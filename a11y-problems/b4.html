@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+</head>
+
+<body ng-app="businessApp">
+  <div class="container" ng-controller="thingController">
+    <h2>Business Application</h2>
+    <h3>Departments</h3>
+    <div class="alert alert-info" ng-show="!deptLength.length">No more departments!</div>
+    <table class="table table-stipped" ng-show="deptLength.length">
+      <thead>
+        <tr>
+          <td>
+            <input type="checkbox" name="" value="">
+          </td>
+          <td>
+            Department
+          </td>
+          <td>
+            Budget
+          </td>
+          <td>
+            Actions
+          </td>
+          <td>
+            Details
+          </td>
+        </tr>
+        <tbody>
+          <tr ng-repeat="dept in depts" ng-if="!dept.Reorg">
+            <td><input type="checkbox" name="" value=""></td>
+            <td>{{dept.Department}}</td>
+            <td   style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
+            <td><a href="" class="edit" data-toggle="modal" data-target="#editModal" ng-click="edit($index)">Edit</a> | <a href="" class="reorg" ng-click="reorg($index)">Move</a> </td>
+            <td>
+              <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
+            </td>
+          </tr>
+        </tbody>
+      </thead>
+    </table>
+
+    <div ng-show="reorgLength.length">
+      <h3>Move candidates</h3>
+      <table class="table table-stipped">
+        <thead>
+          <tr>
+            <td>
+              <input type="checkbox" name="" value="">
+            </td>
+            <td>
+              Department
+            </td>
+            <td>
+              Budget
+            </td>
+            <td>
+              Actions
+            </td>
+            <td>
+              Details
+            </td>
+          </tr>
+          <tbody>
+            <tr ng-repeat="dept in depts" ng-if="dept.Reorg">
+              <td><input type="checkbox" name="" value=""></td>
+              <td>{{dept.Department}}</td>
+              <td   style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
+              <td><a href="" class="reorg" ng-click="unreorg($index)">Un-move</a> </td>
+              <td>
+                <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
+              </td>
+            </tr>
+          </tbody>
+        </thead>
+      </table>
+    </div>
+
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="editModalTitle">Editing: {{selectedItemEdit.Department}}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form">
+              <div class="form-group">
+                <label for="dept">Department Name</label>
+                <input type="text" class="form-control" id="dept" aria-describedby="deptHelp" placeholder="Department name" ng-model="selectedItemEdit.Department">
+                <small id="deptHelp" class="form-text text-muted">Pick something sensible, please.</small>
+              </div>
+              <div class="form-group">
+                <label for="budg">Department Budget</label>
+                <input type="text" class="form-control" id="budg" aria-describedby="budgHelp" placeholder="Enter any number" ng-model="selectedItemEdit.Budget">
+                <small id="budgHelp" class="form-text text-muted">Pick something sensible, please.</small>
+              </div>
+              <div class="form-group">
+                <label for="col">Department Color</label>
+                <select class="form-control" ng-model="selected_color" aria-describedby="colHelp" id="col">
+                 <option value="">--- Select an option ---</option>
+                 <option ng-selected= "color === selectedItemEdit.Color" ng-repeat="color in colors"
+                        value="{{color}}">{{color}}
+                </select>
+                <br>
+                <small id="colHelp" class="form-text text-muted"> Go crazy</small>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveChanges()">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="moreinfo" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="infoModalTitle">{{infoSelectedItem.Department}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>Budget: {{infoSelectedItem.Budget}}</p>
+            <p style="background-color:{{infoSelectedItem.Color.toLowerCase()}}  !important">Color: {{infoSelectedItem.Color}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <script type="text/javascript">
+    var businessApp = angular.module('businessApp', []);
+
+    businessApp.controller('thingController', ['$scope', function($scope) {
+      $scope.deptLength = [0, 1];
+      $scope.colors =['Pink','LightPink','HotPink','DeepPink','PaleVioletRed','LightSalmon','Salmon','DarkSalmon','LightCoral','LimeGreen','Lime','LawnGreen','Chartreuse','GreenYellow','SpringGreen','MediumSpringGreen ','LightGreen','PaleGreen','Aqua','Cyan','LightCyan','PaleTurquoise','Aquamarine','LightGoldenrodYellow','PapayaWhip','Moccasin','PeachPuff','PaleGoldenrod'];
+      $scope.depts = [{
+        "Department": "Adv Research Comp Tech Srv",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Infra Net",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Strategy and Planning",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Central Administration",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Enterprise Application Services",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Support Services",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Teaching and Learning",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Infra & Info Assurance",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }, {
+        "Department": "Information Quest",
+        "Budget": "$350,000",
+        "Color": "White",
+        "Reorg": false
+      }];
+
+
+
+      $scope.passItemToModal = function(index) {
+        $scope.infoSelectedItem = $scope.depts[index];
+      }
+
+      $scope.passItemToModalEdit = function(index) {
+        $scope.selectedItemIndex = index;
+        $scope.selectedItemEdit = $scope.depts[index]
+      }
+      $scope.reorg = function(index) {
+        $scope.depts[index].Reorg = true;
+        $scope.reorgLength = _.where($scope.depts, {
+          Reorg: true
+        });
+        $scope.deptLength = _.where($scope.depts, {
+          Reorg: false
+        });
+      }
+      $scope.unreorg = function(index) {
+        $scope.depts[index].Reorg = false;
+        $scope.reorgLength = _.where($scope.depts, {
+          Reorg: true
+        });
+        $scope.deptLength = _.where($scope.depts, {
+          Reorg: false
+        });
+      }
+      $scope.edit = function(index) {
+        $scope.passItemToModalEdit(index);
+      }
+      $scope.saveChanges = function() {
+        $scope.depts[$scope.selectedItemIndex].Department = $scope.selectedItemEdit.Department;
+        $scope.depts[$scope.selectedItemIndex].Color = $scope.selected_color;
+        $scope.depts[$scope.selectedItemIndex].Budget = $scope.selectedItemEdit.Budget;
+      }
+    }]);
+  </script>
+
+<div class="container">
+  <h3>Further reading</h3>
+  <p><a href="https://medium.com/@aziz.marwan/accessibility-considerations-when-building-single-page-applications-53c625e1dc87" target="_blank">Accessibily challenges building Single Page Applications</a></p>
+  <p><a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics" target="_blank">WAI-ARIA Explained</a></p>
+
+</div>
+</body>
+
+</html>

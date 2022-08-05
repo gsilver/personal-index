@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Links</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style media="screen">
+    #footer-social li {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      width: 18%;
+      text-align: center;
+    }
+
+    #darntable1 a,
+    #darntable1 a {
+      padding-left: .5em;
+      padding-right: .5em
+    }
+
+    .image-list li {
+      padding: 1em
+    }
+  </style>
+</head>
+
+<body>
+  <br><br>
+  <div class="container">
+    <h1>Links</h1>
+    <br>
+    <p>Several situations where links might be an issue. <strong>Remember:</strong> descriptive and unique are the requirements.</p>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="true">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="icons-tab" data-toggle="tab" href="#icons" role="tab" aria-controls="icons" aria-selected="false">Icons</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="cards-tab" data-toggle="tab" href="#cards" role="tab" aria-controls="cards" aria-selected="false">Cards</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="images-tab" data-toggle="tab" href="#images" role="tab" aria-controls="images" aria-selected="false">Images</a>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <br>
+        <p>What to do with multiple links?</p>
+        <p>Your tools are <code>aria-label</code>, <code>aria-labeledby</code>, <code>aria-describedby</code> and <code>class="sr-only"</code>.</p>
+
+        <table class="table table-striped table-hover" id="darntable1">
+          <thead class="thead-dark">
+            <tr>
+              <th>
+                Widget
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                Smeck
+              </th>
+              <td>
+                $12
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Stodge
+              </th>
+              <td>
+                $32
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Flaf
+              </th>
+              <td>
+                $1
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Squitch
+              </th>
+              <td>
+                $67
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Speck
+              </th>
+              <td>
+                $32
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Sproing
+              </th>
+              <td>
+                $12
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+
+
+          </tbody>
+
+        </table>
+
+        <p>Fixed (several techniques)</p>
+        <table class="table table-striped table-hover" id="darntable2">
+          <thead class="thead-dark">
+            <tr>
+              <th id="widget-name">
+                Widget
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                Smeck
+              </th>
+              <td>
+                $12
+              </td>
+              <td>
+                <a href="#">Edit <span class="sr-only">Smeck</span> </a> |
+                <a href="#">Delete  <span class="sr-only">Smeck</span></a> |
+                <a href="#">Add to wishlist  <span class="sr-only">Smeck</span></a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span id="widget-name">Stodge</span>
+              </th>
+              <td>
+                $12
+              </td>
+              <td>
+                <a href="#" aria-describedby="widget-name">Edit </a> |
+                <a href="#" aria-describedby="widget-name">Delete  </a> |
+                <a href="#" aria-describedby="widget-name">Add to wishlist </a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Sproing
+              </th>
+              <td>
+                $12
+              </td>
+              <td>
+                <a href="#" aria-label="Edit Sproing">Edit</a> |
+                <a href="#" aria-label="Delete Sproing">Delete</a> |
+                <a href="#" aria-label="Add Sproing to wishlist">Add to wishlist</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Squitch
+              </th>
+              <td>
+                $67
+              </td>
+              <td>
+                <a href="#">Edit</a> |
+                <a href="#">Delete</a> |
+                <a href="#">Add to wishlist</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Inspect the last row. It has not changed, and yet you could argue that it is ok, even if it is not optimal. How so?</p>
+      </div>
+      <div class="tab-pane fade" id="icons" role="tabpanel" aria-labelledby="icons-tab">
+        <br>
+        <p>What to do with icon links?</p>
+        <p>Your tools are <code>aria-label</code>, <code>aria-labeledby</code>, <code>aria-describedby</code> and <code>class="sr-only"</code>.</p>
+        <ul id="footer-social" style="list-style:none">
+          <li><a href="https://www.facebook.com/midwestux/" target="_blank"><i class="fa fa-facebook-f"></i></a></li>
+          <li><a href="https://twitter.com/midwestUX" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="mailto:hello@midwestuxconference.com " target="_blank"><i class="fa fa-envelope"></i></a></li>
+          <li><a href="https://instagram.com/midwestux" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://vimeo.com/mwux" target="_blank"><i class="fab fa-vimeo-v"></i></a></li>
+        </ul>
+        <hr>
+        <p>Fixed (several techniques):</p>
+
+        <ul id="footer-social" style="list-style:none">
+          <li><a href="https://www.facebook.com/midwestux/" target="_blank"><i class="fa fa-facebook-f"></i> <span class="sr-only">Facebook</span> </a></li>
+          <li><a href="https://twitter.com/midwestUX" target="_blank" aria-label="Twitter"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="mailto:hello@midwestuxconference.com " target="_blank" aria-labelledby="mailto-label"><i class="fa fa-envelope"></i></a></li>
+          <li><a href="https://instagram.com/midwestux" target="_blank"><i class="fa fa-instagram" role="image" alt="Instagram"></i></a></li>
+          <li><a href="https://vimeo.com/mwux" target="_blank" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a></li>
+        </ul>
+        <span id="mailto-label" class="sr-only">E Mail</span>
+      </div>
+      <div class="tab-pane fade" id="cards" role="tabpanel" aria-labelledby="cards-tab">
+        <br>
+        <p>What happens when the link has a lot of text? Let's assume that is how it came to you as a requirement.</p>
+        <p>Your tools are <code>aria-label</code>, <code>aria-labeledby</code> and <code>aria-hidden</code>.</p>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+        </div>
+        <br>
+        <p>Some posibilities?</p>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active" aria-label="List group item heading">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small>3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action" aria-labeledby="item-label">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1" id="item-label">List group item heading</h5>
+              <small class="text-muted">3 days ago</small>
+            </div>
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">List group item heading</h5>
+              <small class="text-muted" aria-hidden="true">3 days ago</small>
+            </div>
+            <p class="mb-1" aria-hidden="true"> Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <small class="text-muted" aria-hidden="true">Donec id elit non mi porta.</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+        <br>
+        <p>What happens in these circumstances? Why are some good, some bad?</p>
+        <div class="row">
+          <div class="col-sm-6">
+            Good
+          </div>
+          <div class="col-sm-6">
+            Bad
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="image-list" style="list-style-type: lower-alpha;">
+              <li>
+                <a href="#">
+                  <img src="svg/alert.svg" alt="Alert!">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg role="image" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <title>Alert!</title>
+                    <path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-exclamation-triangle" aria-hidden="true">
+                  </i>
+                  Alert!
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-exclamation-triangle" role="image" alt="Alert!">
+                  </i>
+                </a>
+              </li>
+
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <ol class="image-list">
+              <li>
+                <a href="#">
+                <img src="svg/alert.svg" alt="Alert!">
+                Alert!
+              </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg alt="alert" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-exclamation-triangle">
+                  </i>
+                  Alert!
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-exclamation-triangle">
+                  </i>
+                </a>
+              </li>
+
+            </ol>
+          </div>
+
+        </div>
+        <ol id="image-list">
+
+
+        </ol>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

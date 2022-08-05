@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <h1>What principle is being violated here? <small>Other than "be kind"?</small> </h1>
+    <br>
+    <div class="alert"><span id="instructions">Select all items whose color has an "R" in it.</span> You have
+      <strong id="count"  style="color:#c00;font-size:150%">15</strong> seconds left.</div>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">One</th>
+          <th scope="col">Color</th>
+          <th scope="col">Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a1"></td>
+          <td> <label for="a1">One</label> </td>
+          <td>Red</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a2"></td>
+          <td> <label for="a2">Two</label> </td>
+          <td>Pink</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a3"></td>
+          <td> <label for="a3">Three</label> </td>
+          <td>Green</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a4"></td>
+          <td> <label for="a4">Four</label> </td>
+          <td>Suet</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a5"></td>
+          <td> <label for="a5">Five</label> </td>
+          <td>Norwegian Midwinter Sky</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a6"></td>
+          <td> <label for="a6">Six</label> </td>
+          <td>Sunny</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a7"></td>
+          <td> <label for="a7">Seven</label> </td>
+          <td>Maroon</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a8"></td>
+          <td> <label for="a8">Eight</label> </td>
+          <td>Furious Blush</td>
+          <td>267</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a9"></td>
+          <td> <label for="a9">Nine</label> </td>
+          <td>Rage</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a10"></td>
+          <td> <label for="a10">Ten</label> </td>
+          <td>Shame</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a11"></td>
+          <td> <label for="a11">Eleven</label> </td>
+          <td>Blue  You Saw Once Before</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a12"></td>
+          <td> <label for="a12">Twelve</label> </td>
+          <td>Rainy Dawn</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a13"></td>
+          <td> <label for="a13">Thirteen</label> </td>
+          <td>Unsettling Hue</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a14"></td>
+          <td> <label for="a14">Fourteen</label> </td>
+          <td>Uncanny Tone</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a15"></td>
+          <td> <label for="a15">Sixteen</label> </td>
+          <td>Eldritch Fuschia</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="" value="" id="a16"></td>
+          <td> <label for="a16">Sixteen</label> </td>
+          <td>Mellow Marygold</td>
+          <td>7</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+
+  window.onload = function(){
+
+  (function(){
+    var counter = 15;
+
+    setInterval(function() {
+      counter--;
+      if (counter >= 0) {
+        span = document.getElementById("count");
+        span.innerHTML = counter;
+      }
+      if (counter === 0) {
+          var checked = $('input[type="checkbox"]:checked').length;
+          var checkboxes =  $('input[type="checkbox"]').length;
+          $('.alert').addClass('alert-danger').attr('role','alert').append(' <strong> You ran out of time! You got ' + checked + ' out of 10 lines!</strong>');
+          $('#instructions').fadeOut();
+          $('input').attr('disabled','disabled');
+          clearInterval(counter);
+      }
+
+    }, 1000);
+
+  })();
+
+  }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Plovers of Michigan</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <br><br>
+    <h1>
+      <img src="images/fakeh1.png" alt="Plovers of Michigan" style="width:348px">
+    </h1>
+    <div class="d-flex flex-row-reverse">
+      <button type="button" class="btn btn-light" aria-label="Ring the bell!">
+          <img src="svg/bell.svg">
+      </button>
+      <button type="button" class="btn btn-light" title="DEFCON 5!">
+          <img src="svg/alert.svg">
+      </button>
+      <button type="button" class="btn btn-light">
+          <img src="svg/book.svg" alt="buy the book">
+      </button>
+      <button type="button" class="btn btn-light">
+          <img src="svg/bug.svg" alt="">
+          <span class="sr-only">Squash the bug!</span>
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h2>Some faves</h2>
+    <div class="card-deck">
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="images/plover1.png" alt="Card image cap"></a>
+        <div class="card-body">
+          <h5 class="card-title">Alpena Squidge</h5>
+          <p class="card-text">The Squidge, what is there to say? Not much as it happens.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="images/plover2.png" alt="Card image cap"></a>
+        <div class="card-body">
+          <h5 class="card-title">Traverse Bay Shrill</h5>
+          <p class="card-text">The Shrill needs no introduction, it speaks for itself, in penetrating tones.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="images/plover3.png" alt="Card image cap"></a>
+        <div class="card-body">
+          <h5 class="card-title">St. Mary's Mudder</h5>
+          <p class="card-text">The unassuming Mudder will be there even after the earth crashes into the sun.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="images/plover4.png"></a>
+        <div class="card-body">
+          <h5 class="card-title">Lake Superior Sandblaster</h5>
+          <p class="card-text">
+            Watch for it after it emerges when the snow melts, sometime around August.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <a href="#"><img class="card-img-top" src="images/plover5.png" alt="Eire Eerie plover"></a>
+        <div class="card-body">
+          <h5 class="card-title">Eire Eerie</h5>
+          <p class="card-text">Always a little bit off, a little bit unsettling, like the opening pages of a Stephen King potboiler</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $('.card a').click(function(e) {
+        var thisBird = $(this).parent('.card').find('h5').text();
+        e.preventDefault()
+        alert('If we had a budget we would take you to a new page about the ' + thisBird)
+      });
+    </script>
+</body>
+
+</html>

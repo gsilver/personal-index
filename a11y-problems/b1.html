@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    table tr:first-child td {
+      color: #696969;
+      background: #E3E3E3
+    }
+    .media-left a:hover img {
+      border:1px solid black !important
+    }
+    .media-left a:focus{
+      outline:none
+    }
+  </style>
+</head>
+
+<body class="container">
+  <h2>Plovers of Michigan</h2>
+  <div class="btn-group pull-right share">
+    <button type="button" class="btn btn-default">
+      <span class="octicon octicon-clippy"></span>
+      <span class="sr-only">Copy site to clipboard</span>
+    </button>
+    <button type="button" class="btn btn-default" aria-label="Flag as inappropriate">
+        <span class="octicon octicon-alert"></span>
+    </button>
+    <button type="button" class="btn btn-default">
+      <span class="octicon octicon-thumbsup"></span>
+    </button>
+  </div>
+  <iframe src="https://player.vimeo.com/video/184161227" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <h2>Types</h2>
+  <div class="media">
+    <div class="media-left">
+      <a href="#"><img class="media-object" src="images/plover1.png"></a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Alpena Squidge</h4>
+      <p>The Squidge, what is there to say? Not much as it happens.</p>
+      <p><a href="#">Adopt me!</a></p>
+    </div>
+  </div>
+  <div class="media">
+    <div class="media-left">
+      <a href="#"><img class="media-object" src="images/plover2.png" alt=""></a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Traverse Bay Shrill</h4>
+      <p>The Shrill needs no introduction, it speaks for itself, in penetrating tones.</p>
+      <p><a href="#">Adopt me!</a></p>
+    </div>
+  </div>
+
+  <div class="media">
+    <div class="media-left">
+      <a href="#"><img class="media-object" src="images/plover3.png" alt="picture of some bird"></a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">St. Mary's Mudder</h4>
+      <p>The unassuming Mudder will be there even after the earth crashes into the sun.</p>
+      <p><a href="#">Adopt me!</a></p>
+    </div>
+  </div>
+  <div class="media">
+    <div class="media-left">
+      <a href="#"><img class="media-object" src="images/plover4.png" alt=""></a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Lake Superior Sandblaster</h4>
+      <p>Watch for it after it emerges when the snow melts, sometime around August. </p>
+      <p><a href="#">Adopt me!</a></p>
+    </div>
+    <br>
+    <p>Counts</p>
+
+    <table class="table">
+      <tr>
+        <td>
+          Years
+        </td>
+        <td>
+          Alpena Squidge
+        </td>
+        <td>
+          Traverse Bay Shrill
+        </td>
+        <td>
+          St. Mary's Mudder
+        </td>
+        <td>
+          Lake Superior Sandblaster
+        </td>
+      </tr>
+      <tr>
+        <td>
+          1999
+        </td>
+        <td>
+          23
+        </td>
+        <td>
+          45
+        </td>
+        <td>
+          56
+        </td>
+        <td>
+          67
+        </td>
+      </tr>
+      <tr>
+
+        <td>2000
+        </td>
+        <td>
+          56
+        </td>
+        <td>
+          67
+        </td>
+        <td>87
+        </td>
+        <td>
+          89
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2001
+        </td>
+        <td>
+          54
+        </td>
+        <td>
+          56
+        </td>
+        <td>
+          76
+        </td>
+        <td>
+          78
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2002
+        </td>
+        <td>
+          23
+        </td>
+        <td>
+          76
+        </td>
+        <td>
+          78
+        </td>
+        <td>
+          98
+        </td>
+      </tr>
+    </table>
+
+    <h5>Priorities</h5>
+
+    <p>1. Update counts</p>
+    <p>2. Protect beach habitat</p>
+    <p>3. Crank up empathy machines</p>
+    <p>4. Launch "Adopt a Plover" program, check out blue links.</p>
+    <h3>More video</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/1avB_tt7uEs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+    <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      $('.media-body a').on('click', function() {
+        alert('I am yours! Thanks!')
+      })
+      $('.media-left a').on('click', function() {
+        alert('If we had a budget this would be a popup with a larger picture!')
+      })
+      $('.share button').on('click', function() {
+        alert('Thanks for letting us know!')
+      })
+
+      media-left
+    </script>
+</body>
+
+</html>

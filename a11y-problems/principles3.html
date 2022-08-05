@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div id="homePanel" class="exPanel">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" class="navLink" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">Crazypants</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li id="home" class="active"><a href="#" class="navLink" data-target="homePanel">Home</a></li>
+                <li id="about" ><a href="#" class="navLink" data-target="aboutPanel"> About us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="contact"><a href="#" class="navLink" data-target="contactPanel">Contact us</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <h2>Crazypants Home</h2>
+
+        <p>Lorem ipsum dolor sit amet, condimentum vitae mus amet commodo sagittis, quam in, consectetuer pede arcu rhoncus consequat. Metus aliquam. Sed tempor pellentesque tristique convallis dictum at, est cras ac ipsum eros, odio dolore, lectus sit cursus massa turpis, massa mattis scelerisque fermentum. Mus vel lacus. Auctor suscipit dui proin sed sed integer, egestas fringilla eu suscipit tristique luctus leo, ut maecenas, hendrerit mauris sed eleifend turpis enim. Condimentum facilisis amet odio scelerisque ut amet, numquam venenatis nisl semper eget libero.</p>
+      </div>
+      <div id="aboutPanel" class="exPanel" style="display:none">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" class="navLink" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Crazypants</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li id="about"  class="active"><a href="#" class="navLink" data-target="aboutPanel"> About us</a></li>
+                <li id="home"><a href="#" class="navLink" data-target="homePanel">Home</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="contact"><a href="#" class="navLink" data-target="contactPanel">Contact us</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <h2>Crazypants About Us</h2>
+        <p>Quam in, consectetuer pede arcu rhoncus consequat. Metus aliquam. Sed tempor pellentesque tristique convallis dictum at, est cras ac ipsum eros, odio dolore, lectus sit cursus massa turpis, massa mattis scelerisque fermentum. Mus vel lacus. Auctor suscipit dui proin sed sed integer, egestas fringilla eu suscipit tristique luctus leo, ut maecenas, hendrerit mauris sed eleifend turpis enim. Condimentum facilisis amet odio scelerisque ut amet, numquam venenatis nisl semper eget libero.</p>
+      </div>
+      <div id="contactPanel" class="exPanel"  style="display:none">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" class="navLink" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Crazypants</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li id="home"><a href="#" class="navLink" data-target="homePanel">Home</a></li>
+                <li id="contact" class="active"><a href="#" class="navLink" data-target="contactPanel">Contact us</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
+                <li id="about"><a href="#" class="navLink" data-target="aboutPanel"> About us</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <h2>Crazypants Contact Us</h2>
+        <p>Metus aliquam. Sed tempor pellentesque tristique convallis dictum at, est cras ac ipsum eros, odio dolore, lectus sit cursus massa turpis, massa mattis scelerisque fermentum. Mus vel lacus. Auctor suscipit dui proin sed sed integer, egestas fringilla eu suscipit tristique luctus leo, ut maecenas, hendrerit mauris sed eleifend turpis enim. Condimentum facilisis amet odio scelerisque ut amet, numquam venenatis nisl semper eget libero.</p>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+    $( document ).ready(function() {
+      $('#home').fadeIn('slow');
+      $('a.navLink').on('click', function(e){
+        e.preventDefault(e);
+        $('.exPanel').hide();
+        var newPanel = $(this).attr('data-target');
+        $('#' + newPanel).fadeIn('slow');
+      })
+
+  });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
+  <link rel="stylesheet" href="vendor/jquery-orgchart/jquery.orgchart.css">
+  <link rel="stylesheet" href="css/org_styles.css">
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="orgApp">
+  <div class="container" ng-controller="csvController">
+    <h1>Orgcharter</h1>
+    <div class="panel panel-default">
+      <div class="panel-body" style="padding:5px 15px 20px 15px">
+        <p>Provide the CSV version of the file you downloaded from <a href="https://na4.orgchartnow.com">Org Chart Now.</a></p>
+        <div class="input-group">
+          <label class="input-group-btn">
+              <span class="btn"  ng-class="filename? 'btn-success': 'btn-primary'">
+                Browse…
+                <i class="glyphicon glyphicon-upload" ng-show="!filename"></i> <i class="glyphicon glyphicon-ok" ng-show="filename"></i>
+                <input class="sr-only" id="trim-file" type="file" name="files" style="display:inline" file-model="trimfile">
+              </span>
+            </label>
+          <input type="text" class="form-control" readonly="" value="{{filename}}">
+        </div>
+      </div>
+    </div>
+    <div ng-show="csvList">
+      <h2 style="font-size:110%">1. We parse the uploaded CSV
+        <a href="" ng-show="revealTable" ng-click="revealTable = false">(Reveal CSV)</a>
+        <a href="" ng-show="!revealTable" ng-click="revealTable = true">(Conceal CSV)</a>
+      </h2>
+    </div>
+
+    <table class="table csvTable" ng-show="!revealTable">
+      <thead>
+        <tr>
+          <th ng-repeat="header in headers track by $index" scope="col">{{header}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in csvList  track by $index">
+          <td>
+            {{item[0]}}
+          </td>
+          <td>
+            {{item[1]}}
+          </td>
+          <td>
+            {{item[2]}}
+          </td>
+          <td>
+            {{item[3]}}
+          </td>
+          <td>
+            {{item[4]}}
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+
+    <div ng-show="dataObject">
+      <h2 style="font-size:110%">2. To produde a list of lists
+        <a href="" ng-show="revealList" ng-click="revealList = false">(Reveal List)</a>
+        <a href="" ng-show="!revealList" ng-click="revealList = true">(Conceal List)</a>
+      </h2>
+    </div>
+    <ul id="source-chart" class="source-chart" ng-show="dataObject" ng-class="!revealList?'':'sr-only'">
+      <li>
+        {{dataObject.name}} {{dataObject.title}}
+        <ul ng-if="dataObject.reports.length">
+          <li ng-repeat="report in dataObject.reports  track by $index">{{report.name}} - {{report.title}}
+            <ul ng-if="report.reports.length">
+              <li ng-repeat="report in report.reports  track by $index">{{report.name}} - {{report.title}}
+                <ul ng-if="report.reports.length">
+                  <li ng-repeat="report in report.reports track by $index">{{report.name}} - {{report.title}}
+                    <ul ng-if="report.reports.length">
+                      <li ng-repeat="report in report.reports track by $index">{{report.name}} - {{report.title}}
+                        <ul ng-if="report.reports.length">
+                          <li ng-repeat="report in report.reports">{{report.name}} - {{report.title}}
+                            <ul ng-if="report.reports.length">
+                              <li ng-repeat="report in report.reports track by $index"">{{report.name}} - {{report.title}}
+                                <ul ng-if="report.reports.length">
+                                  <li ng-repeat="report in report.reports track by $index"">{{report.name}} - {{report.title}}
+                                    <ul ng-if="report.reports.length">
+                                      <li ng-repeat="report in report.reports track by $index"">{{report.name}} - {{report.title}}</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div ng-show="dataObject">
+      <h2 style="font-size:110%">3. That we use to produce an org chart </h2>
+      <div id="chart" class="chart">
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.5.0/papaparse.min.js"></script>
+  <script src="vendor/jquery-orgchart/jquery.orgchart.min.js"></script>
+</body>
+
+</html>

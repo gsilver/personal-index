@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Form structure</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <h1>Form structure</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="original-tab" data-toggle="tab" href="#original" role="tab" aria-controls="original" aria-selected="true">Original</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="fixed-tab" data-toggle="tab" href="#fixed" role="tab" aria-controls="fixed" aria-selected="false">Fixed</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="fixed2-tab" data-toggle="tab" href="#fixed2" role="tab" aria-controls="fixed2" aria-selected="false">Fixed v.2</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="original" role="tabpanel" aria-labelledby="original-tab">
+        <br>
+        <h2>Buying a shoe - Armageddon </h2>
+        <form>
+          <div class="form-group">
+            <label for="first_name">First name</label>
+            <input type="text" class="form-control" id="first_name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input type="text" class="form-control" id="last_name">
+          </div>
+          <div class="form-group">
+            <label for="hair_color">Hair color</label>
+            <input type="text" class="form-control" id="hair_color">
+          </div>
+          <div class="form-group">
+            <label for="peculiar">Peculiar habits</label>
+            <input type="text" class="form-control" id="peculiar">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city">
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip code</label>
+            <input type="number" class="form-control" id="zip">
+          </div>
+          <div class="form-group">
+            <label for="model">Shoe model</label>
+            <select class="form-control" id="model">
+             <option>Brogue</option>
+             <option>Tennis</option>
+             <option>Pointy toe</option>
+             <option>Flats</option>
+             <option>Galoshes</option>
+           </select>
+          </div>
+          <div class="form-group">
+            <label for="size">Size</label>
+            <input type="number" class="form-control" id="size">
+          </div>
+          <div style="padding-left:3em">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+              Black
+            </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <label class="form-check-label" for="exampleRadios2">
+              Red
+            </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
+              <label class="form-check-label" for="exampleRadios3">
+              Fuchsia
+            </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option2">
+              <label class="form-check-label" for="exampleRadios4">
+              Mauve
+            </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">How many?</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>50</option>
+            </select>
+          </div>
+
+          <div style="padding:1em 0 1em 3em">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadios-2-1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios-2-1">
+                Standard post (1-4 weeks)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadios-2-2" value="option2">
+              <label class="form-check-label" for="exampleRadios-2-2">
+                Expedited (1 week)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadios-2-3" value="option2">
+              <label class="form-check-label" for="exampleRadios-2-3">
+                Same day delivery
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadios-2-4" value="option2">
+              <label class="form-check-label" for="exampleRadios-2-4">
+                Drone delivery
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade show" id="fixed" role="tabpanel" aria-labelledby="fixed-tab">
+        <br>
+        <h2>Buying a shoe - the pleasant experience <small>(as pleasant as these things get)</small> </h2>
+        <form>
+          <fieldset>
+            <legend>Personal info</legend>
+            <div class="form-group">
+              <label for="first_name2">First name</label>
+              <input type="text" class="form-control" id="first_name2">
+            </div>
+            <div class="form-group">
+              <label for="last_name2">Last name</label>
+              <input type="text" class="form-control" id="last_name2">
+            </div>
+            <div class="form-group">
+              <label for="hair_color2">Hair color</label>
+              <input type="text" class="form-control" id="hair_color2">
+            </div>
+            <div class="form-group">
+              <label for="peculiar2">Peculiar habits</label>
+              <input type="text" class="form-control" id="peculiar2">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Address</legend>
+            <div class="form-group">
+              <label for="address2">Address</label>
+              <input type="text" class="form-control" id="address2">
+            </div>
+            <div class="form-group">
+              <label for="city2">City</label>
+              <input type="text" class="form-control" id="city2">
+            </div>
+            <div class="form-group">
+              <label for="zip2">Zip code</label>
+              <input type="number" class="form-control" id="zip2">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Shoe selection</legend>
+            <div class="form-group">
+              <label for="model2">Shoe model</label>
+              <select class="form-control" id="model2">
+               <option>Brogue</option>
+               <option>Tennis</option>
+               <option>Pointy toe</option>
+               <option>Flats</option>
+               <option>Galoshes</option>
+             </select>
+            </div>
+            <div class="form-group">
+              <label for="size2">Size</label>
+              <input type="number" class="form-control" id="size2">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">How many?</label>
+              <select class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>50</option>
+              </select>
+            </div>
+
+              <fieldset>
+                <legend>Color</legend>
+                <div style="padding-left:3em">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosx1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadiosx1">
+                  Black
+                </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosx2" value="option2">
+                  <label class="form-check-label" for="exampleRadiosx2">
+                  Red
+                </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosx3" value="option2">
+                  <label class="form-check-label" for="exampleRadiosx3">
+                  Fuchsia
+                </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosx4" value="option2">
+                  <label class="form-check-label" for="exampleRadiosx4">
+                  Mauve
+                </label>
+              </div>
+              </div>
+            </fieldset>
+          </fieldset>
+          <fieldset>
+            <legend>Shipping options</legend>
+            <div style="padding:0 0 1em 3em">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadiosx-2-1">
+                  Standard post (1-4 weeks)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-2" value="option2">
+                <label class="form-check-label" for="exampleRadiosx-2-2">
+                  Expedited (1 week)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-3" value="option2">
+                <label class="form-check-label" for="exampleRadiosx-2-3">
+                  Same day delivery
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-4" value="option2">
+                <label class="form-check-label" for="exampleRadiosx-2-4">
+                  Drone delivery
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="tab-pane fade show" id="fixed2" role="tabpanel" aria-labelledby="fixed2-tab">
+        <br>
+        <h2>Buying a shoe - when your framework hates fieldsets</h2>
+        <form>
+          <h3 id="pinfo">Personal info</h3>
+          <div class="form-group">
+              <label for="first_name3">First name</label>
+              <input type="text" class="form-control" id="first_name3" aria-describedby="pinfo">
+            </div>
+          <div class="form-group">
+              <label for="last_name3">Last name</label>
+              <input type="text" class="form-control" id="last_name3"  aria-describedby="pinfo">
+            </div>
+          <div class="form-group">
+            <label for="hair_color3">Hair color</label>
+            <input type="text" class="form-control" id="hair_color3"  aria-describedby="pinfo">
+          </div>
+          <div class="form-group">
+            <label for="peculiar3">Peculiar habits</label>
+            <input type="text" class="form-control" id="peculiar3"  aria-describedby="pinfo">
+          </div>
+          <h3 id="dadd">Address</h3>
+          <div class="form-group">
+            <label for="address3">Address</label>
+            <input type="text" class="form-control" id="address3" aria-describedby="dadd">
+          </div>
+          <div class="form-group">
+            <label for="city3">City</label>
+            <input type="text" class="form-control" id="city3"  aria-describedby="dadd">
+          </div>
+          <div class="form-group">
+            <label for="zip3">Zip code</label>
+            <input type="number" class="form-control" id="zip3"  aria-describedby="dadd">
+          </div>
+          <h3 id="showsel">Shoe selection</h3>
+          <div class="form-group">
+            <label for="model3">Shoe model</label>
+            <select class="form-control" id="model3" aria-describedby="showsel">
+             <option>Brogue</option>
+             <option>Tennis</option>
+             <option>Pointy toe</option>
+             <option>Flats</option>
+             <option>Galoshes</option>
+           </select>
+          </div>
+          <div class="form-group">
+              <label for="size3">Size</label>
+              <input type="number" class="form-control" id="size3"  aria-describedby="showsel">
+            </div>
+          <div class="form-group">
+              <label for="exampleFormControlSelect3">How many?</label>
+              <select class="form-control" id="exampleFormControlSelect3"  aria-describedby="showsel">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>50</option>
+              </select>
+            </div>
+            <h4 id="colorsel">Color</h4>
+            <div style="padding-left:3em">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosxx1" value="option1" checked aria-describedby="showsel">
+                <label class="form-check-label" for="exampleRadiosxx1">
+                  Black
+                </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosxx2" value="option2"  aria-describedby="showsel">
+              <label class="form-check-label" for="exampleRadiosxx2">Red</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosxx3" value="option2" aria-describedby="showsel">
+              <label class="form-check-label" for="exampleRadiosxx3">
+                Fuchsia
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadiosxx4" value="option2" aria-describedby="showsel">
+              <label class="form-check-label" for="exampleRadiosxx4">Mauve</label>
+            </div>
+          </div>
+          <h3 id="shipopsel">Shipping options</h3>
+          <div style="padding:0 0 1em 3em">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-1x" value="option1" checked aria-describedby="shipopsel">
+              <label class="form-check-label" for="exampleRadiosx-2-1x">
+                Standard post (1-4 weeks)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-2x" value="option2" aria-describedby="shipopsel">
+              <label class="form-check-label" for="exampleRadiosx-2-2x">
+                Expedited (1 week)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-3x" value="option2" aria-describedby="shipopsel">
+              <label class="form-check-label" for="exampleRadiosx-2-3x">
+                Same day delivery
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios-2" id="exampleRadiosx-2-4x" value="option2" aria-describedby="shipopsel">
+              <label class="form-check-label" for="exampleRadiosx-2-4x">
+                Drone delivery
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>What principle is being violated here? <small>Other than "be neat"?</small> </h1>
+
+      <h2>Multiple IDs</h2>
+      <strong class="text-primary">Click on the labels</strong><br><br>
+      <div class="panel">
+      <div class="checkbox"><input type="checkbox" name="" value="" id="one"><label for="one">One</label></div>
+      <div class="checkbox"><input type="checkbox" name="" value="" id="one"><label for="one">Two</label></div>
+      <div class="checkbox"><input type="checkbox" name="" value="" id="one"><label for="one">Three</label></div>
+      <div class="checkbox"><input type="checkbox" name="" value="" id="one"><label for="one">Four</label></div>
+
+
+      <h2>Badly formed elements: broken table</h2>
+      <p><strong  class="text-primary">View page source, search for  "I am inside a table"</strong></p>
+      <p><strong  class="text-primary">Inspect (right click on and select "Inspect") "I am inside a table"</strong></p>
+      <p><strong  class="text-primary">What is the difference? </strong></p>
+
+      <table class="table">
+        <div class="">
+          I am inside a table, so how come it looks like I am outside?
+        </div>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+        <tr>
+          <td>Content 1</td>
+          <td>Content 2</td>
+          <td>Content 3</td>
+        </tr>
+        <tr>
+          <td>Content 1</td>
+          <td>Content 2</td>
+          <td>Content 3</td>
+        </tr>
+      </table>
+    </div>
+    <h2>Badly formed elements: unreadable list</h2>
+    <p> <strong  class="text-primary">Inspect (right click on and select "Inspect") the ersatz list items</strong></p>
+    <p> <strong  class="text-primary">How do you think a screen reader will deal with this?</strong></p>
+    <ul>
+      <li>
+        I am a list item!
+      </li>
+      <div>
+        I am sadly not a list item, but here I am anyways
+      </div>
+      <li>
+        I am a list item too!
+      </li>
+      <li>
+        I am a list item too!
+      </li>
+      <div>
+        I wish I was a list item!
+      </div>
+
+      <li>
+        I am a list item too!
+      </li>
+
+    </ul>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

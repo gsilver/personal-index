@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style media="screen">
+    .link {
+      color: #007bff;
+    }
+
+    .link:focus,
+    .link:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .fake-button:hover,
+    .fake-button:focus {
+      color: green
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <br><br>
+    <h1>Spot the problems</h1>
+    <p>Hint - use keyboard.  Inspect - what is wrong with them?</p>
+        <p>They seem like controls - but are they controls for everyone?</p>
+    <p><a><span class="link">This is a link, really.</span></a></p>
+    <br><br>
+    <p><button type="button" name="button" class="btn btn-primary" tabindex="-1">And this is a button</button></p>
+<br><br>
+    <p><i class="fa fa-play fa-5x fake-button"></i></p>
+    <br><br>
+    <div>
+      <ul id="hovermenu-btn">
+        <li style="list-style:none;"><button type="button" name="button" class="btn btn-primary">Menu <i class="fa fa-angle-double-down"></i></button></li>
+
+        <ul class="list-group" id="xxx" style="display:none">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </ul>
+    </div>
+
+
+
+
+
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('.fake-button').on('click', function(e) {
+      $(this).attr('class', 'fa fa-refresh fa-spin fa-5x fa-fw').css('color', 'red');
+      alert('You clicked a fake button!');
+    })
+    //      $('#hovermenu-btn').hover($('#xxx').show(),$('#xxx').show());
+
+    $("#hovermenu-btn").hover(function() {
+      $('#xxx').show();
+    }, function() {
+      $('#xxx').hide()
+    });
+  </script>
+</body>
+
+</html>

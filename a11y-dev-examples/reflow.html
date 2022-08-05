@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Reflow example</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1>Reflow problems</h1>
+    <p>Load the tab and resize viewport, or zoom in with <kbd>Cmd or Ctrl + </kbd></p>
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="true">Table</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pre-tab" data-toggle="tab" href="#pre" role="tab" aria-controls="pre" aria-selected="false">Pre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="absolute-tab" data-toggle="tab" href="#absolute" role="tab" aria-controls="absolute" aria-selected="false">Absolute</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="exceptions-tab" data-toggle="tab" href="#exceptions" role="tab" aria-controls="exceptions" aria-selected="false">Exceptions</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="table" role="tabpanel" aria-labelledby="table-tab">
+        <br><br>
+        <h2>Layout tables</h2>
+        <table style="width:1200px">
+          <tr>
+            <td colspan="2" style="background-color:#eee;padding:20px;">Top nav thing 1 | Top nav thing 2 | Top nav thing 3 | Top nav thing 4 | Top nav thing 5 |</td>
+          </tr>
+          <tr>
+            <td style="background-color:#ccc;padding:20px;">
+              <div class=""><strong>Side nav</strong>
+
+              </div>
+              <ul>
+                <li>A thing</li>
+                <li>Another one</li>
+                <li>More things</li>
+                <li>Yet more things</li>
+              </ul>
+            </td>
+            <td style="padding:20px;">
+              <p>
+                One of the schools of Tlön goes so far as to negate time; it reasons that the present is indefinite, that the future has no reality other than as a present hope, that the past has no reality other than as a present memory. Another school declares that
+                all time has already transpired and that our life is only the crepuscular and no doubt falsified an mutilated memory or reflection of an irrecoverable process. Another, that the history of the universe — and in it our lives and the most
+                tenuous detail of our lives — is the scripture produced by a subordinate god in order to communicate with a demon. Another, that the universe is comparable to those cryptographs in which not all the symbols are valid and that only what
+                happens every three hundred nights is true. Another, that while we sleep here, we are awake elsewhere and that in this way every man is two men.
+              </p>
+              <p>
+                This much is already known: for every sensible line of straightforward statement, there are leagues of senseless cacophonies, verbal jumbles and incoherences. (I know of an uncouth region whose librarians repudiate the vain and superstitious custom of
+                finding a meaning in books and equate it with that of finding a meaning in dreams or in the chaotic lines of one's palm . . . They admit that the inventors of this writing imitated the twenty-five natural symbols, but maintain that this
+                application is accidental and that the books signify nothing in themselves. This dictum, we shall see, is not entirely fallacious.)
+              </p>
+              <p>
+                He told me that in 1886 he had invented an original system of numbering and that in a very few days he had gone beyond the twenty-four-thousand mark. He had not written it down, since anything he thought of once would never be lost to him. His first stimulus
+                was, I think, his discomfort at the fact that the famous thirty-three gauchos of Uruguayan history should require two signs and two words, in place of a single word and a single sign. He then applied this absurd principle to the other
+                numbers. In place of seven thousand thirteen he would say (for example) Maximo Pérez; in place of seven thousand fourteen, The Railroad; other numbers were Luis Melián Lafinur, Olimar, sulphur, the reins, the whale, the gas, the caldron,
+                Napoleon, Agustin de Vedia. In place of five hundred, he would say nine. Each word had a particular sign, a kind of mark; the last in the series were very complicated...
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="background-color:#000;color:#fff;padding:20px;text-align:center">footer thing 1 | footer thing 2 | footer thing 3 | footer thing 4 | footer thing 5 | footer thing 6</td>
+          </tr>
+        </table>
+      </div>
+      <div class="tab-pane fade show" id="pre" role="tabpanel" aria-labelledby="pre-tab">
+        <br><br>
+        <h2>&lt;pre&gt; and other things</h2>
+        <pre><code style="font-size:150%">
+          /**
+           * GENERIC POLLING SERVICE, used by Migrations panel to poll /migrations on page
+           * load and on new migration requests
+           */
+
+          projectMigrationApp.factory('PollingService', [
+          		'$http',
+          		function($http) {
+          			var defaultPollingTime = 10000;
+          			var polls = {};
+
+          			return {
+          				startPolling : function(name, url, pollingTime, callback) {
+          					if (!polls[name]) {
+          						var poller = function() {
+          							$http.get(url, {
+          								cache : false
+          							}).then(callback);
+          						};
+          						poller();
+          						polls[name] = setInterval(poller, pollingTime || defaultPollingTime);
+          					}
+          				},
+          				stopPolling : function(name) {
+          					clearInterval(polls[name]);
+          					delete polls[name];
+          				}
+          			};
+          		} ]);
+
+        </code></pre>
+      </div>
+      <div class="tab-pane fade show" id="absolute" role="tabpanel" aria-labelledby="absolute-tab">
+        <br><br>
+        <h2>Absolute positioning</h2>
+        <div style="position:relative">
+          <div style="background-color:#000;color:#fff;padding:20px">
+            In that Empire, the Art of Cartography attained such Perfection that the map of a single Province occupied the entirety of a City, and the map of the Empire, the entirety of a Province. In time, those Unconscionable Maps no longer satisfied, and the Cartographers
+            Guilds struck a Map of the Empire whose size was that of the Empire, and which coincided point for point with it. The following Generations, who were not so fond of the Study of Cartography as their Forebears had been, saw that that vast Map
+            was Useless, and not without some Pitilessness was it, that they delivered it up to the Inclemencies of Sun and Winters. In the Deserts of the West, still today, there are Tattered Ruins of that Map, inhabited by Animals and Beggars; in all
+            the Land there is no other Relic of the Disciplines of Geography.
+          </div>
+          <div style="position:absolute;top:150px;left:0;width:100%;height:200px;background-color:#c00;color:#fff;padding:20px">
+            The Falklands thing was a fight between two bald men over a comb.
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade show" id="exceptions" role="tabpanel" aria-labelledby="exceptions-tab">
+        <br><br>
+        <h2>Exceptions</h2>
+        <h3>Tabular data: Graunt's table of casualties</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>The Years of our Lord</th>
+              <th>1647</th>
+              <th>1648</th>
+              <th>1649</th>
+              <th>1650</th>
+              <th>1651</th>
+              <th>1652</th>
+              <th>1653</th>
+              <th>1654</th>
+              <th>1655</th>
+              <th>1656</th>
+              <th>1657</th>
+              <th>1658</th>
+              <th>1659</th>
+              <th>1660</th>
+              <th>1629</th>
+              <th>1630</th>
+              <th>1631</th>
+              <th>1632</th>
+              <th>1633</th>
+              <th>1634</th>
+              <th>1635</th>
+              <th>1636</th>
+              <th>1629-1632</th>
+              <th>1633-1636</th>
+              <th>1647-1650</th>
+              <th>1651-1654</th>
+              <th>1655-1658</th>
+              <th>1629, 1649, 1659</th>
+              <th>in 20 years</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>Colick, and Wind</td>
+              <td>103</td>
+              <td>71</td>
+              <td>85</td>
+              <td>82</td>
+              <td>76</td>
+              <td>102</td>
+              <td>80</td>
+              <td>101</td>
+              <td>85</td>
+              <td>120</td>
+              <td>113</td>
+              <td>179</td>
+              <td>116</td>
+              <td>167</td>
+              <td>48</td>
+              <td>57</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>37</td>
+              <td>50</td>
+              <td>105</td>
+              <td>87</td>
+              <td>341</td>
+              <td>359</td>
+              <td>497</td>
+              <td>247</td>
+              <td>1389</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cold, and Cough</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>41</td>
+              <td>36</td>
+              <td>21</td>
+              <td>58</td>
+              <td>30</td>
+              <td>31</td>
+              <td>33</td>
+              <td>24</td>
+              <td>10</td>
+              <td>58</td>
+              <td>51</td>
+              <td>55</td>
+              <td>45</td>
+              <td>54</td>
+              <td>50</td>
+              <td>57</td>
+              <td>174</td>
+              <td>207</td>
+              <td>0</td>
+              <td>77</td>
+              <td>140</td>
+              <td>43</td>
+              <td>598</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Consumption, and Cough</td>
+              <td>2423</td>
+              <td>2200</td>
+              <td>2388</td>
+              <td>1988</td>
+              <td>2350</td>
+              <td>2410</td>
+              <td>2286</td>
+              <td>2868</td>
+              <td>2606</td>
+              <td>3184</td>
+              <td>2757</td>
+              <td>3610</td>
+              <td>2982</td>
+              <td>3414</td>
+              <td>1827</td>
+              <td>1910</td>
+              <td>1713</td>
+              <td>1797</td>
+              <td>1754</td>
+              <td>1955</td>
+              <td>2080</td>
+              <td>2477</td>
+              <td>5157</td>
+              <td>8266</td>
+              <td>8999</td>
+              <td>9914</td>
+              <td>12157</td>
+              <td>7197</td>
+              <td>44487</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Convulsion</td>
+              <td>684</td>
+              <td>491</td>
+              <td>530</td>
+              <td>493</td>
+              <td>569</td>
+              <td>653</td>
+              <td>606</td>
+              <td>828</td>
+              <td>702</td>
+              <td>1027</td>
+              <td>807</td>
+              <td>841</td>
+              <td>742</td>
+              <td>1031</td>
+              <td>52</td>
+              <td>87</td>
+              <td>18</td>
+              <td>241</td>
+              <td>221</td>
+              <td>386</td>
+              <td>418</td>
+              <td>709</td>
+              <td>498</td>
+              <td>1734</td>
+              <td>2198</td>
+              <td>2656</td>
+              <td>3377</td>
+              <td>1324</td>
+              <td>9073</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cramp</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Cut of the Stone</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+              <td>3</td>
+              <td>0</td>
+              <td>1</td>
+              <td>1</td>
+              <td>2</td>
+              <td>4</td>
+              <td>1</td>
+              <td>3</td>
+              <td>5</td>
+              <td>46</td>
+              <td>48</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>5</td>
+              <td>1</td>
+              <td>5</td>
+              <td>2</td>
+              <td>2</td>
+              <td>5</td>
+              <td>10</td>
+              <td>6</td>
+              <td>4</td>
+              <td>13</td>
+              <td>47</td>
+              <td>38</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Images <small> Where is is important to see detail and not scale</small> </h3>
+        <img src="images/complex-image.png" alt="a complex image">
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

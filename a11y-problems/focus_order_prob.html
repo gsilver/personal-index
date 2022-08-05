@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus order problems</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <button type="button" class="btn btn-success pull-right" id="fixIssues" >
+      Fix focus order
+    </button>
+
+
+    <h1>Focus order demo</h1>
+    <p>After loading page start tabbing (navigate by using the <code>tab</code> key to go forward and <code>shift + tab</code> to go backward). Message below will let you know what elements are receiving focus when you tab onto them. <strong>Note:</strong> please use Chrome browser. </p>
+    <p>After going through it once, click on the <code>Fix focus order</code> button and keep on tabbing. Is it a better experience?</p>
+    <p style="display:none" class="alert alert-info" id="alert-focus" role="alert">Focus is currently on: <strong style="color:#c00" id="target-name"></strong> </p>
+    <div class="btn-group btn-group-sm">
+      <a href="#" class="btn btn-default btn-xs"  tabindex="19">Go forward</a>
+      <a href="#" class="btn btn-default btn-xs"  tabindex="2">Go back</a>
+      <a href="#" class="btn btn-default btn-xs" tabindex="20">Cancel</a>
+    </div>
+    <br><br>
+    <ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies orci sit amet risus finibus lobortis. Praesent iaculis, odio eu pharetra interdum, odio tortor ultricies lorem, et blandit magna felis tincidunt lorem. Proin luctus tortor egestas
+        diam viverra aliquet. Nam ut fermentum magna. Pellentesque consequat leo eu vestibulum euismod. Nulla bibendum urna in dignissim cursus. Quisque venenatis tempus odio non malesuada.<sup><a href="#" tabindex="8">[1]</a></sup></p>
+
+      <p>In lectus est, blandit id tellus venenatis, tristique fringilla lorem. Vestibulum ac enim at ligula vulputate maximus eu a risus. Donec convallis risus ut consectetur molestie. Vestibulum nec tincidunt odio. Quisque vel arcu ante. Vivamus ac lacinia
+        tellus, eu eleifend orci. Vivamus nunc dolor, viverra eu massa sed, sodales dictum est. Pellentesque auctor cursus purus, nec posuere leo fermentum sit amet. Pellentesque et laoreet mauris. In at nisi erat. Morbi gravida luctus ante. Fusce mollis
+        semper vulputate. Sed luctus viverra orci ut auctor. Duis quis nisi vel erat porttitor finibus. Sed a magna arcu. Ut bibendum nisl at felis scelerisque, in faucibus nisi laoreet. <sup><a href="#" class=""  tabindex="16">[2]</a></sup></p>
+    </ul>
+
+    <div class="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" tabindex="12">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="Password"  tabindex="14">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile" tabindex="1">
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox"  class=""  tabindex="5">
+        <label for="checkbox"> Check me out</label>
+      </div>
+      <br><br>
+      <button type="submit" class="btn btn-default"  tabindex="10">Submit</button>
+      <br><br>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $('*').on('focus', function() {
+      $('#target-name').text($(this).text() || $(this).parent('div').find('label').text());
+      $('#alert-focus').fadeIn()
+    })
+    $('#fixIssues').on('click', function(){
+      $('[tabindex]').removeAttr('tabindex');
+    })
+  </script>
+
+</body>
+
+</html>

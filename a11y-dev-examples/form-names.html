@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Form element names</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <h1>Form element accessible names</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="types-tab" data-toggle="tab" href="#types" role="tab" aria-controls="types" aria-selected="true">3 good names, one bad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="edges-tab" data-toggle="tab" href="#edges" role="tab" aria-controls="edges" aria-selected="false">Dubious names</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="types" role="tabpanel" aria-labelledby="types-tab">
+
+        <br>
+        <h2>Types of names</h2>
+        <p>A simple test: click on label, does it pass the focus to the element? If so it <b>probably</b> has a name.</p>
+        <p>But there are other ways of providing a name that do not have the focus passing effect.</p>
+        <p>Use developer tools in Chrome. Inspect the input, switch to <b>Accessibility</b> pane. Note - there is <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1005290&q=&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified" target="_blank"> bug in Chrome 76 and 77 </a> where explicit labels do not show up as a name.</p>
+        <form>
+          <h3><small> 1. Names?</small></h3>
+          <div class="form-group">
+            <label for="first_name">First name</label>
+            <input type="text" class="form-control" id="first_name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input type="text" class="form-control" id="last_name">
+          </div>
+          <h3><small>2. And these?</small></h3>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control" aria-label="First name">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" class="form-control"aria-label="Last name">
+          </div>
+          <h2><small>3. Finally, how about?</small></h2>
+          <div class="form-group">
+            <label id="fnname2">First name</label>
+            <input type="text" class="form-control" aria-labelledby="fnname2">
+          </div>
+          <div class="form-group">
+            <label id="lnname2">Last name</label>
+            <input type="text" class="form-control" aria-labelledby="lnname2">
+          </div>
+          <h3> <small>4. Definitely no name!</small></h3>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" class="form-control">
+          </div>
+
+
+        </form>
+      </div>
+        <div class="tab-pane fade show" id="edges" role="tabpanel" aria-labelledby="edges-tab">
+          <br>
+          <h2>Other naming</h2>
+          <p>All of these seem like good ideas, but are not.</p>
+          <h3>Placeholder</h3>
+          <p>Some screen readers will use the placeholder to compute the name. Others may not. And everyone will be inconvinienced when the placeholder is complex and crucial to filling thing correctly. It is nice to have the the text always present.</p>
+          <div class="form-group">
+            <input type="text" name=""  class="form-control"  value="" placeholder="Start date (mm/dd/yyyy)" >
+          </div>
+          <h3>Title</h3>
+          <p>Screen readers may (or may not) read it when input receives focus.</p>
+          <div class="form-group">
+            <input type="text" name=""  class="form-control"  value="" title="Start date (mm/dd/yyyy)" >
+          </div>
+          <h3>Implicit labeling</h3>
+          <p>This is when instead of <code>&lt;label for="id"&gt;Name&lt;/label&gt; &lt;input id="id"&gt;</code> we do <code>&lt;label&gt;&lt;input&gt;Name&lt;/label&gt;</code> - the label wraps the input</p>
+          <p>Click on label. It works!</p>
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="" value=""> Some string
+            </label>
+          </div>
+          <p>... but your CSS framework might dissaprove!</p>
+          <div class="form-group">
+            <label>
+               Some string that Boostrap 4 is not going to pad or margin properly<input type="text" class="form-control" name="" value="">
+            </label>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

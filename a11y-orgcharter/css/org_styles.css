@@ -1,0 +1,16 @@
+div.orgChart div.node {
+  padding:5px;
+  width:auto;
+  background:#fff;
+  border-radius:3px;
+  height:auto
+}
+
+.csvTable, .chart, .source-chart {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 1.5s;
+}
+
+.csvTable.ng-hide, .chart.ng-hide, .source-chart.ng-hide {
+  opacity:0;
+}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Contrast</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <style media="screen">
+    .nofocus input:focus {
+      box-shadow: none !important;
+      border: 1px solid #ced4da !important;
+    }
+
+    .nofocus .btn-light:focus{
+      box-shadow: none !important;
+      color:red !important
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Contrast</h1>
+    <br>
+    <p>Several situations where contrast might be an issue.</p>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="grayscale-tab" data-toggle="tab" href="#grayscale" role="tab" aria-controls="grayscale" aria-selected="true">Grayscale</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="color-tab" data-toggle="tab" href="#colors" role="tab" aria-controls="colors" aria-selected="false">Colors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="complex-tab" data-toggle="tab" href="#complex" role="tab" aria-controls="complex" aria-selected="false">Background images</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="focus-tab" data-toggle="tab" href="#focus" role="tab" aria-controls="focus" aria-selected="false">Focus</a>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="grayscale" role="tabpanel" aria-labelledby="grayscale-tab">
+        <br>
+        <p>At what line does the contrast between text and background become insufficient?</p>
+        <ol class="list-group">
+          <li class="list-group-item" style="background:#FCFCFC;color:#000">1. Cras justo odio</li>
+          <li class="list-group-item" style="background:#DCDCDC;color:#000">2. Dapibus ac facilisis in</li>
+          <li class="list-group-item" style="background:#D3D3D3;color:#000">3. Morbi leo risus</li>
+          <li class="list-group-item" style="background:#C0C0C0;color:#000">4. Porta ac consectetur ac</li>
+          <li class="list-group-item" style="background:#A9A9A9;color:#000">5. Vestibulum at eros</li>
+          <li class="list-group-item" style="background:#808080;color:#000">6. Cras justo odio</li>
+          <li class="list-group-item" style="background:#696969;color:#000">7. Dapibus ac facilisis in</li>
+          <li class="list-group-item" style="background:#595959;color:#000">8. Morbi leo risus</li>
+          <li class="list-group-item" style="background:#4F4F4F;color:#000">9. Porta ac consectetur ac</li>
+          <li class="list-group-item" style="background:#3B3B3B;color:#000">10. Morbi leo risus</li>
+          <li class="list-group-item" style="background:#292929;color:#000">11. Morbi leo risus</li>
+          <li class="list-group-item" style="background:#1F1F1F;color:#000">12. Dapibus ac risus</li>
+        </ol>
+      </div>
+      <div class="tab-pane fade" id="colors" role="tabpanel" aria-labelledby="color-tab">
+        <br>
+        <p>Here is the palette for alerts of a popular framework. Do they all have good contrast?</p>
+
+        <div class="alert alert-primary" role="alert">
+          A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-secondary" role="alert">
+          A simple secondary alert—check it out!
+        </div>
+        <div class="alert alert-success" role="alert">
+          A simple success alert—check it out!
+        </div>
+        <div class="alert alert-danger" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div class="alert alert-warning" role="alert">
+          A simple warning alert—check it out!
+        </div>
+        <div class="alert alert-info" role="alert">
+          A simple info alert—check it out!
+        </div>
+        <div class="alert alert-light" role="alert">
+          A simple light alert—check it out!
+        </div>
+        <div class="alert alert-dark" role="alert">
+          A simple dark alert—check it out!
+        </div>
+
+      </div>
+      <div class="tab-pane fade" id="complex" role="tabpanel" aria-labelledby="complex-tab">
+        <br>
+        <p>
+          Background images are hard!
+        </p>
+        <div style="background-image: url('images/business-services-run-smoothly.jpg'); background-position: 89% 75%; width: 100%; height:500px; color:#fff;padding:177px;font-size:300%">
+          <h2 style="font-size:200%">Transformixr</h2>
+          <p>Where we turn people into widgets!</p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="focus" role="tabpanel" aria-labelledby="focus-tab">
+        <br>
+
+        <p>
+          Focus treatment of controls is tricky! Spot the problems by tabbing through.
+        </p>
+<hr>
+        <p>1. Framework (BS4) focus</p>
+        <div class="form-inline" style="padding:10px">
+          <label class="sr-only" for="inlineFormInputName1">Name</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName1" placeholder="Jane Doe">
+          <label class="sr-only" for="inlineFormInputGroupUsername1">Username</label>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername1" placeholder="Username">
+          </div>
+          <div class="form-check mb-2 mr-sm-2">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheck1">
+            <label class="form-check-label" for="inlineFormCheck1">
+              Remember me
+            </label>
+          </div>
+          <button type="button" class="btn btn-success mb-2">Submit</button>
+        </div>
+        <hr>
+        <p>2. Framework (BS4) focus, with a twist</p>
+        <div class="form-inline" style="background-color:#28a745;padding:10px 10px 5px 10px">
+          <label class="sr-only" for="inlineFormInputName2">Name</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe">
+          <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
+          </div>
+          <div class="form-check mb-2 mr-sm-2">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheck2">
+            <label class="form-check-label" for="inlineFormCheck2">
+              Remember me
+            </label>
+          </div>
+          <button type="button" class="btn btn-success mb-2">Submit</button>
+        </div>
+        <hr>
+        <br>
+        <p>3. Native Browser focus</p>
+        <div class="form-inline" style="padding:10px 10px 5px 10px">
+          <label class="sr-only" for="inlineFormInputName3">Name</label>
+          <input type="text" class="mb-2 mr-sm-2" id="inlineFormInputName3" placeholder="Jane Doe">
+          <label class="sr-only" for="inlineFormInputGroupUsername3">Username</label>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="" id="inlineFormInputGroupUsername3" placeholder="Username">
+          </div>
+          <div class="form-check mb-2 mr-sm-2">
+            <input class="" type="checkbox" id="inlineFormCheck3">
+            <label class="form-check-label" for="inlineFormCheck3">
+              Remember me
+            </label>
+            <a href="#"> A link </a>
+          </div>
+
+          <button type="button" class="">Submit</button>
+        </div>
+        <hr>
+        <br>
+        <p>4. Native Browser focus with a twist! (the twist being #00274c, the  <a target="_blank" href="https://vpcomm.umich.edu/brand/style-guide/design-principles/colors">bane of our existence</a>)</p>
+        <div class="form-inline" style="padding:10px 10px 5px 10px;background-color:#00274c">
+          <label class="sr-only" for="inlineFormInputNamex">Name</label>
+          <input type="text" class="mb-2 mr-sm-2" id="inlineFormInputNamex" placeholder="Jane Doe">
+          <label class="sr-only" for="inlineFormInputGroupUsername4">Username</label>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="" id="inlineFormInputGroupUsername4" placeholder="Username">
+          </div>
+          <div class="form-check mb-2 mr-sm-2">
+            <input class="" type="checkbox" id="inlineFormCheck4">
+            <label class="form-check-label" for="inlineFormCheck4">
+              Remember me
+            </label>
+            <a href="#"> A link </a>
+          </div>
+
+          <button type="button" class="">Submit</button>
+        </div>
+        <hr>
+        <br>
+        <p>5. App CSS Browser focus (overriding BS4)</p>
+        <div class="form-inline nofocus" style="padding:10px 10px 5px 10px">
+          <label class="sr-only" for="inlineFormInputNamey">Name</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputNamey" placeholder="Jane Doe">
+          <label class="sr-only" for="inlineFormInputGroupUsername5">Username</label>
+          <div class="input-group mb-2 mr-sm-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername5" placeholder="Username">
+          </div>
+          <div class="form-check mb-2 mr-sm-2">
+            <input class="form-check-input" type="checkbox" id="inlineFormCheck5">
+            <label class="form-check-label" for="inlineFormCheck5">
+              Remember me
+            </label>
+          </div>
+          <button type="button" class="btn btn-light mb-2">Submit</button>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>

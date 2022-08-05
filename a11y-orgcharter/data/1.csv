@@ -1,0 +1,25 @@
+PersonID,SupervisorID,isAssistant,Name,Title
+1,0,0,Bill Freeman,Associate Vice President IT Services
+2,1,1,Presilla Clebsch,Executive Assistant
+3,1,0,Nancy Vincent,Strategy and Architecture
+4,1,0,Bruce Rickerson,Strategic Planning
+5,1,0,Mathew Miyasaki,Communication Services
+6,1,0,Jan Zicero,Help Desk and Client Services
+7,1,0,Dawn Ware,Human Resources
+8,1,0,Sam Marinshaw,Research Computing
+9,3,0,Chaya Shah,Senior Analyst
+10,3,0,Kathy Martin,Senior Analyst
+11,3,0,David Gipe,Systems Architect
+12,11,0,Dan Gillian,Intern
+13,4,0,Jeffrey Gray,Program Manager
+14,4,0,James Schiaffino,Program Manager
+15,5,0,Peter Standish,Network Admin
+16,5,0,Doug Brotherton,Senior IT Spec
+17,5,0,Vacancy,IT Engineer
+18,6,0,Jo Ann Walker,Support Tech
+19,6,0,Pat Ali,IT Support
+20,7,0,David Jackson,Training Specialist
+21,8,0,Sarita Sanjoy,Systems Programmer
+22,8,0,Stephen Plotkin,Systems Programmer II
+23,8,0,Tim Hsu,DBA
+24,8,0,Vacancy,DBA

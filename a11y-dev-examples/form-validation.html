@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Front end validation </title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <style media="screen">
+    label.error {
+      color:#c00
+    }
+    .validMessage {
+      display:none;
+      margin-bottom: .5rem;
+      color: #fff;
+      background: red;
+      padding: 0 5px;
+      border-radius: 3px;
+      }
+    .failedVal span.validMessage {
+      display: inline-block;
+    }
+    #valid_alert{
+      display:none
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <h1>Front end validation patterns</h1>
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="html5-tab" data-toggle="tab" href="#html5" role="tab" aria-controls="html5" aria-selected="true">HTML 5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="custom-tab" data-toggle="tab" href="#custom" role="tab" aria-controls="custom" aria-selected="false">HTML5 +</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="best-tab" data-toggle="tab" href="#best" role="tab" aria-controls="best" aria-selected="true">Best</a>
+        </li>
+
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="html5" role="tabpanel" aria-labelledby="html5-tab">
+          <br>
+          <h2>Inputs that HTM5 validates natively</h2>
+          <form style="margin:2em 0">
+            <label style="display:block" for="text">text (required, "banana" or "cherry")</label>
+            <input class="form-control" type="text" id="text" required pattern="banana|cherry">
+            <button class="btn btn-outline-secondary">Validate</button>
+          </form>
+
+          <form style="margin:2em 0">
+            <label style="display:block" for="email">email (required, valid email)</label>
+            <input class="form-control" type="email" id="email" required>
+            <button class="btn btn-outline-secondary">Validate</button>
+      		</form>
+
+          <form style="margin:2em 0">
+            <label style="display:block" for="url">url (required, valid url)</label>
+            <input class="form-control" type="URL" id="url" required>
+            <button class="btn btn-outline-secondary">Validate</button>
+      		</form>
+
+          <form style="margin:2em 0">
+            <label style="display:block" for="tel">telephone (required, 333 333 3333)</label>
+            <input class="form-control" type="tel" id="tel" required  pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" >
+            <button class="btn btn-outline-secondary">Validate</button>
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="number">number (required, 100 or more, smaller than 1000)</label>
+            <input class="form-control" type="number" id="number" required min="100" max="999">
+            <button class="btn btn-outline-secondary">Validate</button>
+      		</form>
+
+
+          <h2>Inputs that constrain to begin with</h2>
+          <form style="margin:2em 0">
+            <label style="display:block" for="range">range</label>
+            <input class="form-control" type="range" id="range">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="date">date</label>
+            <input class="form-control" type="date" id="date">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="month">month</label>
+            <input class="form-control" type="month" id="month">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="week">week</label>
+            <input class="form-control" id="week" type="week">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="time">time</label>
+            <input class="form-control" id="time" type="time">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="datetime-local">datetime local</label>
+            <input class="form-control" type="datetime-local" id="datetime-local">
+      		</form>
+          <form style="margin:2em 0">
+            <label style="display:block" for="color">color</label>
+            <input style="width:10em" type="color" id="color">
+      		</form>
+          <h2>Inputs where validation is silly</h2>
+          <form style="margin:2em 0">
+            <label style="display:block" for="search">search</label>
+            <input class="form-control" type="search" name="search" id="search">
+      		</form>
+        </div>
+        <div class="tab-pane fade show" id="custom" role="tabpanel" aria-labelledby="custom-tab">
+          <br>
+          <h2>HTML5 +</h2>
+          <form class="cmxform" id="commentForm" method="get" action="">
+            <fieldset>
+              <legend>Please provide your name, email address (won't be published) and a comment</legend>
+              <div class="form-group">
+                <label for="cname">Name (required, at least 2 characters)</label>
+                <input id="cname" class="form-control" name="name" minlength="2" type="text" required>
+              </div>
+              <div class="form-group">
+                <label for="cemail">E-Mail (required)</label>
+                <input id="cemail" class="form-control" type="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="curl">URL (optional)</label>
+                <input id="curl" class="form-control" type="url" name="url">
+              </div>
+              <div class="form-group">
+                <label for="ccomment">Your comment (required)</label>
+                <textarea id="ccomment" class="form-control"  name="comment" required></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary submit">
+              </div>
+            </fieldset>
+          </form>
+
+        </div>
+        <div class="tab-pane fade show" id="best" role="tabpanel" aria-labelledby="best-tab">
+          <br>
+          <h2>Best</h2>
+          <p>Using <code>aria-describedby</code>, <code>aria-invalid</code>, <code>aria-required</code>, and a global message (<code>role="alert"</code>) outside the form that gets focus on failed validation.</p>
+          <div id="valid_alert" class="alert alert-danger" role="alert"><ul></ul></div>
+          <form id="bform">
+            <div class="form-group">
+              <label for="bname">Name</label> <span class="validMessage" id ="bname-valid-mess">This field is required</span>
+              <input id="bname" class="form-control" name="name" type="text" aria-required="true" aria-describedby="bname-valid-mess">
+            </div>
+            <div class="form-group">
+              <label for="bphone">Phone number</label> <span class="validMessage" id ="bphone-valid-mess">This field is required</span>
+              <input id="bphone" class="form-control" name="bphone" type="text" aria-required="true" aria-describedby="bphone-valid-mess">
+            </div>
+            <input type="button" id="bsubmit" class="btn btn-primary" name="bsubmit" value="Submit">
+
+          </form>
+
+        </div>
+      </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+  <script>
+  $("#commentForm").validate();
+  </script>
+
+
+  <script>
+
+  $('#bsubmit').on( "click", function() {
+    $('#valid_alert li').remove();
+    var failLog=[];
+    $('#bform *').filter(':input').each(function(){
+      if($(this).attr('aria-required') && $(this).val() ===''){
+        $(this).attr('aria-invalid',true);
+        $(this).parent('.form-group').addClass('failedVal');
+        failLog.push({name: $(this).siblings('label').text(),id:$(this).attr('id')})
+      } else {
+        $(this).attr('aria-invalid',false);
+        $(this).parent('.form-group').removeClass('failedVal');
+      }
+
+    });
+    for ( var i = 0, j = failLog.length; i < j; i++ ) {
+      $('#valid_alert ul').append('<li><a href="#" onclick="passFocus(' +failLog[i].id + ')">'+ failLog[i].name + '</a> is required</li>')
+    }
+    if (failLog.length) {
+      $('#valid_alert').css('display','block').attr('tabindex',-1).focus();
+    } else {
+      $('#valid_alert').css('display','none');
+    }
+  });
+  var passFocus = function(id) {
+    var thisEl=id.id;
+    $('#' + thisEl).focus();
+  }
+  </script>
+
+</body>
+
+</html>
