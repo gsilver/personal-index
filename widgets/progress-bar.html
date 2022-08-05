@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Progress bar</title>
+    <style media="screen">
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Progress bar</h1>
+      <p aria-live="polite" id="supplementary-info" class="alert"></p>
+      <div class="bs-example">
+        <div class="progress progress-striped active" style="display:none">
+          <div class="progress-bar"></div>
+        </div>
+        <p>
+          <button type="button" class="btn btn-primary" id="startProgress">
+            Start
+          </button>
+          <button type="button" class="btn btn-default" id="resetProgress">
+            Reset
+          </button>
+        </p>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p>Very basic progress bar. The Javascript updates the text of two elements: the progress bar that counts by 1 and the message that counts by 10.
+              The last one has an
+             <code>aria-live="polite"</code> attribute/value that will make changes to it available to the accessibility API.</p>
+            <p>
+              Announcing the changes to the progress bar proper (counting by 1) was not feasable as the screen reader
+              (VoiceOver and NVDA) could not keep up.
+            </p>
+          </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+          var i = 0;
+
+          $('#startProgress').on('click', function() {
+            $('.progress').css('display','block');
+            $('#supplementary-info').text('Starting ...').attr('class', 'alert alert-info');
+            $(this).attr('disabled', true)
+            startProgress();
+          });
+          $('#resetProgress').on('click', function() {
+            location.reload();
+          });
+          function startProgress() {
+            if (i < 100) {
+              i = i + 1;
+               if(Number.isInteger(i / 10)){
+                $('#supplementary-info').text(i / 10 + '0% done').attr('class', 'alert alert-warning');
+               }
+              if (i === 100) {
+                $('#supplementary-info').text('Done!').attr('class', 'alert alert-success');
+              }
+              $(".progress-bar").css("width", i + "%").text(i + " %");
+            }
+            // Wait for sometime before running this script again
+            setTimeout("startProgress()", 100);
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

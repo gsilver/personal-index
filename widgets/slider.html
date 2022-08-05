@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slider</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/slider.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Slider</h1>
+
+    <p>
+      Temperature: <span id="tempAdd">68</span><br>
+      Fan: <span id="idFanThumbAdd">Off</span><br>
+      Mode: <span id="idHeatThumbAdd">Off</span>
+
+    </p>
+
+    <div class="aria-widget-vertical-slider">
+      <div id="idTemp" class="widget-label">
+        Temperature
+      </div>
+      <div id="idTempValue" class="value">
+        0
+      </div>
+      <div class="rail" style="height: 200px">
+        <div id="idTempThumb" role="slider" tabindex="0" class="thumb" aria-valuemin="50" aria-valuenow="68" aria-valuemax="100" aria-labelledby="idTemp"></div>
+      </div>
+    </div>
+    <div class="aria-widget-text-slider">
+      <div id="idFan" class="widget-label">
+        Fan
+      </div>
+      <div class="rail" style="width: 160px">
+        <div id="idFanThumb" role="slider" tabindex="0" class="thumb" aria-valuemin="0" aria-valuenow="0" aria-valuemax="3" aria-valuetext="Off" aria-labelledby="idFan" aria-orientation="horizontal"></div>
+        <div class="value">
+          Off
+        </div>
+        <div class="value">
+          Low
+        </div>
+        <div class="value">
+          High
+        </div>
+        <div class="value">
+          Auto
+        </div>
+      </div>
+    </div>
+    <div class="aria-widget-text-slider">
+      <div id="idHeat" class="widget-label">
+        Heat/Cool
+      </div>
+      <div class="rail" style="width: 120px">
+        <div id="idHeatThumb" role="slider" tabindex="0" class="thumb" aria-valuemin="0" aria-valuenow="0" aria-valuemax="2" aria-valuetext="Off" aria-labelledby="idHeat" aria-orientation="horizontal"></div>
+        <div class="value">
+          Off
+        </div>
+        <div class="value">
+          Heat
+        </div>
+        <div class="value">
+          Cool
+        </div>
+      </div>
+    </div>
+    <script src="js/slider.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    Credits: <a href="https://www.w3.org/TR/wai-aria-practices/examples/slider/slider-2.html">https://www.w3.org/TR/wai-aria-practices/examples/slider/slider-2.html</a>
+  </div>
+
+  </div>
+
+
+</body>
+
+</html>
