@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Details element</title>
+  <style media="screen">
+  body {
+  font-family: 'Open Sans', sans-serif;
+}
+details summary {
+      cursor: pointer;
+    }
+
+    summary:hover,
+    summary:focus {
+      background: #999;
+      color: #fff;
+      outline: none
+    }
+
+    details summary:after {
+      content: "+";
+      float: right
+    }
+
+    details[open] summary:after {
+      content: "-";
+    }
+
+    details summary h3 {
+      display: inline;
+    }
+
+    summary {
+      padding: 5px;
+      cursor: pointer;
+      line-height: 1;
+      list-style-type: none;
+      border: 1px solid #efefef;
+      background-color: #efefef;
+      padding: 10px;
+      font-weight: bold;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .details-content {
+      padding: 5px;
+
+    }
+
+    details[open] summary~* {
+      animation: slidedown .5s ease-in-out;
+    }
+
+    @keyframes slidedown {
+      0% {
+        opacity: 0;
+        margin-top:-10px
+      }
+
+      100% {
+        opacity: 1;
+        margin-top:0px
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <details>
+      <summary>
+        <h3>Here is the title of this panel</h3>
+      </summary>
+      <div class="details-content">
+        <p>Here are the contents of this panel.</p>
+        <p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p><p>Here are the contents of this panel.</p>
+      </div>
+    </details>
+  </div>
+
+</body>
+
+</html>

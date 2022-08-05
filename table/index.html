@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style media="screen">
+    table {
+    }
+
+    td {
+      border: 1px solid black;
+      padding:10px;
+    }
+
+    .hover {
+      background: #eee;
+    }
+    th.hover {
+      background: #000;
+      color:#fff;
+    }
+    .x {
+      background: #c00;
+      color: #fff
+    }
+  </style>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container">
+<h1>Table - visual demo</h1>
+<p>Visually, we can determine the x and y of every cell by triangulating the column and row labels with the cell. </p>
+<p>Hover over cells to see an exagerated version of this.</p>
+<p>In order for screen readers to be able to do the same triangulation the table needs to be properly configured, on the web or in documents like MS Word.</p>
+
+
+  <table class="table">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Col 1</th>
+      <th scope="col">Col 2</th>
+      <th scope="col">Col 3</th>
+      <th scope="col">Col 4</th>
+      <th scope="col">Col 5</th>
+      <th scope="col">Col 6</th>
+    </tr>
+    <tr>
+      <th scope="row">Row 1</th>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+      <td>Cell 5</td>
+      <td>Cell 6</td>
+    </tr>
+    <tr>
+      <th scope="row">Row 2</th>
+      <td>Cell 7</td>
+      <td>Cell 8</td>
+      <td>Cell 9</td>
+      <td>Cell 10</td>
+      <td>Cell 11</td>
+      <td>Cell 12</td>
+    </tr>
+    <tr>
+      <th scope="row">Row 3</th>
+      <td>Cell 13</td>
+      <td>Cell 14</td>
+      <td>Cell 15</td>
+      <td>Cell 16</td>
+      <td>Cell 17</td>
+      <td>Cell 18</td>
+    </tr>
+    <tr>
+      <th scope="row">Row 4</th>
+      <td>Cell 19</td>
+      <td>Cell 20</td>
+      <td>Cell 21</td>
+      <td>Cell 22</td>
+      <td>Cell 23</td>
+      <td>Cell 24</td>
+    </tr>
+    <tr>
+      <th scope="row">Row 5</th>
+      <td>Cell 25</td>
+      <td>Cell 26</td>
+      <td>Cell 27</td>
+      <td>Cell 28</td>
+      <td>Cell 29</td>
+      <td>Cell 30</td>
+    </tr>
+  </table>
+</div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+  $('td').on('mouseover mouseout', function(){
+                   $(this).prevAll().addBack()
+                   .add($(this).parent().prevAll()
+                   .children(':nth-child(' + ($(this).index() + 1) + ')')).toggleClass('hover');
+                   $(this).toggleClass('x');
+            });
+
+
+});
+</script>
+
+</body>
+
+</html>
+

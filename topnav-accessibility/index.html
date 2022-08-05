@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+  <style media="screen">
+    ul[role="menubar"] {
+      margin: 10px;
+      padding: 10px;
+      font-size: 110%;
+      list-style: none;
+      background-color: #eee;
+    }
+
+    ul[role="menubar"] [role="menuitem"],
+    ul[role="menubar"] [role="separator"] {
+      padding: 0.25em;
+      background-color: #eee;
+      border: 2px solid #eee;
+    }
+
+    ul[role="menubar"] [role="separator"] {
+      padding-top: 0.15em;
+      background-image: url('../images/separator.png');
+      background-position: center;
+      background-repeat: repeat-x;
+    }
+
+    ul[role="menubar"] [role="menuitem"]:focus,
+    ul[role="menubar"] [role="menuitem"]:hover,
+    ul[role="menubar"] [role="separator"]:focus,
+    ul[role="menubar"] [role="separator"]:hover {
+      background-color: black;
+      color: white;
+    }
+
+    ul[role="menubar"] a[role="menuitem"] {
+      text-decoration: none;
+      color: black;
+    }
+
+    ul[role="menubar"] li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul[role="menubar"]>li {
+      display: inline;
+      position: relative;
+    }
+
+    ul[role="menubar"]>li>a::after {
+      /*content: url('../images/down-arrow-brown.png');
+      padding-left: 0.25em;
+      */
+    }
+
+    ul[role="menubar"] ul[role="menu"] {
+      display: none;
+      position: absolute;
+      top: -2px;
+      left: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul[role="menubar"] ul[role="menu"] li a {
+      display: block;
+      width: 10em;
+    }
+
+    ul[role="menubar"] ul[role="menu"] a[aria-haspopup="true"]::after {
+      /*content: url('../images/right-arrow-brown.png');
+      padding-right: 2em;
+      */
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="container">
+  <h1>Some top nav examples</h1>
+
+  <div id="nav1description">
+    <p>Native Bootstrap 3.3.7</p>
+    <p>Tab between menu triggers, arrow down and up throught the menus with roving tabindex trapping arrow in submenu</p>
+  </div>
+
+  <nav class="navbar navbar-default" aria-label="nav 1" id="nav1">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">Nav 1</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 2 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 3 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 4 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div id="nav2description">
+    <p>Bootstrap 3.3.7 with focus event listeners on dropdown links (shows menu, changes state of aria-expanded)</p>
+    <p>Menu keys disabled - all is done with tab</p>
+  </div>
+  <nav class="navbar navbar-default" aria-label="nav 2" id="nav2" aria-desribedby="nav2description">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="#">Nav 2</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 2 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 3 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 4 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div id="nav3description">
+  <p>Fully instrumented W3 example: tab to nav, left/right arrow keys to navigate nav items, enter or arrown to open submenu, right to open sub-submenus (see <a href="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html">original</a>)</p>
+  </div>
+  <nav aria-label="Mythical University" aria-describedby="nav3description">
+    <ul id="menubar1" role="menubar" aria-label="Mythical University">
+      <li role="none">
+        <a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="0">
+          About <span class="caret"></span>
+        </a>
+        <ul role="menu" aria-label="About">
+          <li role="none">
+            <a role="menuitem" href="mb-about.html#overview" tabindex="-1">
+              Overview
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-about.html#admin" tabindex="-1">
+              Administration
+            </a>
+          </li>
+          <li role="none">
+            <a id="menubar113" role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+              Facts <span class="glyphicon glyphicon-play"></span>
+            </a>
+            <ul role="menu" aria-label="Facts">
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+                  History
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+                  Current Statistics
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#facts" tabindex="-1">
+                  Awards
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+              Campus
+              Tours
+            </a>
+            <ul role="menu" aria-label="Campus Tours">
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+                  For prospective students
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+                  For alumni
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-about.html#tours" tabindex="-1">
+                  For visitors
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li role="none">
+        <a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="-1">
+          Admissions  <span class="caret"></span>
+        </a>
+        <ul role="menu" aria-label="Admissions">
+          <li role="none">
+            <a role="menuitem" href="mb-admissions.html#apply" tabindex="-1">
+              Apply
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="#" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+              Tuition <span class="glyphicon glyphicon-play"></span>
+            </a>
+            <ul role="menu" aria-label="Tuition Information">
+              <li role="none">
+                <a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+                  Undergraduate
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+                  Graduate
+                </a>
+              </li>
+              <li role="none">
+                <a role="menuitem" href="mb-admissions.html#tuition" tabindex="-1">
+                  Professional Schools
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-admissions.html#signup" tabindex="-1">
+              Sign Up
+            </a>
+          </li>
+          <li role="separator"></li>
+          <li role="none">
+            <a role="menuitem" href="mb-admissions.html#visit" tabindex="-1">
+              Visit
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-admissions.html#photo" tabindex="-1">
+              Photo Tour
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-admissions.html#connect" tabindex="-1">
+              Connect
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li role="none">
+        <a role="menuitem" aria-haspopup="true" aria-expanded="false" href="#" tabindex="-1">
+          Academics  <span class="caret"></span>
+        </a>
+        <ul role="menu" aria-label="Academics">
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#colleges" tabindex="-1">
+              Colleges & Schools
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#programs" tabindex="-1">
+              Programs of Study
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#honors" tabindex="-1">
+              Honors Programs
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#online" tabindex="-1">
+              Online Courses
+            </a>
+          </li>
+          <li role="separator"></li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#explorer" tabindex="-1">
+              Course Explorer
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#register" tabindex="-1">
+              Register for Class
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#academic" tabindex="-1">
+              Academic Calendar
+            </a>
+          </li>
+          <li role="none">
+            <a role="menuitem" href="mb-academics.html#tanscripts" tabindex="-1">
+              Transcripts
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/js/MenubarItemLinks.js"></script>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/js/MenubarLinks.js"></script>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/js/PopupMenuItemLinks.js"></script>
+  <script src="https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/js/PopupMenuLinks.js"></script>
+
+
+  <script type="text/javascript">
+    var menubar = new Menubar(document.getElementById('menubar1'));
+    menubar.init();
+  </script>
+
+  <script type="text/javascript">
+    $('#nav2 .dropdown-toggle').on('focus', function() {
+      $('#nav2 .dropdown-toggle').attr('aria-expanded', false);
+      $('#nav2 .dropdown-menu').hide();
+      $(this).attr('aria-expanded', true).next('.dropdown-menu').show();
+    });
+  </script>
+
+</body>
+
+</html>

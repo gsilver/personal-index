@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Some experiments with checkbox groups</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <style media="screen">
+    .form-check {padding-left:5em}
+  </style>
+</head>
+
+<body>
+  <div class="container" style="padding-top:3em">
+    <h1>Some experiments with checkbox groups</h1>
+    <p>The goal here is to figure out:</p>
+    <ul>
+      <li>Why does the FormBuilder pattern work?</li>
+      <li>Does it work universally?</li>
+      <li>What is the best pattern? Simplest, most functional, most universal.</li>
+    </ul>
+
+    <div class="oneField field-container-D" role="group" aria-labelledby="tfa_5-L1" aria-required="true">
+      <label id="tfa_5-L1" class="label preField reqMark" aria-label="This example has same instrumentation as FormBuilder">This example has same instrumentation as FormBuilder</label><br>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput1" aria-labeledby="checkLabel1">
+        <label class="form-check-label" for="checkInput1" id="checkLabel1">
+          Choice one
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput2" aria-labeledby="checkLabel2">
+        <label class="form-check-label" for="checkInput2" id="checkLabel2">
+          Choice two
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput3" aria-labeledby="checkLabel3">
+        <label class="form-check-label" for="checkInput3" id="checkLabel3">
+          Choice three
+        </label>
+      </div>
+    </div>
+
+    <div class="oneField field-container-D" role="group" aria-labelledby="tfa_5-L2" aria-required="true">
+      <label id="tfa_5-L2" class="label preField reqMark">This example removes some of the labeling duplication (aria-label and arialabeledby)</label><br>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput2-1">
+        <label class="form-check-label" for="checkInput2-1">
+          Choice one
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput2-2">
+        <label class="form-check-label" for="checkInput2-2">
+          Choice two
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput2-3">
+        <label class="form-check-label" for="checkInput2-3">
+          Choice three
+        </label>
+      </div>
+    </div>
+
+
+    <fieldset class="oneField field-container-D">
+      <legend>This example is a fieldset and a legend. aria-required and role="group" still present in the wrapper and in the input wrappers</legend>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput3-1">
+        <label class="form-check-label" for="checkInput3-1">
+          Choice one
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput3-2">
+        <label class="form-check-label" for="checkInput3-2">
+          Choice two
+        </label>
+      </div>
+      <div class="form-check" aria-required="true">
+        <input class="form-check-input" type="checkbox" value="" id="checkInput3-3">
+        <label class="form-check-label" for="checkInput3-3">
+          Choice three
+        </label>
+      </div>
+    </fieldset>
+
+
+
+        <fieldset class="oneField field-container-D">
+          <legend>This example is a fieldset and a legend. aria-required and role="group" removed from the wrapper, only present in the input wrappers</legend>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput4-1">
+            <label class="form-check-label" for="checkInput4-1">
+              Choice one
+            </label>
+          </div>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput4-2">
+            <label class="form-check-label" for="checkInput4-2">
+              Choice two
+            </label>
+          </div>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput4-3">
+            <label class="form-check-label" for="checkInput4-3">
+              Choice three
+            </label>
+          </div>
+        </fieldset>
+
+
+
+        <fieldset class="oneField field-container-D">
+          <legend>This example is a fieldset and a legend. aria-required and role="group" removed from the wrapper, as well as from the input wrappers. Inputs have a required attribute</legend>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput5-1">
+            <label class="form-check-label" for="checkInput5-1">
+              Choice one
+            </label>
+          </div>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput5-2">
+            <label class="form-check-label" for="checkInput5-2">
+              Choice two
+            </label>
+          </div>
+          <div class="form-check" aria-required="true">
+            <input class="form-check-input" type="checkbox" value="" id="checkInput5-3">
+            <label class="form-check-label" for="checkInput5-3">
+              Choice three
+            </label>
+          </div>
+        </fieldset>
+
+
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
