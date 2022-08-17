@@ -8,7 +8,9 @@
   <title></title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,9 +22,28 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>A set of bad web fragments</h1>
-    <br>
+  <div class="container-fluid">
+    <ul class="nav navbar navbar-expand-lg navbar-light bg-light">
+      <li class="nav-item">
+        <a class="nav-link btn btn-default"  href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-default"  href="/a11y-dev-examples/">Development</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-default"  href="/a11y-problems/">Accessibility problems</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-default"  href="/experiments/">Experiments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/widgets/">Canonical components</a>
+      </li><!--last-->
+    </ul>
+    <div class="container ">
+      <div class="row">
+        <h1>A set of bad web fragments</h1>
+    
     <ol>
       <li>
         <a href="b1.html"><strong>Plovers of Michigan</strong></a>
@@ -74,14 +95,15 @@
         <p>What POUR (Perceivable, Operable, Understandable, Robust) principle is being massively ignored here?</p>
         <br>
       </li>
-
+    </div>
 
   </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 
 </html>
