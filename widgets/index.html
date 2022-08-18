@@ -8,28 +8,31 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/base.css">
   </head>
   <body>
       <div class="container-fluid">
-        <ul class="nav navbar navbar-expand-lg navbar-light bg-light">
+        <div role="navigation">
+          <ul class="nav navbar navbar-expand-lg navbar-dark bg-light">
             <li class="nav-item">
               <a class="nav-link btn btn-default"  href="/">Home</a>
             </li>
-        
+            
             <li class="nav-item">
-              <a class="nav-link btn btn-default"  href="/a11y-dev-examples/">Development</a>
+              <a class="nav-link btn btn-default"  href="/a11y-dev-examples/" >Development</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-default"  href="/a11y-problems/">Accessibility problems</a>
+              <a class="nav-link btn btn-default"  href="/a11y-problems/" >Accessibility problems</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-default"  href="/experiments/">Experiments</a>
+              <a class="nav-link btn btn-default"  href="/experiments/" aria-current="true">Experiments</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/widgets/">Canonical components</a>
             </li><!--last-->
           </ul>
-          <div class="container">
+        </div>
+        <div class="container">
             <div class="row">
               <h1>Towards best components</h1>
             </div>
