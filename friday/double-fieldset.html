@@ -16,19 +16,30 @@
     <p>User can pick only one computer, selecting from either visual/feldset group.</p>
     <fieldset>
       <legend>Please select your laptop for work.</legend>
-      <input type="radio" id="laptop1" name="computer" value="laptop1">
-      <label for="laptop1">elite book</label><br>
-      <input type="radio" id="laptop2" name="computer" value="laptop2">
-      <label for="laptop2">Surface Book (Mac OS Edition)</label> <br>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="laptop1" name="computer" value="laptop1">
+        <label for="laptop1">elite book</label>
+      </div>  
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="laptop2" name="computer" value="laptop2">
+        <label for="laptop2">Surface Book (Mac OS Edition)</label>
+      </div>
+      
     </fieldset>
     <fieldset>
       <legend>Or instead select a desktop:</legend>
-      <input type="radio" id="desktop1" name="computer" value="desktop1">
-      <label for="desktop1">think center</label><br>
-      <input type="radio" id="desktop2" name="computer" value="desktop2">
-      <label for="desktop2">Imac</label><br>  
-      <input type="radio" id="desktop3" name="computer" value="desktop3">
-      <label for="desktop3">Pro-desk</label><br>
+      <div class="form-check">
+        <input  class="form-check-input" type="radio" id="desktop1" name="computer" value="desktop1">
+        <label for="desktop1">think center</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="desktop2" name="computer" value="desktop2">
+        <label for="desktop2">Imac</label>  
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" id="desktop3" name="computer" value="desktop3">
+        <label for="desktop3">Pro-desk</label>
+      </div>
     </fieldset>
     <input type="submit" value="Submit">
   </fieldset>
