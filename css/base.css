@@ -9,5 +9,6 @@
     text-decoration: underline;
 }
 h1 {
-    font-size: 2rem !important
+    font-size: 2rem !important;
+    margin-bottom:2rem;
 }

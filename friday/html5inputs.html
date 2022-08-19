@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <br>
+        <h1>HTML5 form elements, pros and cons</h1>
+
+        <p>Problem statement: we are recommending HTML5 native input types. Is this wise? Let us see.</p>
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" name="email" autocomplete="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputSearch">Search</label>
+          <input type="search" name="search"  class="form-control" id="exampleInputSearch" aria-describedby="searchlHelp" placeholder="Enter Search">
+          <small id="emailSearch" class="form-text text-muted">Search away!</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputPhone">Phone number</label>
+          <input type="tel" name="tel" autocomplete="tel" class="form-control" id="exampleInputPhone" aria-describedby="telHelp" placeholder="Enter phone">
+          <small id="telHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputURL">URL</label>
+          <input type="url" name="url" autocomplete="url" class="form-control" id="exampleInputURL" aria-describedby="urlHelp" placeholder="Enter URL">
+          <small id="numberHelp" class="form-text text-muted">This url will remain our secret.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputNumber">Number</label>
+          <input   min="1" max="10" step="2" type="number" name="number" class="form-control" id="exampleInputNumber" aria-describedby="numberHelp">
+          <small id="numberHelp" class="form-text text-muted">Enter an odd number smaller than 10.</small>
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="exampleInputRange">Range</label>
+          <input type="range" id="exampleInputRange" min="50000" max="500000" step="100" value="250000" name="range" class="form-control" id="exampleInputRange" aria-describedby="rangeHelp">
+          <small id="rangeHelp" class="form-text text-muted">How much can you pay? Current value: <span aria-live="polite" id="rangevalue"></span> </small>
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleInputDatetime">Date time</label>
+          <input type="datetime-local" name="datetime" id="exampleInputDatetime" class="form-control" id="exampleInputDatetime" aria-describedby="dtHelp">
+          <small id="dtHelp" class="form-text text-muted">When are you picking up the package?</small>
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleInputColor">Color</label>
+          <input type="color" name="color" id="exampleInputColor"  class="form-control" aria-describedby="colorHelp">
+          <small id="colorHelp" class="form-text text-muted">Pick a tasteful color for your cumerbund.</small>
+        </div>
+       
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

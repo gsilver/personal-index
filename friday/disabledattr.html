@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Disabled attribute in HTML5 form elements</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <br>
+    <h1>Disabled attribute in HTML5 form elements</h1>
+    
+    <p>Problem statement: we ran into some examples a week ago of disabled HTML5 input types that did not announce themselves as such. Is this a common issue?</p>
+    
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input disabled type="email" name="email" autocomplete="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputSearch">Search</label>
+      <input disabled type="search" name="search"  class="form-control" id="exampleInputSearch" aria-describedby="searchlHelp" placeholder="Enter Search">
+      <small id="emailSearch" class="form-text text-muted">Search away!</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputPhone">Phone number</label>
+      <input disabled type="tel" name="tel" autocomplete="tel" class="form-control" id="exampleInputPhone" aria-describedby="telHelp" placeholder="Enter phone">
+      <small id="telHelp" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputURL">URL</label>
+      <input disabled type="url" name="url" autocomplete="url" class="form-control" id="exampleInputURL" aria-describedby="urlHelp" placeholder="Enter URL">
+      <small id="numberHelp" class="form-text text-muted">This url will remain our secret.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputNumber">Number</label>
+      <input disabled   min="1" max="10" step="2" type="number" name="number" class="form-control" id="exampleInputNumber" aria-describedby="numberHelp">
+      <small id="numberHelp" class="form-text text-muted">Enter an odd number smaller than 10.</small>
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="exampleInputRange">Range</label>
+      <input disabled type="range" id="exampleInputRange" min="50000" max="500000" step="100" value="250000" name="range" class="form-control" id="exampleInputRange" aria-describedby="rangeHelp">
+      <small id="rangeHelp" class="form-text text-muted">How much can you pay? Current value: <span aria-live="polite" id="rangevalue"></span> </small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputDatetime">Date time</label>
+      <input disabled type="datetime-local" name="datetime" id="exampleInputDatetime" class="form-control" id="exampleInputDatetime" aria-describedby="dtHelp">
+      <small id="dtHelp" class="form-text text-muted">When are you picking up the package?</small>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputColor">Color</label>
+      <input disabled type="color" name="color" id="exampleInputColor"  class="form-control" aria-describedby="colorHelp">
+      <small id="colorHelp" class="form-text text-muted">Pick a tasteful color for your cumerbund.</small>
+    </div>
+   
+    <h2>
+      A disabled datetime with aria-disabled sauce
+    </h2>
+    <div class="form-group">
+      <label for="exampleInputDatetime2">Date time with aria-disabled</label>
+      <input disabled aria-disabled="true" type="datetime-local" name="datetime2" id="exampleInputDatetime2" class="form-control" id="exampleInputDatetime2" aria-describedby="dt2Help">
+      <small id="dt2Help" class="form-text text-muted">When are you picking up the package? This one has aria-disabled="true"</small>
+    </div>
+
+
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  
+  <script>
+    const price = document.querySelector('#exampleInputRange');
+    const output = document.querySelector('#rangevalue');
+    
+    output.textContent = price.value;
+    
+    price.addEventListener('input', () => {
+      output.textContent = price.value;
+    });
+  </script>
+</body>
+</html>
