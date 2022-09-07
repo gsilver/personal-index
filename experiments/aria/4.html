@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Simplest use of aria roles. Part 5</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <style media="screen">
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="3.html">Previous</a>
+        </li>
+        <li class="nav-item disabled">
+          <span class="nav-link" disabled>Next</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+    <h1>A primitive element</h1>
+    <ul>
+      <li>A &lt;div&gt; styled to look like a button.</li>
+      <li>It has a 'click' handler, so it is operable with a mouse.</li>
+      <li><strong>It can be operated with the keyboard because:</strong></li>
+      <ul>
+        <li><strong>it is now focusable</strong>(added <code>tabindex="0"</code>)</li>
+        <li><strong>it now has a keyboard handler for <kbd>space</kbd> and <kbd>enter</kbd> </strong><code>$('.btn').keypress(function(e){goober});</code> </li>
+      </ul>
+      <li> <strong> And it is now announced as a button in the accessibility API </strong> (added <code>role="button"</code> )</li>
+    </ul>
+
+    <p>It would have been a lot easier to just use a <code>button</code>, no? </p>
+
+    <div class="btn fake-btn" role="button" aria-pressed="false" tabindex="0" style="border:1px solid #ccc;background:#eee">A "button"</div>
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('.btn').on('click', function() {
+      alert('you clicked me');
+    });
+    $('.btn').keypress(function(e) {
+      if (e.which === 13) {
+        alert('pressed enter');
+      } else {
+        if (e.which === 32) {
+          alert('pressed spacebar');
+        }
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>
