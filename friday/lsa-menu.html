@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>LSA Menu</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .audience-nav-item li{
+            list-style: none;
+            display: inline;
+            margin:0 1rem;
+            outline: 1px solid #aaa;
+            padding:1rem
+        }
+        .panel {
+            outline:2px solid #aaa;
+            padding:1rem;
+        }
+        .panel:focus {
+            outline:2px dashed #aaa;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>LSA Menu</h1>
+        <p>This menu has some problems</p> 
+        <ul>
+            <li>
+                What are they?
+            </li>
+            <li>
+                How do we fix them?
+            </li>
+
+        </ul>
+        <br>
+        <div class="row center">
+            <h3>for</h3>
+            <ul class="audience-nav-item">
+               <li>
+                   
+                   <span class="audItem theme-bg theme-border currentPath" data-hover="undergraduates">Undergraduates</span>
+               </li>
+
+             
+               <li>
+                   <a class="audItem theme-bg theme-border" href="" data-hover="graduates">Graduates</a>
+                   
+               </li>
+
+             
+               <li>
+                   <a class="audItem theme-bg theme-border" href="" data-hover="instructors">Instructors</a>
+                   
+               </li>
+
+             
+               <li>
+                   <a class="audItem theme-bg theme-border" href="" data-hover="alumni-friends">Alumni &amp; Friends</a>
+                   
+               </li>
+
+             </ul>
+         </div>
+         <div>
+            <div class="panel" id="undergraduates" style="display:none">
+                Some content specific to undergraduates. Has a <a href=""> link.</a>
+            </div>
+            <div class="panel" id="graduates"  style="display:none">
+                Some content specific to graduates.  Has a <a href=""> link.</a>
+            </div>
+            <div class="panel" id="instructors"  style="display:none">
+                Some content specific to instructors.  Has a <a href=""> link.</a>
+            </div>
+            <div class="panel" id="alumni-friends"  style="display:none">
+                Some content specific to alumni and friends.  Has a <a href=""> link.</a>
+            </div>
+
+        </div>
+        
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            
+            <script>
+                $('.audience-nav-item a').on('click', function(){
+                    var theText = $(this).html();
+                    alert ('On click you will be sent to the ' + theText + ' page');
+                })
+                $('.audience-nav-item a').on('mouseenter', function(){
+                    $('.panel').hide();
+                     var theTarget = $(this).attr('data-hover');
+                     $('#' + theTarget).slideDown( "slow", function() {});
+                });
+                $('.audience-nav-item a').on('focus', function(){
+                    $('.panel').hide();
+                     var theTarget = $(this).attr('data-hover');
+                     $('#' + theTarget).slideDown( "slow", function() {});
+                });
+                $('.audience-nav-item a').keydown(function(e){
+                    var theTarget = $(this).attr('data-hover');
+                    if (e.which == 40) { 
+                        $('#' + theTarget).attr('tabindex','0').focus();
+                        return false;
+                    }
+                });
+
+
+            </script>
+        </body>
+        </html>
