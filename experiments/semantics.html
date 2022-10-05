@@ -9,8 +9,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
+        .nav-link {
+            color:#fff !important;
+        }
         .noStyle:before {
             content: "";
+        }
+        footer.bla {
+            background:#eee;
+            border-top:1px solid #dee2e6;
+            vertical-align: middle;
+            padding:1rem;
+        }
+        a.footerLink {
+            display: block;
+            float:left;
+            margin: 0 2rem !important;
+
         }
         .noStyle {
             font-size: 1rem !important;
@@ -24,11 +39,26 @@
             display: block;
             text-align: left;
             flex:none;
-            max-width: none;            
+            max-width: none;
+            border-top:0 solid #aaa;            
+        }
+        .noStyle a.footerLink {
+            display: block;
+            float:none;
+            margin: 0 2rem !important;
         }
         .noStyle .nav-link {
             color:#000 !important  
         }
+        nav.noStyle {
+            max-width: 1140px;
+            width: 100%;
+            padding-right: 15px;
+            
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
     </style>
 </head>
 <body>
@@ -39,85 +69,99 @@
         
         <hr>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark noStyle" >
+            <a class="navbar-brand" href="#">HotStove</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav noStyle">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Soups <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Curries</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Breads</a>
                     </li>
                 </ul>
             </div>
         </nav>
-    </header> 
-    
-    
-    
-    
-    
+    </header>     
     <div class="container">
         <br>
         <div class="row">
-            <div class="col-2 noStyle">
+            <nav class="col-2 noStyle">
                 
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Active</a>
+                        <a class="nav-link" href="#ingredients">Ingredients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#instructions">Instructions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="#ack">Acknowledgments</a>
                     </li>
                 </ul>
                 
+            </nav>
+            <main class="col-8 noStyle">
                 
-            </div>
-            <div class="col-10 noStyle">
+                <h1 class="noStyle">Lentil Dal</h1>
                 
-                
-                
-                <h1 class="noStyle">A heading 1</h1>
-                
-                <p class="noStyle">A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. A paragraph. Goes on for a bit. </p> 
-                <ul class="noStyle">
-                    <li>
-                        A list item
-                    </li>
-                    <li>
-                        A list item
-                    </li>
+                <p class="noStyle">
+                    This easy Indian dal is ready in under an hour, and makes a satisfying vegetarian lunch or dinner. Serve with rice or naan. This soup also keeps well and can be frozen for up to three months.</p> 
+                    <p class="noStyle">One of the things I love about red lentils is that they cook up so quickly. Unlike their sturdier brown and green lentil cousins, when cooked, red lentils quickly fall apart into a smooth mush-like consistency.
+                    </p>
+                    <h2 class="noStyle"><a id="ingredients"></a> Ingredients</h2>
+                    <ul class="noStyle">
+                        <li>1 cup red lentils (yellow lentils will work as well)</li>
+                        <li>3 cups water</li>
+                        <li>3 plum tomatoes</li>
+                        <li>2 teaspoons vegetable oil</li>
+                        <li>1/2 cup finely chopped white or yellow onion</li>
+                        <li>2 medium cloves garlic, finely chopped and made into a paste (see Recipe Note)</li>
+                        <li>2 teaspoons Bengali five spice mix (panch phoron) OR 1/2 teaspoon nigella seeds or black (or white) sesame seeds, 1/2 teaspoon cumin seeds, 1/2 teaspoon fennel seeds, 1/2 teaspoon mustard seeds, and (if available) 1/2 teaspoon fenugreek seeds</li>
+                        <li>1 bay leaf</li>
+                        <li>1 teaspoon turmeric</li>
+                        <li>1 teaspoon kosher salt plus more to taste</li>
+                        <li>1 lime, juiced (about 2 tablespoons fresh lime juice)</li>
+                        <li>8 sprigs cilantro, de-stemmed and chopped</li>
+                        <li>Cooked basmati rice, optional</li>                    
+                    </ul>
                     
-                </ul>
-                
-                
-                <h2 class="noStyle">A heading 2</h2>
-                <ol class="noStyle">
-                    <li>
-                        An ordered list item
-                    </li>
-                    <li>
-                        An ordered list item
-                    </li>
                     
-                </ol>
-                <blockquote class="blockquote text-center">
-                    <p class="mb-0 noStyle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer noStyle">Someone famous in <cite class="noStyle" title="Source Title">Source Title</cite></footer>
-                </blockquote>
+                    <h2 class="noStyle"><a id="instructions"></a>Instructions</h2>
+                    <ol class="noStyle">
+                        <li>Cook the lentils:</li>
+                        <li>Blanch and chop the tomatoes:</li>
+                        <li>Sauté the onions with seasonings:</li>
+                        <li>Add garlic paste and cook for 1 minute more, stirring continuously, making sure that the garlic does not burn. Add the Add cooked lentils</li>
+                        <li>Finish the soup</li>
+                        <li>Stir in chopped cilantro and remove from heat. Garnish with more chopped cilantro.</li>
+                        <li>Serve with basmati rice or naan bread.</li>                   
+                    </ol>
+                    <h2 id="ack" class="noStyle">Acknowledgments</h2>
+                    <p>Content borrowed from  Elise Bauer's <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"></a> Simply Recipes entry for dal</p>
+                    <blockquote class="blockquote">
+                        <p class="mb-0 noStyle">I've made Kerissa's recipe a couple of times and love the flavors and how easy it is to make. Do you have a favorite Indian dal recipe? Please let us know about it in the comments.</p>
+                        <footer class="blockquote-footer noStyle">Elise Bauer <cite class="noStyle" title="Red Lentil Dal">Red Lentil Dal</cite></footer>
+                    </blockquote>
+
+                </main>
+                <aside class="col-2 noStyle">
+                    <p> A word from our sponsor, who sponsors us.</p>
+                    <p>"In West Bengal and throughout India, dal is eaten at nearly every meal, serving as a sauce, a soup and a way to mash and stick food together (traditionally they eat with their hands in this region)."</p>
+                    
+                </aside>
             </div>
         </div>
+        <footer class="bla noStyle">
+            <a href="#" class="footerLink">Contact us</a> <a href="#" class="footerLink">Kill server</a>
+        </footer>
+        
+        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script
@@ -129,7 +173,7 @@
         
         <script class="immune"> 
             $('#toggleStyle').on('click', function(){
-                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2').not('.immune').toggleClass( 'noStyle' )
+                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'noStyle' )
             })
             
             
