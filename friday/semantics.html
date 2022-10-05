@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Structure and semantics</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    .block {
+        outline:2px solid red;
+    }    
+
+    .code{
+            color:red !important;
+            display:none;
+            list-style: none;
+        }
+    .nav-link {
+            color:#000 !important;
+            text-decoration: underline;
+        }
+        .noStyle::before {
+            content: "";
+        }
+        .noStyle::after {
+            content: "";
+        }
+        footer.bla {
+            border-top:3px solid #dee2e6;
+            vertical-align: middle;
+            padding:1rem;
+        }
+        a.footerLink {
+            display: block;
+            float:left;
+            margin: 0 2rem !important;
+
+        }
+        .noStyle {
+            font-size: 1rem !important;
+            font-style: normal;
+            font-weight:normal;
+            color:#000;
+            padding:0 inherit;
+            padding-inline-start: 0px;
+            list-style: none;
+            background:#fff !important;
+            display: block;
+            text-align: left;
+            flex:none;
+            max-width: none;
+            border-top:0 solid #aaa;            
+        }
+        .noStyle a{
+            color:#000
+        }
+        .noStyle a.footerLink {
+            display: block;
+            float:none;
+            margin: 0 2rem !important;
+        }
+        .noStyle .nav-link {
+            color:#000 !important  
+        }
+        nav.noStyle {
+            max-width: 1140px;
+            width: 100%;
+            padding-right: 15px;
+            
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid"><br>
+            <button type="button" class="btn btn-primary immune" id="toggleStyle">Toggle style</button> 
+            <button type="button" class="btn btn-primary immune" id="showMarkup">Toggle code</button>    
+        </div>
+        
+        <hr>
+        <span class="code">&lt;nav aria-label="main"&gt;</span>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light noStyle" >
+            <a class="navbar-brand" href="#">HotStove</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav noStyle">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soups <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Curries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Breads</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <span class="code">&lt;/nav&gt;</span>
+    </header>     
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <nav class="col-3 noStyle">
+                <span class="code">&lt;nav aria-label="secondary"&gt;</span>
+                <ul class="nav flex-column">
+                    <li class="code">&lt;ul&gt;</span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingredients"><span class="code">&lt;li&gt;</span>Ingredients<span class="code">&lt;/li&gt;</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instructions"><span class="code">&lt;li&gt;</span>Instructions<span class="code">&lt;/li&gt;</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ack"><span class="code">&lt;li&gt;</span>Acknowledgments<span class="code">&lt;/li&gt;</span></a>
+                    </li>
+                    <li class="code">&lt;/ul&gt;</span>
+                </ul>
+                <span class="code">&lt;/nav&gt;</span>
+            </nav>
+            <main class="col-7 noStyle">
+                
+                <h1 class="noStyle"><span class="code">&lt;h1&gt;</span>Lentil Dal<span class="code">&lt;/h1&gt;</span></h1>
+                
+                <p class="noStyle"><span class="code">&lt;p&gt;</span>
+                    This easy Indian dal is ready in under an hour, and makes a satisfying vegetarian lunch or dinner. Serve with rice or naan. This soup also keeps well and can be frozen for up to three months.<span class="code">&lt;p&gt;</span></p> 
+                    <p class="noStyle"><span class="code">&lt;p&gt;</span>One of the things I love about red lentils is that they cook up so quickly. Unlike their sturdier brown and green lentil cousins, when cooked, red lentils quickly fall apart into a smooth mush-like consistency.
+                        <span class="code">&lt;/p&gt;</span></p>
+                    <h2 class="noStyle"><a id="ingredients"></a><span class="code">&lt;h2&gt;</span> Ingredients<span class="code">&lt;/h2&gt;</span></h2>
+                    <ul class="noStyle">
+                        <li class="code">&lt;ul&gt;</span>
+                        <li><span class="code">&lt;li&gt;</span>1 cup red lentils (yellow lentils will work as well)<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>3 cups water<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>3 plum tomatoes<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>2 teaspoons vegetable oil<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>1/2 cup finely chopped white or yellow onion<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>2 medium cloves garlic, finely chopped and made into a paste (see Recipe Note)<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>2 teaspoons Bengali five spice mix (panch phoron) OR 1/2 teaspoon nigella seeds or black (or white) sesame seeds, 1/2 teaspoon cumin seeds, 1/2 teaspoon fennel seeds, 1/2 teaspoon mustard seeds, and (if available) 1/2 teaspoon fenugreek seeds<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>1 bay leaf<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>1 teaspoon turmeric<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>1 teaspoon kosher salt plus more to taste<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>1 lime, juiced (about 2 tablespoons fresh lime juice)<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>8 sprigs cilantro, de-stemmed and chopped<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Cooked basmati rice, optional<span class="code">&lt;/li&gt;</span></li>
+                        <li class="code">&lt;/ul&gt;</li>
+                    </ul>
+                    
+                    
+                    <h2 class="noStyle"><a id="instructions"></a><span class="code">&lt;h2&gt;</span>Instructions<span class="code">&lt;/h2&gt;</span></h2>
+                    <ol class="noStyle">
+                        <li class="code">&lt;ol&gt;</span>
+                        <li><span class="code">&lt;li&gt;</span>Cook the lentils<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Blanch and chop the tomatoes<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Sauté the onions with seasonings<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Add garlic paste and cook for 1 minute more, stirring continuously, making sure that the garlic does not burn. Add the Add cooked lentils<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Finish the soup<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Stir in chopped cilantro and remove from heat. Garnish with more chopped cilantro.<span class="code">&lt;/li&gt;</span></li>
+                        <li><span class="code">&lt;li&gt;</span>Serve with basmati rice or naan bread.<span class="code">&lt;/li&gt;</span></li>  
+                        <li class="code">&lt;ol&gt;</span>                 
+                    </ol>
+                    <h2 id="ack" class="noStyle"><span class="code">&lt;h2&gt;</span>Acknowledgments<span class="code">&lt;/h2&gt;</span></h2>
+                    <p><span class="code">&lt;p&gt;</span>Content borrowed from  Elise Bauer's <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"></a> Simply Recipes entry for dal<span class="code">&lt;p&gt;</span></p>
+                    <blockquote class="blockquote noStyle">
+                        <span class="code">&lt;blockquote&gt;</span>
+                        <p class="mb-0 noStyle"><span class="code">&lt;p&gt;</span>I've made Kerissa's recipe a couple of times and love the flavors and how easy it is to make. Do you have a favorite Indian dal recipe? Please let us know about it in the comments.<span class="code">&lt;/p&gt;</span></p>
+                        <footer class="blockquote-footer noStyle">Elise Bauer <cite class="noStyle" title="Red Lentil Dal"> <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"> Red Lentil Dal </a></cite></footer>
+                        <span class="code">&lt;/blockquote&gt;</span>
+                    </blockquote>
+
+                </main>
+                <aside class="col-2 noStyle">
+                    <p class="code" style="display:none">&lt;aside&gt;</p>
+                    <p><span class="code">&lt;p&gt;</span> A word from our sponsor, who sponsors us.<span class="code">&lt;/p&gt;</span></p>
+                    <p><span class="code">&lt;p&gt;</span>"In West Bengal and throughout India, dal is eaten at nearly every meal, serving as a sauce, a soup and a way to mash and stick food together (traditionally they eat with their hands in this region)."<span class="code">&lt;/p&gt;</span></p>
+                    <p class="code"  style="display:none">&lt;/aside&gt;</p>
+                </aside>
+            </div>
+        </div>
+        <span class="code">&lt;footer&gt;</span>
+        <footer class="bla noStyle">
+            
+            <a href="#" class="footerLink">Contact us</a> <a href="#" class="footerLink">Kill server</a>
+            
+        </footer>
+        <span class="code">&lt;/footer&gt;</span>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script class="immune"> 
+            $('#toggleStyle').on('click', function(){
+                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'noStyle' )
+            })
+            $('#showMarkup').on('click', function(){
+                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'block' )
+                $('.code').toggle();
+            })
+            
+        </script>
+    </body>
+    </html>
