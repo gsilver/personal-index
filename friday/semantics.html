@@ -9,12 +9,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-    .block {
-        outline:2px solid red;
-    }    
-
+.codeSnip {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:#c00;
+}
     .code{
-            color:red !important;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            font-weight: bold;
+            color:#c00 !important;
             display:none;
             list-style: none;
         }
@@ -78,20 +82,53 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid"><br>
-            <button type="button" class="btn btn-primary immune" id="toggleStyle">Toggle style</button> 
-            <button type="button" class="btn btn-primary immune" id="showMarkup">Toggle code</button>    
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8 rawInstructions">
+                    <p><br> Take a look at the page below. </p>
+                    <ul class="immune">
+                        <li>Can you tell at a glance what it is about?</li>
+                        <li>Can you distinguish the parts?</li>
+                    </ul>
+                    When you are ready, click on the "<strong>Toggle style</strong>" button
+                </div>
+                <div class="col-8 styleInstructions" style="display:none">
+                    <p> <br> Is this easier? </p>
+                    <ul class="immune">
+                        <li>Styling the content allows us to visually understand the whole at a glance. Our eye can travel to the list of ingredients and figure out in seconds if we need to go shopping. </li>
+                        <li>But what if you cannot see and are using software to navigate and read the page to you?</li>
+                        <li>The page needs to tell the software what the meaning of the parts is! Click on the "<strong>Toggle code</strong>" button to see</li>
+                    </ul>
+                </div>
+                <div class="col-8 codeInstructions" style="display:none">
+                    <p> <br> How does this work?</p>
+                    <ul class="immune">
+                        <li>Can you tell what <span class="codeSnip">&lt;p&gt;</span> is? How about <span class="codeSnip">&lt;nav&gt;</span>?</li>
+                        <li>What on earth are <span class="codeSnip">&lt;h1&gt;</span> and <span class="codeSnip">&lt;h2&gt;</span>?</li>
+                        <li>What is the difference between <span class="codeSnip">&lt;ul&gt;</span> and <span class="codeSnip">&lt;ol&gt;</span>?</li>
+                        <li>Can you indentify the code that flags what the main part is? The footer? An aside?</li>
+                        <li>What differentiates the two <span class="codeSnip">&lt;nav&gt;</span>s?</li>
+                    </ul>
+                </div>
+                <div class="col-4" style="text-align: right;"><br>
+                    <button type="button" class="btn btn-primary immune" id="toggleStyle">Toggle style</button> 
+                    <button type="button" class="btn btn-primary immune" id="showMarkup" style="display:none">Toggle code</button>    
+                </div>
+            </div>
+            
         </div>
         
         <hr>
-        <span class="code">&lt;nav aria-label="main"&gt;</span>
+        
         <nav class="navbar navbar-expand-lg navbar-light bg-light noStyle" >
+            <span class="code">&lt;nav aria-label="main"&gt;<br></span>
             <a class="navbar-brand" href="#">HotStove</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav noStyle">
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Soups <span class="sr-only">(current)</span></a>
                     </li>
@@ -102,9 +139,11 @@
                         <a class="nav-link" href="#">Breads</a>
                     </li>
                 </ul>
+                <span class="code">&lt;/nav&gt;</span>
             </div>
+            
         </nav>
-        <span class="code">&lt;/nav&gt;</span>
+        
     </header>     
     <div class="container">
         <br>
@@ -128,6 +167,7 @@
                 <span class="code">&lt;/nav&gt;</span>
             </nav>
             <main class="col-7 noStyle">
+                <span class="code">&lt;main&gt;</span>
                 
                 <h1 class="noStyle"><span class="code">&lt;h1&gt;</span>Lentil Dal<span class="code">&lt;/h1&gt;</span></h1>
                 
@@ -175,7 +215,7 @@
                         <footer class="blockquote-footer noStyle">Elise Bauer <cite class="noStyle" title="Red Lentil Dal"> <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"> Red Lentil Dal </a></cite></footer>
                         <span class="code">&lt;/blockquote&gt;</span>
                     </blockquote>
-
+                    <span class="code">&lt;/main&gt;</span>
                 </main>
                 <aside class="col-2 noStyle">
                     <p class="code" style="display:none">&lt;aside&gt;</p>
@@ -188,7 +228,7 @@
         <span class="code">&lt;footer&gt;</span>
         <footer class="bla noStyle">
             
-            <a href="#" class="footerLink">Contact us</a> <a href="#" class="footerLink">Kill server</a>
+            <a href="#" class="footerLink">Contact us</a> <a href="#" class="footerLink">Join mailing list</a> <a href="#" class="footerLink">Monetize!</a>
             
         </footer>
         <span class="code">&lt;/footer&gt;</span>
@@ -204,11 +244,15 @@
         
         <script class="immune"> 
             $('#toggleStyle').on('click', function(){
-                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'noStyle' )
+                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'noStyle' );
+                $('.rawInstructions').hide();
+                $('.styleInstructions').show();
+                $('#showMarkup').show();
             })
             $('#showMarkup').on('click', function(){
-                $('h1, h2, h3, h4, p, ul, ol, nav, blockquote, footer, cite, div.col-10, div.col-2, main, aside, footer').not('.immune').toggleClass( 'block' )
                 $('.code').toggle();
+                $('.styleInstructions').hide();
+                $('.codeInstructions').show();
             })
             
         </script>
