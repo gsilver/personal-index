@@ -1,0 +1,232 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Contrast and color</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .sideNav {
+            background:blue
+        }
+        aside *{
+            color:#aaa;
+            background:#ccc
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8 rawInstructions">
+                    <p><br> Take a look at the page below. </p>
+                    <ul class="immune">
+                        <li>Can you tell at a glance what it is about?</li>
+                        <li>Can you distinguish the parts?</li>
+                    </ul>
+                    When you are ready, click on the "<strong>Toggle style</strong>" button
+                </div>
+                <div class="col-8 styleInstructions" style="display:none">
+                    <p> <br> Is this easier? </p>
+                    <ul class="immune">
+                        <li>Styling the content allows us to visually understand the whole at a glance. Our eye can travel to the list of ingredients and figure out in seconds if we need to go shopping. </li>
+                        <li>But what if you cannot see and are using software to navigate and read the page to you?</li>
+                        <li>The page needs to tell the software what the meaning of the parts is! Click on the "<strong>Toggle code</strong>" button to see</li>
+                    </ul>
+                </div>
+                <div class="col-8 codeInstructions" style="display:none">
+                    <p> <br> How does this work?</p>
+                    <ul class="immune">
+                        <li>Can you tell what ?</li>
+                        <li>What on earth are ?</li>
+                        <li>What is the difference between ?</li>
+                        <li>Can you indentify the code that flags what the main part is? The footer? An aside?</li>
+                        <li>What differentiates the two s?</li>
+                    </ul>
+                </div>
+                <div class="col-4" style="text-align: right;"><br>
+                    <div class="form-group row form-inline">
+                        <label for="selectSimul" class="col-sm-2 col-form-label">Simulate</label>
+                            <select class="form-control" id="selectSimul">
+                                <option value="0">reset</option>
+                                <option value="0">protanopia</option>
+                                <option value="1">protanomaly</option>
+                                <option value="2">deuteranopia</option>
+                                <option value="3">deuteranomaly</option>
+                                <option value="4">tritanopia</option>
+                                <option value="5">tritanomaly</option>
+                                <option value="6">achromatopsia</option>
+                                <option value="7">achromatomaly</option>
+                            </select>   
+                            &nbsp; <button type="button" class="btn btn-primary immune" id="color">Go!</button> 
+
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary immune" id="showMarkup" style="display:none">Toggle code</button>    
+                </div>
+            </div>
+            
+        </div>
+        
+        <hr>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
+            <a class="navbar-brand" href="#">HotStove</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Soups <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Curries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Breads</a>
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </nav>
+        
+    </header>     
+    <div class="container">
+        <br>
+        <div class="row">
+            
+            <nav class="col-3 ">
+                
+                <ul class="nav sideNav flex-column">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingredients">Ingredients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instructions">Instructions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ack">Acknowledgments</a>
+                    </li>
+                </ul>
+                
+            </nav>
+            <main class="col-7 ">
+                
+                
+                <h1 class="">Lentil Dal</h1>
+                
+                <p class="">
+                    This easy Indian dal is ready in under an hour, and makes a satisfying vegetarian lunch or dinner. Serve with rice or naan. This soup also keeps well and can be frozen for up to three months.</p> 
+                    <p class="">One of the things I love about red lentils is that they cook up so quickly. Unlike their sturdier brown and green lentil cousins, when cooked, red lentils quickly fall apart into a smooth mush-like consistency.
+                    </p>
+                    <h2 class=""><a id="ingredients"></a> Ingredients</h2>
+                    <ul class="">
+                        
+                        <li>1 cup red lentils (yellow lentils will work as well)</li>
+                        <li>3 cups water</li>
+                        <li>3 plum tomatoes</li>
+                        <li>2 teaspoons vegetable oil</li>
+                        <li>1/2 cup finely chopped white or yellow onion</li>
+                        <li>2 medium cloves garlic, finely chopped and made into a paste (see Recipe Note)</li>
+                        <li>2 teaspoons Bengali five spice mix (panch phoron) OR 1/2 teaspoon nigella seeds or black (or white) sesame seeds, 1/2 teaspoon cumin seeds, 1/2 teaspoon fennel seeds, 1/2 teaspoon mustard seeds, and (if available) 1/2 teaspoon fenugreek seeds</li>
+                        <li>1 bay leaf</li>
+                        <li>1 teaspoon turmeric</li>
+                        <li>1 teaspoon kosher salt plus more to taste</li>
+                        <li>1 lime, juiced (about 2 tablespoons fresh lime juice)</li>
+                        <li>8 sprigs cilantro, de-stemmed and chopped</li>
+                        <li>Cooked basmati rice, optional</li>
+                        
+                    </ul>
+                    
+                    
+                    <h2 class=""><a id="instructions"></a>Instructions</h2>
+                    <ol class="">
+                        
+                        <li>Cook the lentils</li>
+                        <li>Blanch and chop the tomatoes</li>
+                        <li>Sauté the onions with seasonings</li>
+                        <li>Add garlic paste and cook for 1 minute more, stirring continuously, making sure that the garlic does not burn. Add the Add cooked lentils</li>
+                        <li>Finish the soup</li>
+                        <li>Stir in chopped cilantro and remove from heat. Garnish with more chopped cilantro.</li>
+                        <li>Serve with basmati rice or naan bread.</li>          
+                    </ol>
+                    <h2 id="ack" class="">Acknowledgments</h2>
+                    <p>Content borrowed from  Elise Bauer's <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"></a> Simply Recipes entry for dal</p>
+                    <blockquote class="blockquote ">
+                        
+                        <p class="mb-0 ">I've made Kerissa's recipe a couple of times and love the flavors and how easy it is to make. Do you have a favorite Indian dal recipe? Please let us know about it in the comments.</p>
+                        <footer class="blockquote-footer ">Elise Bauer <cite class="" title="Red Lentil Dal"> <a href="https://www.simplyrecipes.com/recipes/red_lentil_dal/"> Red Lentil Dal </a></cite></footer>
+                        
+                    </blockquote>
+                    
+                </main>
+                <aside class="col-2 ">
+                    <p class="code" style="display:none">&lt;aside&gt;</p>
+                    <p> A word from our sponsor, who sponsors us.</p>
+                    <p>"In West Bengal and throughout India, dal is eaten at nearly every meal, serving as a sauce, a soup and a way to mash and stick food together (traditionally they eat with their hands in this region)."</p>
+                    <p class="code"  style="display:none">&lt;/aside&gt;</p>
+                </aside>
+            </div>
+        </div>
+        
+        <footer class="bla ">
+            
+            <a href="#" class="footerLink">Contact us</a> <a href="#" class="footerLink">Join mailing list</a> <a href="#" class="footerLink">Monetize!</a>
+            
+        </footer>
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script class="immune"> 
+            $('#color').on('click', function(){
+                var x= $('#selectSimul').find(":selected").val();
+
+
+                var e = document.getElementById("colorblind-styling");
+                var t = document.getElementById("colorblind-filters");
+                if (!e) {
+                    e = document.createElement("style");
+                    document.body.appendChild(e)
+                }
+                if (!t) {
+                    t = document.createElement("div");
+                    t.setAttribute('style', 'height: 0; padding: 0; margin: 0; line-height: 0;');
+                    t.innerHTML = '<svg id="colorblind-filters" width="0" height="0"> <defs> <filter id="protanopia"> <feColorMatrix type="matrix" values="0.567,0.433,0,0,0  0.558,0.442,0,0,0  0 0.242,0.758,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="protanomaly"> <feColorMatrix type="matrix" values="0.817,0.183,0,0,0  0.333,0.667,0,0,0  0,0.125,0.875,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="deuteranopia"> <feColorMatrix type="matrix" values="0.625,0.375,0,0,0  0.7,0.3,0,0,0  0,0.3,0.7,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="deuteranomaly"> <feColorMatrix type="matrix" values="0.8,0.2,0,0,0  0.258,0.742,0,0,0  0,0.142,0.858,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="tritanopia"> <feColorMatrix type="matrix" values="0.95,0.05,0,0,0  0,0.433,0.567,0,0  0,0.475,0.525,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="tritanomaly"> <feColorMatrix type="matrix" values="0.967,0.033,0,0,0  0,0.733,0.267,0,0  0,0.183,0.817,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="achromatopsia"> <feColorMatrix type="matrix" values="0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0.299,0.587,0.114,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> <filter id="achromatomaly"> <feColorMatrix type="matrix" values="0.618,0.320,0.062,0,0  0.163,0.775,0.062,0,0  0.163,0.320,0.516,0,0  0,0,0,1,0" in="SourceGraphic" /> </filter> </defs> </svg>';
+                    document.body.appendChild(t)
+                }
+                var n = ["protanopia", "protanomaly", "deuteranopia", "deuteranomaly", "tritanopia", "tritanomaly", "achromatopsia", "achromatomaly"];
+                var r = "";
+                for (var i in n) r += parseInt(i) + 1 + ": " + n[i] + "\n";
+
+                var s = x - 1;
+                if (isNaN(s)){return};
+                if (s >= n.length){return};
+                if (s == -1) {
+                    e.innerHTML = "body{-webkit-filter:none;-moz-filter:none;-ms-filter:none;-o-filter:none;filter:none;}";
+                    return
+                }
+                s = n[s];
+                if (document.getElementById(s)) e.innerHTML = "body{-webkit-filter:!!;-moz-filter:!!;-ms-filter:!!;-o-filter:!!;filter:!!;}".replace(/!!/g, "url(#" + s + ")");
+                else e.innerHTML = "body{-webkit-filter:none;-moz-filter:none;-ms-filter:none;-o-filter:none;filter:none;}"
+                
+            })            
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Inline elements and accessibility</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+        mark::before, mark::after, del::before, del::after, ins::before, ins::after, s::before, s::after {
+            clip-path: inset(100%);
+            clip: rect(1px, 1px, 1px, 1px);
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+        }
+        mark.gc::before {
+            content: " [highlight start] ";
+        }
+        
+        mark.gc::after {
+            content: " [highlight end] ";
+        }
+        del.gc::before {
+            content: " [delete start] ";
+        }
+        
+        del.gc::after {
+            content: " [delete end] ";
+        }
+        ins.gc::before {
+            content: " [insert start] ";
+        }
+        
+        ins.gc::after {
+            content: " [insert end] ";
+        }
+        s.gc::before {
+            content: " [not relevant start] ";
+        }
+        
+        s.gc::after {
+            content: " [not relevant end] ";
+        }
+
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div class="container" style="padding-top:1rem">
+        <h1>Inline elements and accessibility</h1>
+        
+        <h2>The elements</h2>
+        
+        <h3>
+            &lt;mark&gt;
+        </h3>
+        <p>Here is a bit of text that <mark>is marked</mark>.</p>
+        <p>Here is a bit of text that <mark class="gc">is marked</mark>. It also uses CSS generated content to note start and end.</p>
+        
+        <h3>
+            &lt;del&gt;
+        </h3>
+        <p>Here is a bit of text that <del>is deleted</del>.</p>
+        <p>Here is a bit of text that <del class="gc">is deleted</del>. It also uses CSS generated content to note start and end.</p>
+
+        <h3>
+            &lt;ins&gt;
+        </h3>
+        <p>Here is a bit of text that <ins>is inserted</ins>.</p>
+        <p>Here is a bit of text that <ins class="gc">is inserted</ins>. It also uses CSS generated content to note start and end.</p>
+
+        <h3>
+            &lt;s&gt;
+        </h3>
+        <p>Here is a bit of text that <s>is no longer relevant or accurate</s>.</p>
+        <p>Here is a bit of text that <s class="gc">is no longer relevant or accurate</s>. It also uses CSS generated content to note start and end.</p>
+        
+            <ins>
+                <s>
+                    
+                </div>
+                
+                
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            </body>
+            </html>
