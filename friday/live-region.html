@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lice regions</title>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    </head>
+    
+    <body ng-app="businessApp">
+        <div class="container" ng-controller="thingController">
+            <br>
+            <h1>Maintaining two tag lists</h1>
+            <!-- <div class="alert alert-info" ng-show="!deptLength.length" role="alert">No more departments!</div> -->
+            <div>{{pressedKey}}</div> 
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Visible tag list</h2>
+                    <ul>
+                        <li ng-repeat="tag in tags">{{tag.tag}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div contenteditable="true" style="height:300px;padding:1rem;outline:1px solid #aaa" ng-keypress="keyPressed($event)" ></div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Hidden tag list {{tags.length}}</h2>
+                    <ul aria-live="polite" aria-atomic="false" aria-relevant="all">
+                        <li ng-repeat="tag in tags">
+                            <div>{{tag.tagname}}</div>
+                            <div>{{tag.tag}}</div>
+                            <div>{{tag.text}}</div>
+                            <div><button class="btn btn-sm" ng-click="delete($index)">Delete</button></div>
+                        </li>
+                        <dd></dd>
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalTitle" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="editModalTitle">Add tag</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form">
+                                <div class="form-group">
+                                    <label for="tagSel">Select a tag {{selectedTag}}</label>
+                                    <select class="form-control" ng-model="selectedTag" id="tagSel">
+                                        <option  ng-repeat="tag in tags"
+                                        value="{{tag.tagname}}">{{tag.tag}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="newTag">
+                                        Or create a new tag
+                                    </label>
+                                    <input type="text" id="newTag" class="form-control" ng-model="newTag">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="saveChanges()">Submit</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{tags}}
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+        <script type="text/javascript">
+            var businessApp = angular.module('businessApp', []);
+            
+            businessApp.controller('thingController', ['$scope', function($scope) {
+                $scope.tags = [{
+                    "tagname": "mention",
+                    "tag":"Mention common acquaintance",
+                    "text": ""
+                }, {
+                    "tagname": "introduction",
+                    "tag":"Introduce yourself",
+                    "text": ""
+                }];                      
+                $scope.delete = function (index){
+                    $scope.tags.splice(index, 1);
+                    
+                }
+                $scope.keyPressed = function (event){
+                    $scope.pressedKey= event.keyCode;                           
+                    if (event.keyCode ===26) {
+                        $scope.pressedKey ="true";
+                        $scope.getSelectionText();
+                        
+                    }                               
+                }
+                $scope.getSelectionText = function(){   
+                    // need to verify text is from the contenteditable
+                    $scope.selectedText = "";
+                    if (window.getSelection) {
+                        $scope.selectedText = window.getSelection().toString();
+                    } else if (document.selection && document.selection.type != "Control") {
+                        $scope.selectedText = document.selection.createRange().text;
+                    }
+                    $('#editModal').modal('show');
+                }
+                
+                $scope.saveChanges = function(){
+
+                    //if newTag fields is populated
+                    if($scope.newTag) {
+                        //need to make the tag name safe, 
+                        let tagObj = {tagname:$scope.newTag.split(' ')[0], tag:$scope.newTag, text:$scope.selectedText};
+                        $scope.tags.push(tagObj);
+                        $scope.newTag='';
+                    }
+                    else{
+                        let tagObj = {tagname:$scope.selectedTag.split(' ')[0], tag:$scope.selectedTag, text:$scope.selectedText};
+                        $scope.tags.push(tagObj);
+                    }
+                    $scope.highlightSelection();
+                    
+                }
+                
+                
+                $scope.highlightSelection = function() {  
+                    let selection= window.getSelection().getRangeAt(0);
+                    let selectedContent = selection.extractContents();
+                    var span= document.createElement("span");
+                    span.style.backgroundColor = "lightpink";
+                    span.appendChild(selectedContent);
+                    selection.insertNode(span);
+                }
+                
+                
+            }]);
+            
+            
+        </script>
+        
+    </body>
+    
+    </html>
+    
