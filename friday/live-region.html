@@ -37,13 +37,13 @@
                     <div contenteditable="true" style="height:300px;padding:1rem;outline:1px solid #aaa" ng-keypress="keyPressed($event)" ></div>
                 </div>
                 <div class="col-md-4">
-                    <h2>Hidden tag list {{tags.length}}</h2>
+                    <h2>Hidden tag list <small>{{tags.length}} entries</small></h2>
                     <ul aria-live="polite" aria-atomic="false" aria-relevant="all">
                         <li ng-repeat="tag in tags">
                             <div>{{tag.tagname}}</div>
                             <div>{{tag.tag}}</div>
                             <div>{{tag.text}}</div>
-                            <div><button class="btn btn-sm" ng-click="delete($index)">Delete</button></div>
+                            <div><button class="btn btn-sm" ng-click="delete($index)" aria-label="Delete {{tag.tagname}}">Delete</button></div>
                         </li>
                         <dd></dd>
                     </ul>
