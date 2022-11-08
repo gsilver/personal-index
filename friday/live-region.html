@@ -20,11 +20,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     </head>
     
-    <body ng-app="businessApp">
+    <body ng-app="tagApp">
         <div class="container" ng-controller="thingController">
             <br>
             <h1>Maintaining two tag lists</h1>
-            <!-- <div class="alert alert-info" ng-show="!deptLength.length" role="alert">No more departments!</div> -->
             <div>{{pressedKey}}</div> 
             <div class="row">
                 <div class="col-md-4">
@@ -91,9 +90,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
         <script type="text/javascript">
-            var businessApp = angular.module('businessApp', []);
+            var tagApp = angular.module('tagApp', []);
             
-            businessApp.controller('thingController', ['$scope', function($scope) {
+            tagApp.controller('thingController', ['$scope', function($scope) {
                 $scope.tags = [{
                     "tagname": "mention",
                     "tag":"Mention common acquaintance",
@@ -141,15 +140,15 @@
                         let tagObj = {tagname:$scope.selectedTag.split(' ')[0], tag:$scope.selectedTag, text:$scope.selectedText};
                         $scope.tags.push(tagObj);
                     }
-                    $scope.highlightSelection();
+                    $scope.highlightSelection($scope.newTag || $scope.selectedTag);
                 }
                 
                 
-                $scope.highlightSelection = function() {  
-                    console.log('a');
+                $scope.highlightSelection = function(tag) {  
                     let selection= window.getSelection().getRangeAt(0);
                     let selectedContent = selection.extractContents();
                     var span= document.createElement("span");
+                    span.setAttribute("aria-label", tag);
                     span.style.backgroundColor = "lightpink";
                     span.appendChild(selectedContent);
                     selection.insertNode(span);
