@@ -129,7 +129,7 @@
                 }
                 
                 $scope.saveChanges = function(){
-                    $scope.highlightSelection();
+                    
                     //if newTag fields is populated
                     if($scope.newTag) {
                         //need to make the tag name safe, 
@@ -141,11 +141,12 @@
                         let tagObj = {tagname:$scope.selectedTag.split(' ')[0], tag:$scope.selectedTag, text:$scope.selectedText};
                         $scope.tags.push(tagObj);
                     }
-                    
+                    $scope.highlightSelection();
                 }
                 
                 
                 $scope.highlightSelection = function() {  
+                    console.log('a');
                     let selection= window.getSelection().getRangeAt(0);
                     let selectedContent = selection.extractContents();
                     var span= document.createElement("span");
@@ -153,8 +154,6 @@
                     span.appendChild(selectedContent);
                     selection.insertNode(span);
                 }
-                
-                
             }]);
             
             
