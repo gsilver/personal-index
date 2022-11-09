@@ -5,22 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lice regions</title>
-    
-    <!-- Bootstrap -->
+    <title>Live regions</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     </head>
     
     <body ng-app="tagApp">
+        <span class="sr-only" id="testid">Some description</span>
         <div class="container" ng-controller="thingController">
             <br>
             <h1>Maintaining two tag lists</h1>
@@ -112,8 +104,7 @@
                                              
                     if (event.keyCode ===26 && event.ctrlKey) {
                         $scope.pressedKey ="true";
-                        $scope.getSelectionText();
-                        
+                        $scope.getSelectionText();                        
                     }                               
                 }
                 $scope.getSelectionText = function(){   
@@ -126,9 +117,10 @@
                     }
                     $('#editModal').modal('show');
                 }
-                
                 $scope.saveChanges = function(){
-                    
+                    var sel = document.getElementById('tagSel');
+                    var tagText= sel.options[sel.selectedIndex].text;
+                    tagSel
                     //if newTag fields is populated
                     if($scope.newTag) {
                         //need to make the tag name safe, 
@@ -137,19 +129,18 @@
                         $scope.newTag='';
                     }
                     else{
-                        let tagObj = {tagname:$scope.selectedTag.split(' ')[0], tag:$scope.selectedTag, text:$scope.selectedText};
+                        let tagObj = {tagname:$scope.selectedTag, tag:tagText, text:$scope.selectedText};
                         $scope.tags.push(tagObj);
                     }
                     $scope.highlightSelection($scope.newTag || $scope.selectedTag);
                 }
-                
-                
                 $scope.highlightSelection = function(tag) {  
                     let selection= window.getSelection().getRangeAt(0);
                     let selectedContent = selection.extractContents();
                     var span= document.createElement("span");
-                    span.setAttribute("aria-label", tag);
-                    span.style.backgroundColor = "lightpink";
+                    span.setAttribute("aria-describedby", "testid");
+                    span.style.backgroundColor = "red";
+                    span.style.color = "white";
                     span.appendChild(selectedContent);
                     selection.insertNode(span);
                 }
