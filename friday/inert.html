@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>The inert element</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>The "inert" element</h1>
+        <p>Problem statement: developers need to jump through hoops when removing non-interactive elements from the accessibility tree. Cases in point:</p>
+        <ol style="list-style:lower-alpha">
+            <li>
+                When modals are launched, focus needs to be trapped in the modal itself so that users do not "fall off" the modal.  Currently this is done via a roving tab index technique that developers would like to put in a rocket and launch straight into the sun
+            </li>
+            <li>When side panels are used, the panel content needs to be removed from the accessibility tree as well</li>
+            <li>Essentially any case where content is displayed and hidden. "Inert" provides a much cleaner alternative to the CSS class changes, aria-hidden="true/false" jiggery pockery</li>
+        </ol>
+        <p>Note: this is a newish attribute and is not universally supported. But maybe it is supported enough for 90% of our needs? Firefox is for once the straggler, but maybe the new Beta addresses this? TODO: check in nightly.</p>
+        <h2>Static inert</h2>
+        <p>The paragraph that follows has the attribute of inert. What will the NVDA/Jaws/VoiceOver experience be? Let's find out.</p>
+        <p  innert>I am so an inert paragraph!</p>
+        <h2>Dynamic inert</h2>
+        <div>  <button class="btn btn-primary" id="lazarus">Toggle inert </button></div>
+        <div id="lazarus-p">
+            <p> I am a simple paragraph. The inert value will be toggled by the button preceeding it. Just to make things interesting here is an interative element, a <a href="https://hmpg.net/"> link</a></p>
+            <p><button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+            </p>
+            <p>As you can see from the hover/focus treatment, as well as the "focusabilty" of the buttons, all descendants of an element with the innert attribute are "inert" </p>
+        </div>   
+
+        
+        
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('#lazarus').on('click', function(){
+                if($('#lazarus-p').attr('inert')){
+                    $('#lazarus-p').removeAttr('inert');
+                    console.log('is inert, will swith to live')
+                } else {
+                    $('#lazarus-p').attr('inert', true);
+                    console.log('is live, will swith to inert');
+
+                }
+            }); 
+        });
+    </script>
+</body>
+</html>
