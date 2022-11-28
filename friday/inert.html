@@ -38,7 +38,7 @@
                 <button type="button" class="btn btn-light">Light</button>
                 <button type="button" class="btn btn-dark">Dark</button>
             </p>
-            <p>As you can see from the hover/focus treatment, as well as the "focusabilty" of the buttons, all descendants of an element with the innert attribute are "inert" </p>
+            <p>As you can see from the hover/focus treatment, as well as the "focusabilty" of the buttons, all descendants of an element with the inert attribute are "inert" </p>
         </div>   
 
         
@@ -55,11 +55,9 @@
             $('#lazarus').on('click', function(){
                 if($('#lazarus-p').attr('inert')){
                     $('#lazarus-p').removeAttr('inert');
-                    console.log('is inert, will swith to live')
                 } else {
                     $('#lazarus-p').attr('inert', true);
-                    console.log('is live, will swith to inert');
-
+       
                 }
             }); 
         });
