@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Labels in forms</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    span.label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+    span.checkLabel {
+        margin-bottom: 0;
+    }
+</style>    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>Labels in forms</h1>
+        <p>All of the form elements below have visible labels.
+            Some of these visible labels are not logically associated with the form element.
+            Use the tab key to navigate to each form element.  Some text will appear by the element with what a screen reader user will hear.</p>
+            
+            
+            <div class="form-group">
+                <div class="col-7">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name"><span class="badge" role="alert"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-7">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address"><span class="badge" role="alert"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-7">
+                    <span class="label" for="zip">Zip code</span>
+                    <input type="text" class="form-control" id="zip"><span class="badge" role="alert"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-7">
+                    <label for="deliv">Delivery method</label>
+                    <select class="custom-select mr-sm-2" id="deliv">
+                        <option selected>Choose...</option>
+                        <option value="1">Express</option>
+                        <option value="2">Slow</option>
+                        <option value="3">Drone</option>
+                      </select><span class="badge" role="alert"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-7">
+                    <label for="credit">Credit card number</label>
+                    <input type="text" class="form-control" id="credit"><span class="badge" role="alert"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-7">
+                    <span class="label" for="tell">Tell us more</span>
+                    <textarea class="form-control" id="tell" rows="4"></textarea><span class="badge" role="alert"></span>
+                </div>
+            </div>
+
+
+            <div class="form-check">
+                <div class="col-7">
+                    <input type="checkbox" class="form-check-input" id="agree">
+                    <span class="checkLabel" for="agree">I agree to this</span> <span class="badge" role="alert"></span>
+                </div>
+            </div>
+        </div>  
+        
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $('.badge').hide(); 
+            $('input, select, textarea').on('blur', function(){
+                $('.badge').hide(); 
+            });
+            $('input, select, textarea').on('focus', function(){
+                let thisInputType
+                if(this.type==='text' || this.type==='textarea'){
+                    thisInputType ='Edit: '
+                } else  if(thisInputType ='checkbox')
+                {
+                    thisInputType ='Checkbox: '
+                } else {
+                    thisInputType ='Select'
+                }
+                let labelText = $( this).siblings( 'label' ).text();
+                let thisClass
+                if (labelText ===''){
+                    thisClass='badge-danger';
+                }
+                else {
+                    thisClass='badge-success';
+                }
+                $( this).siblings( '.badge' ).text(thisInputType + labelText).addClass(thisClass).show();
+                //console.log($(this).attr('id'))
+            });
+
+        });
+    </script>
+</body>
+</html>
