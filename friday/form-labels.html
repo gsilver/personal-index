@@ -92,15 +92,22 @@
                 $('.badge').hide(); 
             });
             $('input, select, textarea').on('focus', function(){
-                let thisInputType
-                if(this.type==='text' || this.type==='textarea'){
-                    thisInputType ='Edit: '
-                } else  if(thisInputType ='checkbox')
-                {
-                    thisInputType ='Checkbox: '
-                } else {
-                    thisInputType ='Select'
+                let thisInputType;
+                console.log(this.type)
+                switch (this.type) {
+                    case 'text':
+                        thisInputType ='Edit: '
+                        break;
+                    case 'textarea':
+                        thisInputType ='Edit: '
+                        break
+                    case 'checkbox':
+                        thisInputType ='Checkbox: '
+                        break;
+                    default:
+                    thisInputType ='Select: '
                 }
+                
                 let labelText = $( this).siblings( 'label' ).text();
                 let thisClass
                 if (labelText ===''){
