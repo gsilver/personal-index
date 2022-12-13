@@ -93,7 +93,6 @@
             });
             $('input, select, textarea').on('focus', function(){
                 let thisInputType;
-                console.log(this.type)
                 switch (this.type) {
                     case 'text':
                         thisInputType ='Edit: '
@@ -107,7 +106,6 @@
                     default:
                     thisInputType ='Select: '
                 }
-                
                 let labelText = $( this).siblings( 'label' ).text();
                 let thisClass
                 if (labelText ===''){
@@ -117,7 +115,6 @@
                     thisClass='badge-success';
                 }
                 $( this).siblings( '.badge' ).text(thisInputType + labelText).addClass(thisClass).show();
-                //console.log($(this).attr('id'))
             });
 
         });
