@@ -28,8 +28,13 @@
 
 
     <h1>Focus order demo</h1>
-    <p>After loading page start tabbing (navigate by using the <code>tab</code> key to go forward and <code>shift + tab</code> to go backward). Message below will let you know what elements are receiving focus when you tab onto them. <strong>Note:</strong> please use Chrome browser. </p>
-    <p>After going through it once, click on the <code>Fix focus order</code> button and keep on tabbing. Is it a better experience?</p>
+    <p>Some users with physical disabilities rely on the keyboard to operate web pages. The most common navigation pattern is to tab through the controls. This is why it is imprtant that the "tab order" follow a logical path. Let's take a look at a page that may be problematic for them.</p>
+    <p>After loading page start tabbing (navigate by using the <code>tab</code> key to go forward and <code>shift + tab</code> to go backward).</p>
+    <ul>
+      <li>After each tab, try to find where the focus landed</li>
+      <li>A message below will let you know what elements are receiving focus when you tab onto them. <strong>Note:</strong> please use Chrome browser. </li>
+      <li>After going through it once, click on the <code>Fix focus order</code> button and keep on tabbing. Is it a better experience?</li>
+    </ul>
     <p style="display:none" class="alert alert-info" id="alert-focus" role="alert">Focus is currently on: <strong style="color:#c00" id="target-name"></strong> </p>
     <div class="btn-group btn-group-sm">
       <a href="#" class="btn btn-default btn-xs"  tabindex="19">Go forward</a>
