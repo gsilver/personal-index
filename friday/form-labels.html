@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Labels in forms</title>
+    <title>Form accessibility</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +20,8 @@
 <body>
     <div class="container">
         <br>
-        <h1>Labels in forms</h1>
+        <h1>Form accessibility</h1>
+        <h2>Labels in forms</h2>
         <p>All of the form elements below have visible labels.
             Some of these visible labels are not logically associated with the form element.
             Use the tab key to navigate to each form element.  Some text will appear by the element with what a screen reader user will hear. If the visible label is not associated with the form element, all you will see is the prompt, not the name of the element.</p>
@@ -69,14 +70,51 @@
                 </div>
             </div>
 
-
             <div class="form-check">
                 <div class="col-7">
                     <input type="checkbox" class="form-check-input" id="agree">
                     <span class="checkLabel" for="agree">I agree to this</span> <span class="badge" role="alert"></span>
                 </div>
             </div>
+            <br>
+            <h2>Grouping form elements</h2>
+            <p>Grouping long complex forms is a benefit to everyone. It is an absolute requirement for users of screen readers when the form elements are checkbox or radio groups. Please take a look at the form below.</p>
+            <p>Click on the radio buttons and read the information a screen reader would hear.</p>
+            <p>Is it enough information to make a choice?</p>
+
+            <p style="display: block; width: 100%; max-width: 100%; padding: 0; margin-bottom: 0.5rem; font-size: 1.5rem; line-height: inherit; color: inherit; white-space: normal;">Are you ok handing your entire savings to me?</legend>
+            <div class="form-check">
+                <div class="col-7">
+                    <input type="radio" name="grift" class="form-check-input" id="yes">
+                    <label  for="yes">Yes</span> <span class="badge" role="alert"></label>
+                </div>
+            </div>
+            <div class="form-check">
+                <div class="col-7">
+                    <input type="radio" name="grift" class="form-check-input" id="no">
+                    <label for="no">No</span> <span class="badge" role="alert"></label>
+                </div>
+            </div>
+            
+            <p> Visual users will see the question and be able to make a choice. But since the radio group is not associated witht the question screen reader users will not be able to. </p>
+            <p> Click on the radio buttons below. In this case the radio group is logically related to the visual group label.</p>
+            <fielset>
+                <legend>Are you ok handing your entire savings to me?</legend>
+                <div class="form-check">
+                    <div class="col-7">
+                        <input type="radio" name="grift2" class="form-check-input" id="yes2">
+                        <label  for="yes2">Yes</span> <span class="badge" role="alert"></label>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <div class="col-7">
+                        <input type="radio" name="grift2" class="form-check-input" id="no2">
+                        <label for="no2">No</span> <span class="badge" role="alert"></label>
+                    </div>
+                </div>
+            </fielset>
         </div>  
+        
      <div style="height:3rem"></div>   
     </div>
     
@@ -88,33 +126,46 @@
     <script>
         $(function() {
             $('.badge').hide(); 
+            
             $('input, select, textarea').on('blur', function(){
+                $('.badge').text(''); 
                 $('.badge').hide(); 
+                let legend ='';
             });
             $('input, select, textarea').on('focus', function(){
+                let legend ='';
                 let thisInputType;
                 switch (this.type) {
                     case 'text':
-                        thisInputType =', Edit'
+                        thisInputType ='Edit'
                         break;
                     case 'textarea':
-                        thisInputType =', Edit'
+                        thisInputType ='Edit'
                         break
                     case 'checkbox':
-                        thisInputType =', Checkbox'
+                        thisInputType ='Checkbox'
                         break;
-                    default:
-                    thisInputType =', Combobox'
+                    case 'radio':
+                        thisInputType ='Radio'
+                        break;
+
+                        default:
+                    thisInputType ='Combobox'
                 }
                 let labelText = $( this).siblings( 'label' ).text();
                 let thisClass
-                if (labelText ===''){
+                if (labelText ===''){   
                     thisClass='badge-danger';
                 }
                 else {
                     thisClass='badge-success';
                 }
-                $( this).siblings( '.badge' ).text(labelText + thisInputType ).addClass(thisClass).show();
+
+                legend = $( this).parent( 'div').parent('div').parent().children('legend').text() + ' ';
+                if(legend===' ' && thisInputType==='Radio'){
+                    thisClass='badge-danger';
+                }
+                $( this).parent( '.col-7' ).find('.badge').text(legend + labelText + ' ' + thisInputType ).addClass(thisClass).show()
             });
 
         });
