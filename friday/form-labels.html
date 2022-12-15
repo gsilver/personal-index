@@ -95,16 +95,16 @@
                 let thisInputType;
                 switch (this.type) {
                     case 'text':
-                        thisInputType ='Edit: '
+                        thisInputType =', Edit'
                         break;
                     case 'textarea':
-                        thisInputType ='Edit: '
+                        thisInputType =', Edit'
                         break
                     case 'checkbox':
-                        thisInputType ='Checkbox: '
+                        thisInputType =', Checkbox'
                         break;
                     default:
-                    thisInputType ='Combobox: '
+                    thisInputType =', Combobox'
                 }
                 let labelText = $( this).siblings( 'label' ).text();
                 let thisClass
@@ -114,7 +114,7 @@
                 else {
                     thisClass='badge-success';
                 }
-                $( this).siblings( '.badge' ).text(thisInputType + labelText).addClass(thisClass).show();
+                $( this).siblings( '.badge' ).text(labelText + thisInputType ).addClass(thisClass).show();
             });
 
         });
