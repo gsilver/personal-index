@@ -158,7 +158,7 @@ $(function() {
             var thisText= this.textContent;
             var thisDesc = $(this).attr('aria-describedby');
             var thisDescText = document.getElementById(thisDesc).textContent;
-            $(this).text((thisText + ' ' + thisDescText));            
+            $(this).text((thisText + ' (' + thisDescText) + ')');            
         });
     })
 
