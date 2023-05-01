@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .p-list{
+            margin-block-end: .25em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>Disambiguation vs label in name</h1>
+        <p>Problem statement: </p>
+        <h2>A list of items</h2>
+        <p>Shoe items in my shopping cart. The button names visually associated with each item are ambiguous.</p>
+        <ul class="pre">
+            <li>
+                <p id="item1a" class="p-list">  Brogue. Tan. 12 </p>
+                <button type="button" class="btn btn-link btn-sm">Delete</button><button type="button" class="btn btn-link btn-sm">Edit</button>
+            </li>
+            <li>
+                <p id="item2a"  class="p-list">Sandals. Green. 6 </p>
+                <button type="button" class="btn btn-link btn-sm">Delete</button><button type="button" class="btn btn-link btn-sm">Edit</button>
+            </li>
+            <li>
+                <p id="item3a"  class="p-list">Wellies. Blue. 7 </p>
+                <button type="button" class="btn btn-link btn-sm">Delete</button><button type="button" class="btn btn-link btn-sm">Edit</button>
+            </li>
+        </ul>
+        <h2>A list of items. Disambiguate with aria-label</h2>
+    <p><button type="button" id="aria-label-btn" class="btn btn-secondary btn-sm">Show computed name</button></p>
+
+        <ul class="aria-label">
+            <li>
+                <p id="item1b" class="p-list">  Brogue. Tan. 12 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Brogue. Tan. 12">Delete</button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Brogue. Tan. 12">Edit</button>
+            </li>
+            <li>
+                <p id="item2b"  class="p-list">Sandals. Green. 6 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Sandals. Green. 6">Delete </button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Sandals. Green. 6">Edit</button>
+            </li>
+            <li>
+                <p id="item3b"  class="p-list">Wellies. Blue. 7 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Wellies. Blue. 7">Delete</button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Wellies. Blue. 7">Edit</button>
+            </li>
+        </ul>
+        <h2>A list of items. Disambiguate with aria-describedby</h2>
+        <p> <button type="button" id="aria-desc-btn" class="btn btn-secondary btn-sm">Show computed name</button> (and descriptor)</p>
+
+        <ul class="aria-describedby">
+            
+            <li>
+                <p id="item1c" class="p-list">  Brogue. Tan. 12 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-describedby="item1c">Delete</button><button type="button" class="btn btn-link btn-sm" aria-describedby="item1c">Edit</button>
+            </li>
+            <li>
+                <p id="item2c"  class="p-list">Sandals. Green. 6 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-describedby="item2c">Delete </button><button type="button" class="btn btn-link btn-sm" aria-describedby="item2c">Edit</button>
+            </li>
+            <li>
+                <p id="item3c"  class="p-list">Wellies. Blue. 7 </p>
+                <button type="button" class="btn btn-link btn-sm" aria-describedby="item3c">Delete</button><button type="button" class="btn btn-link btn-sm" aria-describedby="item3c">Edit</button>
+            </li>
+        </ul>
+        
+        
+        <h2>Can the list be recast as tabular data?</h2>
+        <table class="table thead-dark table-striped table-hover">
+            <tr>
+                <th scope="col">
+                    Shoe model
+                </th>
+                <th scope="col">
+                    Color
+                </th>
+                <th scope="col">
+                    Size
+                </th>
+                <th scope="col">
+                    Actions
+                </th>
+            </tr>
+            <tr>
+                <th scope="row">Brogue</td>
+                    <td>Tan</td>
+                    <td>12</td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Actions">
+                            <button type="button" class="btn btn-link">Delete</button>
+                            <button type="button" class="btn btn-link">Edit</button>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            
+        </div>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+$(function() {
+    $('#aria-label-btn').on('click', function(){
+        $('.aria-label button').each(function( index ) {
+            $(this).text(this['ariaLabel'])
+        });
+    });
+    $('#aria-desc-btn').on('click', function(){
+        $('.aria-describedby button').each(function( index ) {
+            var thisText= this.textContent;
+            var thisDesc = $(this).attr('aria-describedby');
+            var thisDescText = document.getElementById(thisDesc).textContent;
+            $(this).text((thisText + ' ' + thisDescText));            
+        });
+    })
+
+});
+
+
+        </script>
+    </body>
+    </html>
