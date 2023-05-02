@@ -130,8 +130,17 @@
             </tr>
         </table> -->
         <h2>Using aria-describedby</h2>
+        <p>This technique appends the text of the name of the item to the name of the control, with a pause in between, when read by a screen reader.</p>
         <p>Controls are unambiguous for screen reader users. Voice control users are no worse off than the starting example. But depending on the item title, may be too verbose for screen reader users.</p>
-        <p> <button type="button" id="aria-desc-btn" class="btn btn-secondary btn-sm">Show computed name</button> (and descriptor)</p>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Toggle computed name (and descriptor)
+            </label>
+          </div>
+        <br>
+        
+        <!-- <p> <button type="button" id="aria-desc-btn" class="btn btn-secondary btn-sm">Show computed name</button> (and descriptor)</p> -->
         
         <ul class="aria-describedby">
             
@@ -154,15 +163,15 @@
         <ul>
             <li>
                 <p  class="p-list">  Brogue. Tan. 12 </p>
-                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Brogue. Tan. 12"><i class="bi bi-trash"></i></button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Brogue. Tan. 12"><i class="bi bi-pencil"></i></button>
+                <button type="button" class="btn btn-dark btn-sm" aria-label="Delete Brogue. Tan. 12"><i class="bi bi-trash"></i></button> <button type="button" class="btn btn-dark btn-sm" aria-label="Edit Brogue. Tan. 12"><i class="bi bi-pencil"></i></button>
             </li>
             <li>
                 <p   class="p-list">Sandals. Green. 6 </p>
-                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Sandals. Green. 6"><i class="bi bi-trash"></i></button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Sandals. Green. 6"><i class="bi bi-pencil"></i></button>
+                <button type="button" class="btn btn-dark btn-sm" aria-label="Delete Sandals. Green. 6"><i class="bi bi-trash"></i></button> <button type="button" class="btn btn-dark btn-sm" aria-label="Edit Sandals. Green. 6"><i class="bi bi-pencil"></i></button>
             </li>
             <li>
                 <p   class="p-list">Wellies. Blue. 7 </p>
-                <button type="button" class="btn btn-link btn-sm" aria-label="Delete Wellies. Blue. 7"><i class="bi bi-trash"></i></button><button type="button" class="btn btn-link btn-sm" aria-label="Edit Wellies. Blue. 7"><i class="bi bi-pencil"></i></button>
+                <button type="button" class="btn btn-dark btn-sm" aria-label="Delete Wellies. Blue. 7"><i class="bi bi-trash"></i></button> <button type="button" class="btn btn-dark btn-sm" aria-label="Edit Wellies. Blue. 7"><i class="bi bi-pencil"></i></button>
             </li>
         </ul>
     </div>
@@ -179,6 +188,30 @@
                     $(this).text(this['ariaLabel'])
                 });
             });
+
+       $('#flexCheckDefault').change(function() {
+             if(this.checked) {
+                $('.aria-describedby button').each(function( index ) {
+                    var thisText= this.textContent;
+                    var thisDesc = $(this).attr('aria-describedby');
+                    var thisDescText = document.getElementById(thisDesc).textContent;
+                    $(this).text((thisText + ' (' + thisDescText) + ')');            
+                });
+
+              } else {
+                $('.aria-describedby button').each(function( index ) {
+                    if(oddOrEven(index) ==='even'){
+                        $(this).text('Delete')
+                    }
+                    else {
+                        $(this).text('Edit')
+                    }
+
+                });
+              }
+        });
+
+
             $('#aria-desc-btn').on('click', function(){
                 $('.aria-describedby button').each(function( index ) {
                     var thisText= this.textContent;
@@ -189,7 +222,9 @@
             })
             
         });
-        
+        function oddOrEven(x) {
+            return ( x & 1 ) ? "odd" : "even";
+        }
         
     </script>
 </body>
