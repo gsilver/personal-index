@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>2.4.11 Focus Not Obscured</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <style>
+        .modal
+        {
+            overflow: hidden;
+        }
+        .modal-dialog{
+            margin-right: 0;
+            margin-left: 0;
+        }
+        .modeless{
+            top:200px !important;
+            left:50%;
+            bottom:auto;
+            right:auto;
+            margin-left:-300px;
+        }
+        
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="2.4.11 Focus Not Obscured.html">Sticky menus<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="2.4.11-modal.html">Modal </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="2.4.11-menus.html">Menus <span class="sr-only">(current)</span></a>
+                </li>
+                
+            </div>
+        </nav>      
+        <div class="container">
+            
+            <br><br><br>
+            <h1>
+                Menu
+            </h1>
+            
+            <h2>A menu</h2>
+            <br>   <br>
+            <div>
+                <ul>
+                    <li style="list-style:none;">
+                        <button  id="hovermenu-btn" type="button" name="button" class="btn btn-primary">Menu</button> <span aria-live="polite" id="btn-mess"></span>
+                        <ul class="list-group" id="xxx" style="display: none;z-index:22;position:relative">
+                            <li class="list-group-item"><a href="">Cras justo odio</a></li>
+                            <li class="list-group-item"><a href="">Dapibus ac facilisis in</a></li>
+                            <li class="list-group-item"><a href="">Morbi leo risus</a></li>
+                            <li class="list-group-item"><a href="">Porta ac consectetur ac</a></li>
+                            <li class="list-group-item"><a href="">Vestibulum at eros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div style="position:absolute; top:300px;left:25%;z-index:0">
+                    <button class="btn btn-danger btn-small" id="impbtn1">Important button 1</button><br><br>
+                    <button class="btn btn-danger btn-small" id="impbtn2">Important button 2</button><br><br>
+                    <button class="btn btn-danger btn-small" id="impbtn3">Important button 3</button><br><br>
+                </div>
+                
+                
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+        <br>   <br>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    
+    $(function() {
+        
+        $( "#hovermenu-btn" ).on( "focus", function() {
+            console.log('a');
+            $('#xxx').show();
+        } );
+        
+        $( ".btn-danger" ).on( "focus", function() {
+            $('#btn-mess').text($(this).text() + ' has focus') ;
+        });
+        
+        
+    });
+</script>
+</body>
+</html>
