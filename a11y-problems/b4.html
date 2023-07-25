@@ -23,14 +23,11 @@
 <body ng-app="businessApp">
   <div class="container" ng-controller="thingController">
     <h2>Business Application</h2>
-    <h3>Departments</h3>
+    <h3>ITS Departments</h3>
     <div class="alert alert-info" ng-show="!deptLength.length">No more departments!</div>
     <table class="table table-stipped" ng-show="deptLength.length">
       <thead>
         <tr>
-          <td>
-            <input type="checkbox" name="" value="">
-          </td>
           <td>
             Department
           </td>
@@ -46,10 +43,10 @@
         </tr>
         <tbody>
           <tr ng-repeat="dept in depts" ng-if="!dept.Reorg">
-            <td><input type="checkbox" name="" value=""></td>
-            <td>{{dept.Department}}</td>
+
+            <td id="i{{$index}}">{{dept.Department}}</td>
             <td   style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
-            <td><a href="" class="edit" data-toggle="modal" data-target="#editModal" ng-click="edit($index)">Edit</a> | <a href="" class="reorg" ng-click="reorg($index)">Move</a> </td>
+            <td><a href="" class="edit" data-toggle="modal" data-target="#editModal" ng-click="edit($index)">Edit</a> | <a href="" class="reorg" ng-click="reorg($index)">Reorg it!</a> </td>
             <td>
               <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
             </td>
@@ -59,13 +56,10 @@
     </table>
 
     <div ng-show="reorgLength.length">
-      <h3>Move candidates</h3>
+      <h3>Reorg candidates</h3>
       <table class="table table-stipped">
         <thead>
           <tr>
-            <td>
-              <input type="checkbox" name="" value="">
-            </td>
             <td>
               Department
             </td>
@@ -81,10 +75,9 @@
           </tr>
           <tbody>
             <tr ng-repeat="dept in depts" ng-if="dept.Reorg">
-              <td><input type="checkbox" name="" value=""></td>
               <td>{{dept.Department}}</td>
               <td   style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
-              <td><a href="" class="reorg" ng-click="unreorg($index)">Un-move</a> </td>
+              <td><a href="" class="reorg" ng-click="unreorg($index)">Spare it a reorg!</a> </td>
               <td>
                 <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
               </td>
