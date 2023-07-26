@@ -34,9 +34,11 @@
   <body ng-app="businessApp">
     <div class="container" ng-controller="thingController"  role="log">
       <h2>Chatlog test</h2>
-      <ul class="log">
-        <li ng-repeat="messg in messgs">{{messg.Message}} </li>
-      </ul>
+      <div  role="log" >
+        <ul class="log">
+          <li ng-repeat="messg in messgs">{{messg.Message}} </li>
+        </ul>
+      </div>
       <div class="form-group">
         <label for="q">Question</label>
         <textarea id="q" class="form-control" rows="3" ng-model="newMessage"></textarea>
