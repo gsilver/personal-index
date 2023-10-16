@@ -1,20 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Testing aria-flowto</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
+        svg {
+            outline: 1px solid #ccc;
+            margin: 2rem 5rem;
+            width:800px;
+            height:800px;
+        }
         circle:focus{
-            stroke:black
+            stroke:black;
+            outline:3px solid black;
         }
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+    
     <ul>
         <li>red flows to green</li>
         <li>
@@ -23,30 +30,160 @@
         <li>
             green flows to yellow and purple
         </li>
-        <li>yellow flows to purple</li>
+        <li>yellow flows to purple and gray</li>
         <li>purple flows to red</li>
         <li>gray flows to green and blue</li>
     </ul>
-    <svg width="100%" height="400px" version="1.1"
-    xmlns="http://www.w3.org/2000/svg">
-    <circle  id="red" aria-label="red" aria-flowto="green"  tabindex="0" role="button" cx="100" cy="50" r="40" stroke="red"
-    stroke-width="2" fill="red"/>
-    <circle  id="blue" aria-label="blue" aria-flowto="red"  tabindex="0" role="button" cx="200" cy="50" r="40" stroke="blue"
-    stroke-width="2" fill="blue"/>
-    <circle  id="green" aria-label="green" aria-flowto="yellow purple"  tabindex="0" role="button" cx="300" cy="50" r="40" stroke="green"
-    stroke-width="2" fill="green"/>
-    <circle  id="yellow" aria-label="yellow" aria-flowto="purple"  tabindex="0" role="button" cx="100" cy="200" r="40" stroke="yellow"
-    stroke-width="2" fill="yellow"/>
-    <circle  id="purple" aria-label="purple" aria-flowto=""  tabindex="0" role="button" cx="200" cy="200" r="40" stroke="purple"
-    stroke-width="2" fill="purple"/>
-    <circle  id="gray" aria-label="" aria-flowto="green blue"  tabindex="0" role="button" cx="300" cy="200" r="40" stroke="gray"
-    stroke-width="2" fill="gray"/>
 
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.84 506.06">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00aeef;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #00a651;
+      }
+
+      .cls-3 {
+        fill: #7f3f98;
+      }
+
+      .cls-4 {
+        fill: #ed1c24;
+      }
+
+      .cls-5 {
+        fill: #939598;
+      }
+
+      .cls-6 {
+        fill: #f9ed32;
+      }
+
+      .cls-7 {
+        fill: none;
+        stroke-width: 4px;
+      }
+
+      .cls-8 {
+        fill: #0e0d0b;
+      }
+
+      .cls-8, .cls-9 {
+        stroke-width: 0px;
+      }
+
+      .cls-9 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <circle  id="red" aria-label="red" aria-flowto="green"  tabindex="0" role="button"class="cls-4" cx="43.76" cy="165.21" r="43.26"/>
+  <circle id="blue"  aria-label="blue" aria-flowto="red"  tabindex="0" role="button"  class="cls-1" cx="209.27" cy="43.76" r="43.26"/>
+  <circle  id="yellow" aria-label="yellow" aria-flowto="purple gray"  tabindex="0" role="button" class="cls-6" cx="43.76" cy="344.87" r="43.26"/>
+  <circle  id="purple" aria-label="purple" aria-flowto="red"  tabindex="0" role="button"  class="cls-3" cx="209.27" cy="462.3" r="43.26"/>
+  <circle  id="gray" aria-label="gray" aria-flowto="green blue"  tabindex="0" role="button" class="cls-5" cx="395.09" cy="336.04" r="43.26"/>
+  <circle  id="green" aria-label="green" aria-flowto="yellow purple"  tabindex="0" role="button"  class="cls-2" cx="383.12" cy="165.21" r="43.26"/>
+  <g>
+    <path class="cls-8" d="m87.02,165.21c84.74-1.22,169.48-2.44,254.21-3.66"/>
+    <g>
+      <path class="cls-7" d="m87.02,165.21c76.78-1.11,153.56-2.21,230.34-3.32"/>
+      <polygon class="cls-9" points="306.33 176.86 312.41 161.96 305.91 147.24 341.23 161.55 306.33 176.86"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m173.04,64.27c-31.78,24.87-63.55,49.74-95.33,74.62"/>
+    <g>
+      <path class="cls-7" d="m173.04,64.27c-25.51,19.97-51.02,39.93-76.52,59.9"/>
+      <polygon class="cls-9" points="96.23 105.58 100.41 121.12 114.49 128.9 77.71 138.88 96.23 105.58"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m342.39,184.02c-86.82,47.5-173.64,94.99-260.46,142.49"/>
+    <g>
+      <path class="cls-7" d="m342.39,184.02c-79.84,43.68-159.67,87.35-239.51,131.03"/>
+      <polygon class="cls-9" points="105.63 296.66 107.22 312.68 119.85 322.65 81.93 326.51 105.63 296.66"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m351.33,193.93c-47.85,75.65-95.7,151.29-143.55,226.94"/>
+    <g>
+      <path class="cls-7" d="m351.33,193.93c-43.59,68.92-87.19,137.84-130.78,206.76"/>
+      <polygon class="cls-9" points="214.04 383.27 223.2 396.51 239.08 399.11 207.79 420.87 214.04 383.27"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m87.92,335.97c89.64,5.83,179.29,11.66,268.93,17.49"/>
+    <g>
+      <path class="cls-7" d="m87.92,335.97c81.7,5.31,163.4,10.63,245.1,15.94"/>
+      <polygon class="cls-9" points="320.85 365.96 328.09 351.59 322.77 336.4 356.85 353.46 320.85 365.96"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m77,371.64c35.44,18.85,70.89,37.7,106.33,56.55"/>
+    <g>
+      <path class="cls-7" d="m77,371.64c28.42,15.11,56.83,30.23,85.25,45.34"/>
+      <polygon class="cls-9" points="145.37 424.78 157.88 414.66 159.28 398.63 183.33 428.19 145.37 424.78"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m192.38,423.77c-40.66-75.9-81.32-151.81-121.98-227.71"/>
+    <g>
+      <path class="cls-7" d="m192.38,423.77c-36.9-68.89-73.8-137.78-110.7-206.66"/>
+      <polygon class="cls-9" points="100.04 220.02 84.02 221.46 73.93 234 70.41 196.06 100.04 220.02"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m366.84,305.68c-44.41-76.84-88.82-153.69-133.23-230.53"/>
+    <g>
+      <path class="cls-7" d="m366.84,305.68c-40.43-69.95-80.86-139.9-121.28-209.85"/>
+      <polygon class="cls-9" points="264 98.14 248.03 100.11 238.35 112.97 233.61 75.15 264 98.14"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-8" d="m387.47,292.78c-3.23-28.11-6.45-56.21-9.68-84.32"/>
+    <g>
+      <path class="cls-7" d="m387.47,292.78c-2.32-20.2-4.64-40.39-6.95-60.59"/>
+      <polygon class="cls-9" points="396.52 241.66 381.08 237.1 367.08 245.04 377.8 208.47 396.52 241.66"/>
+    </g>
+  </g>
 </svg>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    const possibleKeys = [1,2,3,4,5,6,7,8,9]
+    $('circle').on('focus', function(){
+        var flowto1 = $(this).attr('aria-flowto').split(' ');
+        var flowto2 ='';
+        flowto1.forEach((element, index) => flowto2 = flowto2 + ' ' + element + ' (' + (index + 1) + ')');
+        $(this).attr('aria-describedby','Flows to ' + flowto2);
+        $(this).attr('data-array', flowto1)
+    })
+    $('circle').on('keyup', function(event){
+        if(possibleKeys.includes(Number(event.key))) {
+            if($(this).attr('data-array').split(',').length ===1){
+                var idVal = $(this).attr('data-array').split(',')[0];
+                $('#' + idVal).focus();
+            } else {
+                var n = Number(event.key) - 1;
+                var idValMany = $(this).attr('data-array').split(',')[n];
+                $('#' + idValMany).focus();
+            }}
+        })
+    </script>
 </body>
 </html>
+
+
