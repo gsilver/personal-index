@@ -21,7 +21,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    
+  <div class="container">
+    <h1>Using <code>aria-flowto</code></h1>
+    <br>
+    <p><strong> Problem statement:</strong> to make flowchart experiences equitable, one of the many requirements
+      is providing the same exploratory affordances to a screen reader user as to a sighted user: what paths are avaliable from node x, for example.
+    </p>
+    <p>WAI-ARIA has a <code>aria-flowto</code> attribute that identifies 
+      the next element (or elements) in an alternate reading order of content. For example: <code>aria-flowto="id-of-element1 id-of-element2"</code>. This makes it a good candidate for
+    providing this missing affordance.</p>
+    <p><code>aria-flowto</code> is only read and used by the JAWS screen reader, however. NVDA has a long standing <a href="https://github.com/nvaccess/nvda/issues/4049"> request </a> for it, and VoiceOver does not support it and seems to have no plans to do so. </p>
+    <p>Below, <code>aria-flowto</code> is being used to indicate what the next elements are in the path, and a polyfill is provided to support NVDA and VO. It involves focus navigation.</p>
     <ul>
         <li>red flows to green</li>
         <li>
@@ -182,7 +192,8 @@
                 $('#' + idValMany).focus();
             }}
         })
-    </script>
+        </script>
+  </div>
 </body>
 </html>
 
