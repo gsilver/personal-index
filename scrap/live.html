@@ -31,11 +31,11 @@
         </div>
         
 
-        <div id="stuffDisplay" aria-live="{{selectedSetting}}" class="alert alert-primary">
+        <div id="stuffDisplay" aria-live="{{selectedSetting}}" class="alert alert-primary" ng-show="textStuff !=null">
           {{textStuff}}
         </div>
         <div class="form-group">
-          <label for="stuff">Type stuff here {{selectedSetting}}</label>
+          <label for="stuff">Type stuff here <code ng-show="selectedSetting != ''"> aria-live="{{selectedSetting}}"</code></label>
           <textarea id="stuff" class="form-control" name="" id="" rows="3" ng-model="textStuff">
             {{model.selectedOccurrence}}
           </textarea>
