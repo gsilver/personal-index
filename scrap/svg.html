@@ -97,13 +97,16 @@
     </style>
   </defs>
   
-  <circle id="blue"  aria-label="blue" aria-flowto="red"  tabindex="0" role="button"  class="cls-1" cx="209.27" cy="43.76" r="43.26"/>
-  <circle  id="green" aria-label="green" aria-flowto="yellow purple"  tabindex="0" role="button"  class="cls-2" cx="383.12" cy="165.21" r="43.26"/>
-  <circle  id="gray" aria-label="gray" aria-flowto="green blue"  tabindex="0" role="button" class="cls-5" cx="395.09" cy="336.04" r="43.26"/>
-  <circle  id="purple" aria-label="purple" aria-flowto="red"  tabindex="0" role="button"  class="cls-3" cx="209.27" cy="462.3" r="43.26"/>
-  <circle  id="yellow" aria-label="yellow" aria-flowto="purple gray"  tabindex="0" role="button" class="cls-6" cx="43.76" cy="344.87" r="43.26"/>
-  <circle  id="red" aria-label="red" aria-flowto="green"  tabindex="0" role="button"class="cls-4" cx="43.76" cy="165.21" r="43.26"/>
+  <circle id="blue"  aria-describedby="blueD" aria-label="blue" aria-flowto="red"  tabindex="0" role="button"  class="cls-1" cx="209.27" cy="43.76" r="43.26"/>
+  <circle  id="green" aria-label="green" aria-describedby="greenD" aria-flowto="yellow purple"  tabindex="0" role="button"  class="cls-2" cx="383.12" cy="165.21" r="43.26"/>
+  <circle  id="gray" aria-label="gray" aria-describedby="grayD" aria-flowto="green blue"  tabindex="0" role="button" class="cls-5" cx="395.09" cy="336.04" r="43.26"/>
+  <circle  id="purple" aria-label="purple" aria-describedby="purpleD" aria-flowto="red"  tabindex="0" role="button"  class="cls-3" cx="209.27" cy="462.3" r="43.26"/>
+  <circle  id="yellow" aria-label="yellow" aria-describedby="yellowD"  aria-flowto="purple gray"  tabindex="0" role="button" class="cls-6" cx="43.76" cy="344.87" r="43.26"/>
+  <circle  id="red" aria-label="red" aria-describedby="redD"  aria-flowto="green"  tabindex="0" role="button"class="cls-4" cx="43.76" cy="165.21" r="43.26"/>
   
+
+
+
   
   <g>
     <path class="cls-8" d="m87.02,165.21c84.74-1.22,169.48-2.44,254.21-3.66"/>
@@ -170,6 +173,14 @@
   </g>
 </svg>
 
+<div class="sr-only">
+<div id="blueD">Flows to red(1)</div>
+  <div id="greenD">Flows to yellow(1) purple(2)"</div>
+  <div id="grayD">Flows to green(1) blue(2)"</div>
+  <div  id="purpleD">Flows to red(1)</div>
+  <div  id="yellowD">FLows to purple(1) gray(2)</div>
+  <div  id="redD">Flows to green(1)</div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -180,8 +191,7 @@
     $('circle').on('focus', function(){
         let flowto1 = $(this).attr('aria-flowto').split(' ');
         let flowto2 ='';
-        flowto1.forEach((element, index) => flowto2 = flowto2 + ' ' + element + ' (' + (index + 1) + ')');
-        $(this).attr('aria-describedby','Flows to ' + flowto2);
+        //flowto1.forEach((element, index) => flowto2 = flowto2 + ' ' + element + ' (' + (index + 1) + ')');
         $(this).attr('data-array', flowto1)
     })
     $('circle').on('keyup', function(event){
