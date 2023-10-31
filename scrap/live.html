@@ -16,18 +16,21 @@
     
 
     <div class="container">
-      <div aria-live="polite" id="al1" style="display:none" class="alert alert-warning">
+
+
+      <div aria-live="polite" id="al1" class="alert alert-warning" aria-atomic="true">
         here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite.
       </div>  
-      <div aria-live="polite" id="al2"  style="display:none" class="alert alert-warning">
+      <div aria-live="polite" id="al2"  class="alert alert-warning" aria-atomic="true">
         here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite. here is another polite paragraph. Very polite.
       </div>  
-      <div aria-live="assertive" id="al3"  style="display:none" class="alert alert-danger">
+      <div aria-live="assertive" id="al3" class="alert alert-danger" aria-atomic="true">
         An assertive paragraph! An assertive paragraph! An assertive paragraph! An assertive paragraph!
       </div>
         
       
-      <section id="block-system-main" class="block block-system clearfix"><div id="alert-block"><div class="block-user-alert-holder"></div></div>
+      <section id="block-system-main" class="block block-system clearfix">
+        <div id="alert-block"><div class="block-user-alert-holder"></div></div>
         
         
         <h1>Declaration of Independence: A Transcription</h1>
@@ -333,24 +336,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script>
+          $( document ).ready(function() {
           var iter=0;
           var intervalId = window.setInterval(function(){
             iter = iter+1;
             switch(iter) {
               case 1:
-              $('#al1').css('display', 'flex'); 
+              $('#al1').css('display', 'flex').html('some new content in first polite container'); 
               break;
               case 2:
-              $('#al2').css('display', 'flex'); 
+              $('#al2').css('display', 'flex').html('some new content in second polite container');
               break;
               case 3:
-              $('#al3').css('display', 'flex'); 
+              $('#al3').css('display', 'flex').html('some new content in assertive container');
               default:
               clearInterval(intervalId); 
             } 
             console.log(iter + ' done')
           }, 5000);
-          
+        });
           // var stuffApp = angular.module('stuffApp', []);
           //   stuffApp.controller('stuffController', ['$scope', function($scope) {
             //     $scope.selectedSetting="";
@@ -359,3 +363,7 @@
         </div>  
       </body>
       </html>
+
+      <div aria-live="polite" id="al1" class="alert alert-warning">
+        here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite. here is a polite paragraph. Very polite.
+      </div>  

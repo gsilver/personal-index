@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <button type="button" class="btn btn-primary" id="logger">Start log</button>
+        <br><br>
+        
+        <div role="log" class="card" style="width: 18rem;">
+            <div class="card-body" id="log">
+            </div>
+        </div>
+        
+        <br><br>
+        <button type="button" class="btn btn-primary" id="summary">Add item to cart</button>
+        <div aria-live="polite" aria-atomic="true" aria-relevant="all" class="alert alert-success" id="summaryInfo" style="display:inline-block;display:none"></div>
+        <br><br>
+        <div role="log" class="panel panel-default">
+            <table class="table">
+                <caption>Your shopping cart</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Style</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Boot</td>
+                        <td>Red</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Sandal</td>
+                        <td>Blue</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Clog</td>
+                        <td>purple</td>
+                        <td>7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <br><br>
+        <button type="button" class="btn btn-primary" id="alertButton">Generate an alert</button>
+        <br><br>
+        <div role="alert" id="alertInfo" class="alert alert-danger" style="display:none"></div>
+        <br><br>
+
+
+
+    </div>
+    <!-- Optional JavaScript -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+    <script>
+        $( document ).ready(function() {
+            $('#logger').on('click', function(){
+                
+                var iter=0;
+                var intervalId = window.setInterval(function(){
+                    iter = iter+1;
+                    switch(iter) {
+                        case 1:
+                        $('#log').html('<p>First content added to log container</p>'); 
+                        break;
+                        case 2:
+                        $('#log').append('<p>Second content added to log container</p>');
+                        break;
+                        case 3:
+                        $('#log').append('<p>Third content added to log container. The end.</p>');
+                        default:
+                        clearInterval(intervalId); 
+                    } 
+                    console.log(iter + ' done')
+                }, 5000);
+            })
+        });
+        
+        $('#summary').on('click', function(){
+            $('#summaryInfo').css('display', 'inline-block');
+            $('#summaryInfo').text ('added purple brogues size 14 to your shopping cart');
+            $('tbody').append('<tr><th scope="row">3</th><td>Brogues</td><td>purple</td><td>14</td></tr>');
+
+        });
+        $('#alertButton').on('click', function(){
+            $('#alertInfo').css('display', 'block');
+            $('#alertInfo').text ('Here is an alert!');
+        });
+        
+    </script>
+</body>
+</html>
