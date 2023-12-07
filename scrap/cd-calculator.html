@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Compliance Documentation Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        table.vendor-questions {
+            width:100%;
+        }
+        table.vendor-questions td:nth-child(2) {
+            width:100%;
+        }
+        .table > thead > tr > th, .table > thead:first-child > tr:first-child > th, .col-sm-6 table thead th, .col-sm-9 table thead th, .col-sm-12 table thead th, #cke_2_contents table thead th, table thead td, #cke_2_contents table thead td {
+    padding: 10px;
+    border: 1px solid #cecbc9;
+    background: #e4e1df;
+    text-align: left;
+    vertical-align: top;
+}
+    </style>
+</head>
+<body>
+    <div class="main-container container" role="main">
+        
+        <div class="row">
+            
+            
+            <section class="col-sm-12">
+                <a id="main-content"></a>
+                <h1 class="page-header">Evaluating Accessibility Compliance Documentation</h1>
+                <div class="region region-content">
+                    <section id="block-system-main" class="block block-system clearfix">
+                        <article id="node-232" class="node node-page clearfix" about="/guides/buying/evaluating-compliance-docs" typeof="foaf:Document">
+                            <header>
+                                <span property="dc:title" content="Evaluating Accessibility Compliance Documentation" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>      </header>
+                                <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>Compliance documentation (CD) types</h2>
+                                    <div class="alert alert-info"><strong>Important:</strong> If the purchase presents a high risk, the actual product will need to be examined and evaluated and the results compared to the documentation, helping us to score the vendor.</div>
+                                    <ol>
+                                        <li><strong><a href="#qa">Vendor questionnaire answers</a>:</strong> In any RFP, the vendor is required to return answers to a <a href="https://docs.google.com/document/d/1oaYmOogyRnki2HeT1ieNmJGQcBYqQoiij-MggRhhsaM/edit?usp=sharing">questionnaire</a> that is attached to the RFP. This is the only CD that is required.</li>
+                                        <li><strong><a href="#vpat">VPAT</a>:</strong> Standing for “Voluntary Product Accessibility Template,” it is a self-disclosing document produced by the vendor (or a third party) which details each aspect of the Section 508 requirements and how the product supports each criteria.</li>
+                                        <li><strong>Other:</strong> Vendors may publish statements about their compliance on their website. While you are there, examine the website itself for accessibility using a <a href="/guides/quick-nontechnical-tests">quick non-technical test</a>. If their promotional material is not accessible, the product may be deficient as well.</li>
+                                    </ol>
+                                    <h2><a id="qa" name="qa"></a>Vendor questionnaire answers</h2>
+                                    <p><strong>How to score the table below:</strong> A yes response to a question scores the value in the right column. A no response scores a value of 0. The maximum score is 30 points.</p>
+                                    <p id="vqscore" class="alert alert-danger" aria-live="polite" style="display:none"></p>
+                                    <table class="table vendor-questions counter">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Question</th>
+                                                <th scope="col">Answer</th>
+                                                <th scope="col">Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">1</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q1">Vendor provided accessibility information about the product</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q1" value="2"> + 2</div>
+                                                    <!-- +2 -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">2</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q2">Vendor outlined how they account for accessibility in company policy and practices (including training, development, quality assurance)</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q2"  value="5"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">3</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q3">Vendor or a reputable 3rd party tests with actual users with different disabilities</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q3" value="5"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">4</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q4">Vendor or a reputable 3rd party tests with a range of assistive technology</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q4" value="5"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">5</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q5">Vendor provided an accessibility contact in the company and this person is not in marketing</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q5" value="3"> +3</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">6</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q6">Vendor prioritizes fixing accessibility errors and does not treat them as feature requests</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q6" value="3"> +3</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">7</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q7">An appreciable percentage of development and QA is devoted to accessibility</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q7" value="3"> +3</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">8</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q8">Vendor says product is not accessible, but has provided a roadmap to make it so</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q8" value="2"> +2</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">9</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="q9">Vendor provides details on training on accessibility for all roles involved</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="q9" value="2"> +2</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h2><a id="vpat" name="vpat"></a>VPAT analysis</h2>
+                                    <p><strong>How to score the table below:</strong> A Yes response to a question scores the value in the right column. A No response scores a value of 0. The maximum General Score is 15 points.</p>
+                                    <h3>General Score</h3>
+                                    <table class="table vendor-questions counter">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Question</th>
+                                                <th scope="col">Answer</th>
+                                                <th scope="col">Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">1</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="gq1">VPAT is the most current version, and it is a VPAT - WCAG or a VPAT - INT</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="gq1" value="5"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">2</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="gq2">Vendor provides detail on how product was tested and who tested it</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="gq2" value="5"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">3</div>
+                                                </td>
+                                                <td data-th="Answer"><label for="gq3">Vendor demonstrates that VPAT is relevant to current version of product or is otherwise up-to-date</label></td>
+                                                <td data-th="Value">
+                                                    <div class="center"><input type="checkbox" id="gq3" value="5"> +5</div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <h3>Success Criteria Score</h3>
+                                    <p>Success Criteria score will depend on the number of criteria that are “Not Applicable” - apply the following formula for maximum score <span class="nobr">(15 + [(38-N) * 5]</span> where N is the number of criteria that are not applicable. Once you have the maximum score you can calculate what the actual score is as a percentage of the maximum score.</p>
+                                    <h4>For each success criteria</h4>
+                                    <table class="table vendor-questions">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Question</th>
+                                                <th scope="col">Answer</th>
+                                                <th scope="col">Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">4</div>
+                                                </td>
+                                                <td data-th="Answer">If the conformance level is "Supports" and VPAT provides detailed remarks that explain why this conformance level was chosen</td>
+                                                <td data-th="Value">
+                                                    <div class="center"> +5</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center">5</div>
+                                                </td>
+                                                <td data-th="Answer">If the conformance level is "Partially Supports" or "Does Not Support" and</td>
+                                                <td data-th="Value">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center"><span class="sr-only">5-A</span></div>
+                                                </td>
+                                                <td data-th="Answer">•&nbsp;VPAT provides detailed remarks about what features are non-conformant</td>
+                                                <td data-th="Value">
+                                                    <div class="center"> +1</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center"><span class="sr-only">5-B</span></div>
+                                                </td>
+                                                <td data-th="Answer">•&nbsp;VPAT provides information about a remediation plan</td>
+                                                <td data-th="Value">
+                                                    <div class="center"> +2</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Question">
+                                                    <div class="center"><span class="sr-only">5-C</span></div>
+                                                </td>
+                                                <td data-th="Answer">•&nbsp;VPAT provides information on &nbsp;a reasonable remediation timeline</td>
+                                                <td data-th="Value">
+                                                    <div class="center"> +2</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>Provisionally, the VPAT needs to score 10 points of the General score and 90% of the criteria score to be acceptable. This method will be refined and communicated as we practice it in real life situations.</p>
+                                </div></div></div>    </article>
+                                
+                            </section>
+                            <section id="block-block-4" class="block block-block clearfix">
+                                
+                                
+                                <div class="feedback row">
+                                    <h2 class="card-title text-center">Tell us what you think</h2>
+                                    <p class="rtecenter home-intro">Your opinion is important to us. We use feedback to continually improve our website and resources to better meet your needs.</p>
+                                    <p class="text-center"><a class="btn btn-primary-outline" href="https://forms.gle/nXjyCJ5wY8txK1R19">Provide Feedback</a></p>
+                                </div>
+                                
+                            </section>
+                        </div>
+                    </section>
+                    
+                    
+                </div>
+            </div>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <script>
+                $('.counter input').on('click', function(){
+                    calculate()
+                })
+                function calculate(){
+                    let total=0;
+                    $('.counter input:checked').each(function( index ) {
+                        total=total + parseInt($(this).val());
+                    });
+                    $('#vqscore').text(total);
+                    if(total === 0){
+                        $('#vqscore').hide()
+                    } else {
+                        console.log('ed')
+                        $('#vqscore').show()
+                    }
+
+                    if(total <= 20){
+                        $('#vqscore').attr('class', 'alert alert-danger');
+
+                    }
+                    if(total > 20 && total <= 25){
+                        $('#vqscore').attr('class', 'alert  alert-warning');
+                    }
+                    if (total > 25){
+                        $('#vqscore').attr('class', 'alert alert-success');
+                    }
+                }
+            </script>
+
+
+        </body>
+        </html>
