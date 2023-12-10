@@ -46,14 +46,14 @@
                                         <li><strong>Other:</strong> Vendors may publish statements about their compliance on their website. While you are there, examine the website itself for accessibility using a <a href="/guides/quick-nontechnical-tests">quick non-technical test</a>. If their promotional material is not accessible, the product may be deficient as well.</li>
                                     </ol>
                                     <h2><a id="qa" name="qa"></a>Vendor questionnaire answers</h2>
-                                    <p><strong>How to score:</strong> Select the checkboxes in the following table when the assertion is clearly true. </p>
-                                    <p id="vqscore" class="alert alert-danger" aria-live="polite" style="display:none"><strong id="vqscore_count"></strong>. <span id="vqscore_msg"></span></p>
-                                    <table class="table vendor-questions questionnaire-answers">
+                                    <p><strong>How to score:</strong> Select the checkboxes in the following table when the assertion is clearly true. When done, click the "Calculate questionaire" button.</p>
+                                    
+                                    <table class="table vendor-questions table-striped questionnaire-answers">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Question</th>
                                                 <th scope="col">Answer</th>
-                                                <th scope="col">Value</th>
+                                                <th scope="col">True/False</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -141,10 +141,26 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    
+                                    <div id="vqscore" class="alert" aria-live="polite" >
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <button class="btn btn-primary" id="calculateqs">Calculate questionnaire</button>
+                                            </div>
+                                            <div class="col-9" style="display: none;">
+                                                <span id="vqscore_container" >
+                                                    Score: <strong id="vqscore_count">0</strong>.
+                                                    <span id="vqscore_msg"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
                                     <h2><a id="vpat" name="vpat"></a>VPAT analysis</h2>
-                                    <p>Select from the choices below. When done click on the "Calculate" button at the bottom.</p>
+                                    <p>Select from the choices below. When done click on the "Calculate VPAT" button at the bottom.</p>
                                     <h3>General Score</h3>                                    
-                                    <table class="table VPAT-questions">
+                                    <table class="table table-striped VPAT-questions">
                                         <thead>
                                             <tr>
                                                 <th scope="col">Question</th>
@@ -183,6 +199,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    
                                     <h3>Success Criteria Score</h3>
                                     
                                     <p>For each success criteria. Select the appropriate answer. See <a href="">documentation (non working link for now)</a>.</p>
@@ -273,25 +290,22 @@
                                                 
                                                 
                                                 
-                                                <p id="vpatscore" class="alert" aria-live="polite" ><button class="btn btn-primary" id="calculate">Calculate</button>
-                                                    <span id="vpat_score_container" style="display:none">
-                                                        <strong id="vpatscore_count">0</strong>
-                                                        <span id="vpatscore_msg"></span>
-                                                    </span>
-                                                </p>
+                                                <div id="vpatscore" class="alert" aria-live="polite" >
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <button class="btn btn-primary" id="calculate">Calculate VPAT</button>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <span id="vpat_score_container" style="display:none">
+                                                                Score: <strong id="vpatscore_count">0</strong>.
+                                                                <span id="vpatscore_msg"></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 
                                                 <p>Provisionally, the VPAT needs to score 10 points of the General score and 90% of the criteria score to be acceptable. This method will be refined and communicated as we practice it in real life situations.</p>
                                             </div></div></div>    </article>
-                                            
-                                        </section>
-                                        <section id="block-block-4" class="block block-block clearfix">
-                                            
-                                            
-                                            <div class="feedback row">
-                                                <h2 class="card-title text-center">Tell us what you think</h2>
-                                                <p class="rtecenter home-intro">Your opinion is important to us. We use feedback to continually improve our website and resources to better meet your needs.</p>
-                                                <p class="text-center"><a class="btn btn-primary-outline" href="https://forms.gle/nXjyCJ5wY8txK1R19">Provide Feedback</a></p>
-                                            </div>
                                             
                                         </section>
                                     </div>
@@ -307,62 +321,62 @@
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
                         <script>
-                            $('.questionnaire-answers input').on('click', function(){
-                                calculate_questionnaire()
-                            })
+                            //function to calculate total for questionnaire answers
                             function calculate_questionnaire(){
                                 let questionnaire_total=0;
+                                //for each checked input, add it's value to the total score
                                 $('.questionnaire-answers input:checked').each(function( index ) {
                                     questionnaire_total=questionnaire_total + parseInt($(this).val());
                                 });
-                                $('#vqscore strong#vqscore_count').text('Score: ' + questionnaire_total);
+                                //add score to the message
+                                $('#vqscore_count').text(questionnaire_total);
                                 if(questionnaire_total === 0){
-                                    $('#vqscore').hide();
+                                    $('#vqscore .col-9').hide();
                                 } else {
-                                    $('#vqscore').show();
+                                    $('#vqscore .col-9').show();
                                 }
+                                //if total is less than or 22, paint red
                                 if(questionnaire_total <= 22){
                                     $('#vqscore').attr('class', 'alert alert-danger');
                                     $('#vqscore_msg').html('The answers to the vendor questionnaire are very problematic/insufficient. Depending on different factors (risk, importance of purchase), etc, reject product offer, request clarification, etc.');
                                     
                                 }
+                                //if total is more than or 22 and less than or equal to 27, paint yellow
                                 if(questionnaire_total > 22 && questionnaire_total <= 27){
                                     $('#vqscore').attr('class', 'alert  alert-warning');
                                     $('#vqscore_msg').html('The answers to the vendor questionnaire are somewhat insufficient. Depending on different factors (risk, importance of purchase), etc, reject product offer, request clarification, etc.');
                                 }
+                                //if total is more than or 27, paint green
                                 if (questionnaire_total > 27){
                                     $('#vqscore').attr('class', 'alert alert-success');
                                     $('#vqscore_msg').html('The answers to the vendor questionnaire are positive. Depending on different factors (risk, importance of purchase, etc), accept product offer, review product, etc.');
                                 }
                             }
+                            
+                            //function to calculate total vpat points
                             function calculate_vpat(){
+                                let vpat_possible=0;
                                 let vpat_total=0;
+                                let vpat_general=0;
                                 $('#vpat_score_container').show();                    
-                                $('.VPAT-questions input:checked, .sp:checked, .rem:checked').each(function( index ) {
-                                    vpat_total=vpat_total + parseInt($(this).val());
+                                //add all the values of general score
+                                $('.VPAT-questions input:checked').each(function( index ) {
+                                    vpat_general=vpat_general + parseInt($(this).val());
                                 });
                                 
-                                $('#vpatscore strong#vpatscore_count').text('' + vpat_total);
-                                
-                                
-                                //calculate score here (15 + [(56-NA) * 5]  - then do the styling  
-                                
-                                // if(vpat_total <= 22){
-                                    //     $('#vpatscore').attr('class', 'alert alert-danger');
-                                    //     $('#vpatscore_msg').html('The answers to the vendor questionnaire are very problematic/insufficient. Depending on different factors (risk, importance of purchase), etc, reject product offer, request clarification, etc.');
-                                    
-                                    // }
-                                    // if(vpat_total > 22 && vpat_total <= 27){
-                                        //     $('#vpatscore').attr('class', 'alert  alert-warning');
-                                        //     $('#vpatscore_msg').html('The answers to the vendor questionnaire are somewhat insufficient. Depending on different factors (risk, importance of purchase), etc, reject product offer, request clarification, etc.');
-                                        // }
-                                        // if (vpat_total > 27){
-                                            //     $('#vpatscore').attr('class', 'alert alert-success');
-                                            //     $('#vpatscore_msg').html('The answers to the vendor questionnaire are positive. Depending on different factors (risk, importance of purchase, etc), accept product offer, review product, etc.');
-                                            // }
-                                        }
-                                        // does showing and hiding of checkboxes when does not support or part. support radio is selected
-                                        $('.sc-score input:radio').on('click', function(){
+                                $('.sp:checked, .sc-ns:checked').each(function( index ) {
+                                    vpat_possible=vpat_possible +1;
+                                });
+                                //add all the values of SC score, ignoring NA
+                                $('.sp:checked, .rem:checked').each(function( index ) {
+                                    vpat_possible=vpat_possible +1;
+                                    vpat_total=vpat_total + parseInt($(this).val());
+                                });
+                                $('#vpatscore strong#vpatscore_count').text('General:' + vpat_general + ',  Success Criteria:' + vpat_total/vpat_possible);
+                            }
+                            
+                            // does showing and hiding of checkboxes when does not support or part. support radio is selected
+                            $('.sc-score input:radio').on('click', function(){
                                             if ( $(this).hasClass('sc-ns')) {
                                                 $(this).parents('td').find('.ns-how').show();
                                             } else {
@@ -370,12 +384,17 @@
                                                 $(this).parents('td').find('input:checkbox').prop( 'checked', false )
                                             }
                                         });
-                                        $('#calculate').on('click', function(){
-                                            calculate_vpat();
-                                        })
-                                        
-                                    </script>
-                                    
-                                    
-                                </body>
-                                </html>
+                            
+                            //listeners for the two buttons to calculate - invoque functions above
+                            $('#calculate').on('click', function(){
+                                calculate_vpat();
+                            })                        
+                            $('#calculateqs').on('click', function(){
+                                calculate_questionnaire()
+                            })         
+                                            
+                            </script>
+                                                
+                                                
+                                            </body>
+                                            </html>
