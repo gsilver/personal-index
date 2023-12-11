@@ -294,7 +294,7 @@
                                                             </div>
                                                             <div class="col-9">
                                                                 <span id="vpat_score_container" style="display:none">
-                                                                    Score: <strong id="vpatscore_count">0</strong>.
+                                                                    Calculation: <span id="vpatscore_count">0</span>.
                                                                     <span id="vpatscore_msg"></span>
                                                                 </span>
                                                             </div>
@@ -372,7 +372,11 @@
                         vpat_total=vpat_total + parseInt($(this).val());
                     });    
                 });
-                $('#vpatscore strong#vpatscore_count').text('General score:' + vpat_general + ',  Success Criteria Score: ' + 100/(vpat_answered *5) * vpat_total + '%');
+                if(vpat_answered  > 0) {
+                    $('#vpatscore span#vpatscore_count').text('General score:' + vpat_general + ',  Success Criteria Score: ' + 100/(vpat_answered *5) * vpat_total + '%');
+                } else {
+                    $('#vpatscore span#vpatscore_count').text('Please answer all the questions');
+                }
             }
             
             // does showing and hiding of checkboxes when does not support or part. support radio is selected
