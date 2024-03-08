@@ -13,12 +13,13 @@
     <div class="container">
         <br>
         <h1> <code>aria-hidden </code>problems </h1>
-        <div aria-hidden="true">
-            <p>The following 2 buttona are contained in a container with <code> aria-hidden="true"</code> applied to it.</p>
+        <p>The following 2 buttons are contained in a container with <code> aria-hidden="true"</code> applied to it.</p>
             <p>At issue is that hiding a container with <code>aria-hidden</code> still leaves the focusable children inside the container as focusable elements.</p>
+            <p>Test: is Button 2 preceivable and focusable with a screen reader?</p>
+        <div aria-hidden="true">
             <p><button class="btn btn-primary">Button 1</button>
             <button class="btn btn-primary">Button 2 (that has aria-hidden applied)</button></p>
-            <p>Test: is Button 2 preceivable and focusable with a screen reader?</p>
+            
 
             
         </div>   
