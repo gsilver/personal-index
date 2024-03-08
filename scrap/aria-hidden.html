@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-       <div aria-hidden="true">
-        <p>This button is contained in an aria-hidden container</p>
-        <button>A button</button>
+</head>
+<body>
+    <div class="container">
+        <div aria-hidden="true">
+            <p>This button is contained in an aria-hidden container</p>
+            <p>At issue is that hiding a container with <code>aria-hidden</code> still leaves the focusable children inside the container as focusable elements.</p>
+            <button>Button 1</button>
+            <button class="btn btn-primary">Button 2 (that has aria-hidden applied)</button>
+            <p>Test: is Button 2 preceivable and focusable with a screen reader?</p>
 
-
-       </div>   
-
-
-
+            
+        </div>   
+        
+    </div>
+    
+    
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
