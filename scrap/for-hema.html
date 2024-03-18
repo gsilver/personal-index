@@ -1,31 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div class="container">
+</head>
+<body>
+    <div class="container">
         <br>
+        
+        
         <h1>Some tools to help test </h1>
-        <h2>Color and contrast</h2>
-        <p>Drag the link below to the browser toolbar</p>
-        <p>
-
+        <div class="alert alert-warning">
+            <p>Since we cannot test directly, here are some simple tests that Hema can perform herself. These come from our page on <a href="https://accessibility.umich.edu/training/quick-non-technical-tests"> non-technical tests</a></p>    
+            <ol>
+                <li>Tab through screen</li>
+                <li>Try to operate all the controls with the keyboard</li>
+                <li>Use the filters with a keyboard only</li>
+                <li>Greyscale screen, drag this link to toolbar: <a href="javascript:void function(){(function(){function i(i){document.body.style.filter=i,document.body.style.webkitFilter=i}window.isGrayscale%3F(i('none'),window.isGrayscale=!1):(i('grayscale(1)'),window.isGrayscale=!0)})()}();">Grayscale</a></li>
+                <li>Zoom</li>
+                <li>Bump text size</li>
+                <li>Change text spacing, drag this to toolbar <a href="javascript:(function()%7Bvar d=document,id='phltsbkmklt',el=d.getElementById(id),f=d.querySelectorAll('iframe'),i=0,l=f.length;if(el)%7Bfunction removeFromShadows(root)%7Bfor(var el of root.querySelectorAll('*'))%7Bif(el.shadowRoot)%7Bel.shadowRoot.getElementById(id).remove();removeFromShadows(el.shadowRoot);%7D%7D%7Del.remove();if(l)%7Bfor(i=0;i<l;i++)%7Btry%7Bf%5Bi%5D.contentWindow.document.getElementById(id).remove();removeFromShadows(f%5Bi%5D.contentWindow.document);%7Dcatch(e)%7Bconsole.log(e)%7D%7D%7DremoveFromShadows(d);%7Delse%7Bs=d.createElement('style');s.id=id;s.appendChild(d.createTextNode('*%7Bline-height:1.5 !important;letter-spacing:0.12em !important;word-spacing:0.16em !important;%7Dp%7Bmargin-bottom:2em !important;%7D'));function applyToShadows(root)%7Bfor(var el of root.querySelectorAll('*'))%7Bif(el.shadowRoot)%7Bel.shadowRoot.appendChild(s.cloneNode(true));applyToShadows(el.shadowRoot);%7D%7D%7Dd.getElementsByTagName('head')%5B0%5D.appendChild(s);for(i=0;i<l;i++)%7Btry%7Bf%5Bi%5D.contentWindow.document.getElementsByTagName('head')%5B0%5D.appendChild(s.cloneNode(true));applyToShadows(f%5Bi%5D.contentWindow.document);%7Dcatch(e)%7Bconsole.log(e)%7D%7DapplyToShadows(d);%7D%7D)();">Change text spacing</a></li>
+            </ol>
+            
+        </div>
         
-        <a href="javascript:void function(){(function(){function i(i){document.body.style.filter=i,document.body.style.webkitFilter=i}window.isGrayscale%3F(i('none'),window.isGrayscale=!1):(i('grayscale(1)'),window.isGrayscale=!0)})()}();">Grayscale</a>
-        </p>
         
-      </div>
+        
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
