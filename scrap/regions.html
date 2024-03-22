@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Adding structure</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        section > section {padding-left: 2rem;}
+        section > section > section{padding-left: 2rem;}
+        hr {
+            background:#ccc;
+            height: .1rem;
+        }
+        h2{
+            font-size: 100%;
+        }
+        .md {
+            color:#777
+        }
+        [lang] {
+            color: brown
+        }
+        code {
+            font-weight: bold;
+            color: green
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>Giving complex views semantics.</h1>
+        <p>The use case was Canvas discussions. The goal is to provide a lightweight structure that will give screen reader users a good context for all the components of a post:</p>
+        <ul>
+            <li>How is this post related to others?</li>
+            <li>What does this "Reply" button do? What am I going to reply to?</li>
+        </ul>
+        <p>There are various possible mechanisms. Let's experiment!</p>
+        <hr>
+        <!-- <h2>Nested sections</h2>
+            <p>With section headings</p>
+            <hr>
+            <section aria-label="do not choke on popcorn">
+                <h2>Topic: why is there something rather than nothing?</h2>
+                <p class="md"> Gonzalo Silverio - 3:00 AM</p>
+                <p>Think about it. If we crack this one we will be hailed as gods.</p>
+                <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                <section>
+                    <h2>Reply: That is a <span lang="la">petitio principii</span></h2>
+                    <p class="md"> Brandon Werner - 3:02 AM</p>
+                    <p>Asking the question presuposes that there is something. The question cannot be asked if there is nothing. It is non-sense.</p>
+                    <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                    <section>
+                        <h2>Reply to reply: <span lang="fr"> Au contraire mon frere!</span></h2>
+                        <p class="md"> Kurt Murmers - 3:04 AM</p>
+                        <p>Language determinism is so 1930s. Get with the program</p>
+                        <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                    </section>    
+                </section>
+            </section>
+            <hr> -->
+            <h2>Nested sections</h2>
+            <p>With <code>aria-labelledby</code></p>
+            <hr>
+            <section aria-label="popcorn">
+
+                <div id="l1">Topic: why is there something rather than nothing?</div>
+                <p class="md"> Gonzalo Silverio - 3:00 AM</p>
+                <p>Think about it. If we crack this one we will be hailed as gods.</p>
+                <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+            </section>
+            <section aria-labelledby="l2">
+                <div id="l2">Reply: That is a <span lang="la">petitio principii</span></div>
+                <p class="md"> Brandon Werner - 3:02 AM</p>
+                <p>Asking the question presuposes that there is something. The question cannot be asked if there is nothing. It is non-sense.</p>
+                <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+            </section>
+            <section aria-labelledby="l3">
+                <div id="l3">Reply to reply: <span lang="fr"> Au contraire mon frere!</span></div>
+                <p class="md"> Kurt Murmers - 3:04 AM</p>
+                <p>Language determinism is so 1930s. Get with the program</p>
+                <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+            </section>
+            <!-- <hr>
+                <h2>As a list of lists</h2>
+                <hr>
+                <ul>
+                    <li>
+                        <div>Topic: why is there something rather than nothing?</div>
+                        <p class="md"> Gonzalo Silverio - 3:00 AM</p>
+                        <p>Think about it. If we crack this one we will be hailed as gods.</p>
+                        <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <div>Reply: That is a <span lang="la">petitio principii</span></div>
+                                <p class="md"> Brandon Werner - 3:02 AM</p>
+                                <p>Asking the question presuposes that there is something. The question cannot be asked if there is nothing. It is non-sense.</p>
+                                <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <div>Reply to reply: <span lang="fr"> Au contraire mon frere!</span></div>
+                                            <p class="md"> Kurt Murmers - 3:04 AM</p>
+                                            <p>Language determinism is so 1930s. Get with the program</p>
+                                            <p> <button type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                        </ul>
+                    </li>
+                </ul> 
+                
+                <hr>
+                <h2>As a list of lists</h2>
+                <p>With additional detail on the "Reply" button (via <code>aria-describedby</code> pointed at the message header)</p>
+                <hr>
+                <ul>
+                    <li>
+                        <div id="msg1">Topic: why is there something rather than nothing?</div>
+                        <p class="md"> Gonzalo Silverio - 3:00 AM</p>
+                        <p>Think about it. If we crack this one we will be hailed as gods.</p>
+                        <p> <button aria-describedby="msg1" type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <div id="msg2">Reply: That is a <span lang="la">petitio principii</span></div>
+                                <p class="md"> Brandon Werner - 3:02 AM</p>
+                                <p>Asking the question presuposes that there is something. The question cannot be asked if there is nothing. It is non-sense.</p>
+                                <p> <button aria-describedby="msg2" type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <div id="msg3">Reply to reply: <span lang="fr"> Au contraire mon frere!</span></div>
+                                            <p class="md"> Kurt Murmers - 3:04 AM</p>
+                                            <p>Language determinism is so 1930s. Get with the program</p>
+                                            <p> <button aria-describedby="msg3"  type="button" class="btn btn-primary btn-sm">Reply</button> </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            -->
+        </div> 
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+            $('button').on('click', function(){
+                alert('this button does nothing at all, quit it!')
+            })
+        </script>
+        
+        
+    </body>
+    </html>
