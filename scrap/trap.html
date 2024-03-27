@@ -23,11 +23,20 @@
       <div class="container">
         <br>
         <h1>
-            Honey trap
+            Preventing bot submissions
         </h1>
         <form>
-          <h2>Putting input inside a very small transparent container</h2>
-            <p>Input instructions (not the label) should make clear that screen reader users should leave blank</p>
+          <h2>1) Putting input inside a very small transparent container</h2>
+            <p>Input is perceivable by screen readers, so input instructions (not the label) should make clear that screen reader users should leave blank</p>
+            <pre><code>
+    &lt;label for=&quot;exampleFormControlInput1&quot;&gt;Email address&lt;/label&gt;
+    &lt;input
+      type=&quot;email&quot;
+      id=&quot;exampleFormControlInput1&quot;
+      placeholder=&quot;name@example.com&quot;
+      aria-describedby=&quot;nofillinst&quot;&gt;
+    &lt;p id=&quot;nofillinst&quot;&gt;Do not fill this information&lt;/p&gt;
+            </code></pre>
             <div class="frame">
             <div class="form-group" style="width:1px;height:1px;overflow:hidden;">
               <label for="exampleFormControlInput1">Email address</label>
@@ -35,14 +44,23 @@
               <p id="nofillinst">Do not fill this information</p>
             </div>
           </div>
-            <h2>Putting input in a container hidden via <code>display:none</code></h2>
+            <h2>2) Putting input in a container hidden via <code>display:none</code></h2>
+            <p>Will be hidden from screen reader users.</p>
             <div class="frame">
             <div class="form-group" style="display:none">
               <label for="exampleFormControlInput1">Email address</label>
               <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
           </div>
-            <h2>Hiding an input container with Javascript  (<code>display:none</code>) after document loads</h2>
+            <h2>3) Hiding an input container with Javascript</h2>
+            <p>
+              Replacing the existing <code>Qualtrics.SurveyEngine.addOnload</code> to hide the input/label after document loads. Will be hidden from screen reader users.
+            </p> 
+  <pre><code>
+    Qualtrics.SurveyEngine.addOnload(function(){
+      jQuery("#"+this.questionId).hide();
+    });
+  </code></pre>
             <div class="frame">
             <div class="form-group" id="hideme">
               <label for="exampleFormControlInput1">Email address</label>
