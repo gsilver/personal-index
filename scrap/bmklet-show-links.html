@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <button onclick="doit()">Check the links</button>
+    <ul>
+        <li><a href="http://umich.edu">Link to U-M</a></li>
+        <li><a href="http://umich.edu"> <img src="https://media.istockphoto.com/id/1505391132/photo/summer-joy.jpg?s=1024x1024&w=is&k=20&c=qX2kUiJXovswCTHVpxt9D7XlJFLRDGmfH7z2CxKxD_Q=" alt=""> </a></li>
+        <li> <a href="http://umich.edu"></a> </li>
+    </ul>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+
+    <script>
+        //javascript:
+        //(() => 
+            function doit() {
+            const links = document.querySelectorAll('a');
+            const message = document.createElement('ul');
+            for (let link of links) {
+                if (link.innerText === '') {
+                    for (const child of link.children) {
+                        if (child.tagName === 'IMG' || child.tagName === 'SVG') {
+                            if (!child.alt) {
+                                let li = document.createElement("li");
+                                message.append(li);
+                                const newContent = document.createTextNode('IMG or SVG: NO ALT VALUE');
+                                li.appendChild(newContent);
+                                console.log('IMG or SVG: NO ALT VALUE');
+        
+                            } else {
+                                let li = document.createElement("li");
+                                message.append(li);
+                                const newContent = document.createTextNode('IMG or SVG: ' + child.alt);
+                                li.appendChild(newContent);
+                                console.log('IMG or SVG: ' + child.alt);
+                            }
+                        }
+                    }
+                } else {
+                    let li = document.createElement("li");
+                    message.append(li);
+                    const newContent = document.createTextNode(link.innerText.trim());
+                    li.appendChild(newContent);
+        
+                    console.log(link.innerText.trim());
+                }
+            }
+            console.log(message);
+            document.body.append(message)
+        }
+        //)();
+        </script>
+
+</body>
+</html>
