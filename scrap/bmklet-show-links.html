@@ -31,33 +31,34 @@
             function doit() {
             const links = document.querySelectorAll('a');
             const message = document.createElement('ul');
+            
+            //can I create the li only once
+            //and instead of appending the content, replace it?
             for (let link of links) {
                 if (link.innerText === '') {
                     for (const child of link.children) {
+                        // maybe also check for common font icon containers
                         if (child.tagName === 'IMG' || child.tagName === 'SVG') {
                             if (!child.alt) {
-                                let li = document.createElement("li");
-                                message.append(li);
                                 const newContent = document.createTextNode('IMG or SVG: NO ALT VALUE');
-                                li.appendChild(newContent);
-                                console.log('IMG or SVG: NO ALT VALUE');
+                                const li = document.createElement("li");
+                                li.textContent=newContent.wholeText;
+                                message.append(li);
         
                             } else {
-                                let li = document.createElement("li");
-                                message.append(li);
                                 const newContent = document.createTextNode('IMG or SVG: ' + child.alt);
-                                li.appendChild(newContent);
-                                console.log('IMG or SVG: ' + child.alt);
+                                const li = document.createElement("li");
+                                li.textContent=newContent.wholeText;
+                                message.append(li);
+
                             }
                         }
                     }
                 } else {
-                    let li = document.createElement("li");
-                    message.append(li);
                     const newContent = document.createTextNode(link.innerText.trim());
-                    li.appendChild(newContent);
-        
-                    console.log(link.innerText.trim());
+                    const li = document.createElement("li");
+                    li.textContent=newContent.wholeText;
+                    message.append(li);
                 }
             }
             console.log(message);
