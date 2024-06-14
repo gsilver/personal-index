@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>A grid table</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            [role="columnheader"],[role="rowheader"] {
+                font-weight: bold;
+            }
+        </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <h1 id="tablecaptiom">A grid table</h1>
+        <br>
+        <div role="grid" aria-labeledby="tablecaptiom">
+            <div class="row mb-3" role="row">
+                <div role="columnheader" class="col-4 themed-grid-col">Shoe type</div>
+                <div role="columnheader" class="col-4 themed-grid-col">Color</div>
+                <div role="columnheader" class="col-4 themed-grid-col">Size</div>
+            </div>
+            <div class="row mb-3"  role="row">
+                <div  role="rowheader" class="col-4 themed-grid-col">Brogue</div>
+                <div role="gridcell"class="col-4 themed-grid-col">Purple   </div>
+                <div role="gridcell" class="col-4 themed-grid-col">13</div>
+            </div>
+            <div class="row mb-3" role="row">
+                <div  role="rowheader" class="col-4 themed-grid-col">Galoshes</div>
+                <div role="gridcell" class="col-4 themed-grid-col">Transparent</div>
+                <div role="gridcell" class="col-4 themed-grid-col">6</div>
+            </div>
+
+            <div class="row mb-3" role="row">
+                <div  role="rowheader" class="col-4 themed-grid-col">Sandals</div>
+                <div role="gridcell" class="col-4 themed-grid-col">Golden</div>
+                <div role="gridcell" class="col-4 themed-grid-col">8</div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
