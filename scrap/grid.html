@@ -14,6 +14,14 @@
             [role="columnheader"],[role="rowheader"] {
                 font-weight: bold;
             }
+            [role="columnheader"] {
+                border-bottom: 2px solid #aaa
+            }    
+            .grid .row:nth-child(2n) {
+                background-color: #eee;
+                /* border-color: #4a64ed; */
+            }
+            .col-sm-4 {padding:1em}
         </style>
 </head>
 
@@ -23,27 +31,27 @@
         <br>
         <h1 id="tablecaptiom">A grid table</h1>
         <br>
-        <div role="grid" aria-labeledby="tablecaptiom">
-            <div class="row mb-3" role="row">
-                <div role="columnheader" class="col-4 themed-grid-col">Shoe type</div>
-                <div role="columnheader" class="col-4 themed-grid-col">Color</div>
-                <div role="columnheader" class="col-4 themed-grid-col">Size</div>
+        <div role="grid" class="grid" aria-labeledby="tablecaptiom">
+            <div class="row" role="row">
+                <div role="columnheader" class="col-sm-4 themed-grid-col">Shoe type</div>
+                <div role="columnheader" class="col-sm-4 themed-grid-col">Color</div>
+                <div role="columnheader" class="col-sm-4 themed-grid-col">Size</div>
             </div>
-            <div class="row mb-3"  role="row">
-                <div  role="rowheader" class="col-4 themed-grid-col">Brogue</div>
-                <div role="gridcell"class="col-4 themed-grid-col">Purple   </div>
-                <div role="gridcell" class="col-4 themed-grid-col">13</div>
+            <div class="row"  role="row">
+                <div  role="rowheader" class="col-sm-4 themed-grid-col">Brogue </div>
+                <div role="gridcell"class="col-sm-4 themed-grid-col">Purple   </div>
+                <div role="gridcell" class="col-sm-4 themed-grid-col">13</div>
             </div>
-            <div class="row mb-3" role="row">
-                <div  role="rowheader" class="col-4 themed-grid-col">Galoshes</div>
-                <div role="gridcell" class="col-4 themed-grid-col">Transparent</div>
-                <div role="gridcell" class="col-4 themed-grid-col">6</div>
+            <div class="row" role="row">
+                <div  role="rowheader" class="col-sm-4 themed-grid-col">Galoshes</div>
+                <div role="gridcell" class="col-sm-4 themed-grid-col">Transparent</div>
+                <div role="gridcell" class="col-sm-4 themed-grid-col">6</div>
             </div>
 
-            <div class="row mb-3" role="row">
-                <div  role="rowheader" class="col-4 themed-grid-col">Sandals</div>
-                <div role="gridcell" class="col-4 themed-grid-col">Golden</div>
-                <div role="gridcell" class="col-4 themed-grid-col">8</div>
+            <div class="row" role="row">
+                <div  role="rowheader" class="col-sm-4 themed-grid-col">Sandals</div>
+                <div role="gridcell" class="col-sm-4 themed-grid-col">Golden</div>
+                <div role="gridcell" class="col-sm-4 themed-grid-col">8</div>
             </div>
 
         </div>
