@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Toggle</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        button {
+            color:#0d62bd !important
+        }
+        [name="options2"]  {
+            position:relative !important;
+            clip: rect(20, 0, 0, 0) !important;
+
+        }
+    </style>
+</head>
+  <body>
+    <div class="container">
+        <br>
+        <h1>Toggle</h1>
+        <br>
+        
+        <p>Single toggle as a button</p>
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+            <span style="color:#fff">Single toggle</span>
+          </button>
+          <br><br>
+          <p>Single toggle as a checkbox</p>
+          <div class="btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="checkbox"> Hidden checkbox
+            </label>
+          </div>
+          <br>
+          <p>Single toggle as a checkbox showing the checkbox</p>
+          <label class="btn btn-secondary active">
+            <input type="checkbox"> Visible checkbox
+          </label>
+          <br>
+          <p>Multiple toggles as hidden radio inputs</p>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1"> Strudel
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2"> Waffle
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option3"> Carob pie
+            </label>
+          </div>
+          <br><br>
+          <p>Multiple toggles as radio inputs, with radio inputs shown</p>
+
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options2" id="option21"> Oatmeal
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options2" id="option22"> Grits
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options2" id="option23"> Polenta
+            </label>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+                <br>
+              <h3>
+                Guidelines
+              </h3>
+              <br>
+              <ul>
+                <li>The switch receives and displays keyboard focus state clearly</li>
+                <li>The visible focus treatment is independent of the state of the switch</li>
+                <li>The focus and state flags of the switch do not rely on color only</li>
+                <li>The switch responds to Space or Enter keys to change state</li>
+                <li>The toggle switch provides its name, initial state and role to the accessibility tree when encountered</li>
+                <li>The toggle switch changes the state in the accessibility tree when toggled via <code>aria-pressed="true/false" when a button</code></li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <p>Credits: <a href="https://getbootstrap.com/docs/4.6/components/buttons/">https://getbootstrap.com/docs/4.6/components/buttons//</a></p>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
