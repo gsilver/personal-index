@@ -8,7 +8,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
+        code {
+            color: #dc3545;
+        }
     </style>
 </head>
   <body>
@@ -26,6 +30,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </div>
+          <hr>
           <div class="panel panel-default">
             <div class="panel-body">
                 <br>
@@ -34,12 +39,22 @@
               </h3>
               <br>
               <ul>
-                <li>The trigger that opens the menu needs to be a button or have the button role and have a name</li>
-                <li>Button can be activated with Space or Enter keys</li>
-                <li>When button is activated and menu is open, the user can use the arrow up/down to navigate the menu choices (optimal) or the tab key to go down or shift+tab to go up</li>
-                <li>Trigger will have <code>aria-expanded=”true”</code> when menu is visible, <code>aria-expanded=”false”</code> when not</li>
-                <li>After the menu loses focus, the menu closes (and the <code>aria-expanded</code> attribute of the trigger reflects this). Menus may lose  focus when the user tabs off the last option or when the user activates any other control or clicks elsewhere.</li>
-                <li>The button may announce that it has a popup via <code>aria-haspopup="true"</code></li>
+                <li>
+                    Keyboard
+                    <ul>
+                        <li>Trigger can be activated with Space or Enter keys</li>
+                        <li>When trigger is activated and menu is open, the user can use the <kbd>arrow up/down</kbd> to navigate the menu choices (optimal) or the <kbd>tab</kbd> key to go down or <kbd>shift+tab</kbd> to go up</li>
+                        <li>When component looses focus, menu dissapears if it was visible</li>
+                    </ul>
+                    <li>Name, role, value
+                        <ul>
+                            <li>The trigger that opens the menu needs to be a button or have the button role and have a good name</li>
+                            <li>Trigger will have <code>aria-expanded=”true”</code> when menu is visible, <code>aria-expanded=”false”</code> when not</li>
+                            <li>After the menu loses focus, the menu closes (and the <code>aria-expanded</code> attribute of the trigger reflects this). Menus may lose  focus when the user tabs off the last option or when the user activates any other control or clicks elsewhere.</li>
+                            <li>The button may announce that it has a popup via <code>aria-haspopup="true"</code></li>        
+                        </ul>
+                    </li>
+                
                 
               </ul>
             </div>
