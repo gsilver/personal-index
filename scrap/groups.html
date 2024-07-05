@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>DomiKnow</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Grouping controls</h1>
+        <p>A traditional grouping pattern using <code>fieldset</code></p>
+        <fieldset>
+            <legend>What color was Napoleon's white horse?</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                    Brown
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Black
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    White
+                </label>
+            </div>
+        </fieldset>
+        <br>
+        <p class="alert alert-success">Screen reader output: </p>
+        <hr>
+        <p>Using <code>role="group"</code> and <code>aria-labelledby</code></p>
+        
+        <div role="group" aria-labelledby="groupLabel">
+            <p id="groupLabel">What is left?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios1X" value="option1">
+                <label class="form-check-label" for="exampleRadios1X">
+                    The opposite of "right"
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios2X" value="option2">
+                <label class="form-check-label" for="exampleRadios2X">
+                    The remainer when most are gone
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios3X" value="option3">
+                <label class="form-check-label" for="exampleRadios3X">
+                    The ones that departed
+                </label>
+            </div>
+        </div>
+        <br>
+
+        <p class="alert alert-success">Screen reader output: </p>
+<hr>
+<p>Domiknow Flow pattern, with each input with an <code>aria-describedby</code> attribute pointing at the ID of the question container</p>
+
+
+<p id="question">In which M-Pathways system would you create a journal entry?</p>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios1Z" value="option1" aria-describedby="question">
+    <label class="form-check-label" for="exampleRadios1Z">
+        Student Administration
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios2Z" value="option2" aria-describedby="question">
+    <label class="form-check-label" for="exampleRadios2Z">
+        Human Resource Management System
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios3Z" value="option3" aria-describedby="question">
+    <label class="form-check-label" for="exampleRadios3Z">
+        Financials & Physical Resources
+    </label>
+</div>
+
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
