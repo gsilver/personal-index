@@ -10,12 +10,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <style>
+        h2 {
+            font-size: 140%;
+        }
+        legend {
+            font-size: 130%;
+        }
+    </style>
+    </head>
 
 <body>
     <div class="container">
         <h1>Grouping controls</h1>
-        <p>A traditional grouping pattern using <code>fieldset</code></p>
+        <h2>1. A traditional grouping pattern using <code>fieldset</code></h2>
         <fieldset>
             <legend>What color was Napoleon's white horse?</legend>
             <div class="form-check">
@@ -39,8 +47,8 @@
         </fieldset>
         <br>
         <p class="alert alert-success">Screen reader output: </p>
-        <hr>
-        <p>Using <code>role="group"</code> and <code>aria-labelledby</code></p>
+
+        <h2>2. Using <code>role="group"</code> and <code>aria-labelledby</code></h2>
         
         <div role="group" aria-labelledby="groupLabel">
             <p id="groupLabel">What is left?</p>
@@ -66,8 +74,8 @@
         <br>
 
         <p class="alert alert-success">Screen reader output: </p>
-<hr>
-<p>Domiknow Flow pattern, with each input with an <code>aria-describedby</code> attribute pointing at the ID of the question container</p>
+
+<h2>3. Domiknow Flow pattern, with each input with an <code>aria-describedby</code> attribute pointing at the ID of the question container</h2>
 
 
 <p id="question">In which M-Pathways system would you create a journal entry?</p>
@@ -89,8 +97,8 @@
         Financials & Physical Resources
     </label>
 </div>
-
-
+<br>
+<p class="alert alert-success">Screen reader output: </p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
