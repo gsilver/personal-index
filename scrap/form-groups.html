@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>DomiKnow</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h2 {
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Grouping controls</h1>
+        <h2>1. A traditional grouping pattern using <code>fieldset</code></h2>
+        <fieldset>
+            <legend>What color was Napoleon's white horse?</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                <label class="form-check-label" for="exampleRadios1">
+                    Brown
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Black
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                    White
+                </label>
+            </div>
+        </fieldset>
+        <br>
+        <div class="alert alert-success">
+            <p>Screen reader output (cursor navigation):</p>
+            <ul>
+                <li>grouping What color was Napoleon's white horse?</li>
+                <li>radio button not checked </li>
+                <li>Brown</li>
+                <li>radio button not checked </li>
+                <li>Black</li>
+                <li>radio button not checked </li>
+                <li>White</li>
+                <li>out of grouping blank</li>
+            </ul>
+            <p>Screen reader output (forms navigation):</p>
+            <ul>
+                <li>What color was Napoleon's white horse? grouping</li>
+                <li>Brown radio button checked 1 of 3</li>
+                <li>Black radio button checked 2 of 3</li>
+                <li>White radio button checked 3 of 3</li>
+            </ul>
+
+        </div>
+        <hr>
+        <h2>2. Using <code>role="group"</code> and <code>aria-labelledby</code></h2>
+
+        <div role="group" aria-labelledby="groupLabel">
+            <p id="groupLabel">What is left?</p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios1X" value="option1">
+                <label class="form-check-label" for="exampleRadios1X">
+                    The opposite of "right"
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios2X" value="option2">
+                <label class="form-check-label" for="exampleRadios2X">
+                    The remainer when most are gone
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadiosX" id="exampleRadios3X" value="option3">
+                <label class="form-check-label" for="exampleRadios3X">
+                    The ones that departed
+                </label>
+            </div>
+        </div>
+        <br>
+
+        <div class="alert alert-success">
+            <p>Screen reader output (cursor navigation):</p>
+            <ul>
+                <li> grouping What is left?</li>
+                <li>radio button not checked </li>
+                <li>The opposite of "right"</li>
+                <li>radio button not checked </li>
+                <li>The remainer when most are gone</li>
+                <li>radio button not checked </li>
+                <li>The ones that departed</li>
+                <li>out of grouping blank</li>
+            </ul>
+            <p>Screen reader output (forms navigation)</p>
+            <ul>
+                <li>What is left? grouping</li>
+                <li>The opposite of "right" radio button checked 1 of 3</li>
+                <li>The remainer when most are gone radio button checked 2 of 3</li>
+                <li>The ones that departed radio button checked 3 of 3</li>
+            </ul>
+        </div>
+        <hr>
+        <h2>3. Domiknow Flow pattern, with each input with an <code>aria-describedby</code> attribute pointing at the ID
+            of
+            the question container</h2>
+
+
+        <p id="question">In which M-Pathways system would you create a journal entry?</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios1Z" value="option1"
+                aria-describedby="question">
+            <label class="form-check-label" for="exampleRadios1Z">
+                Student Administration
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios2Z" value="option2"
+                aria-describedby="question">
+            <label class="form-check-label" for="exampleRadios2Z">
+                Human Resource Management System
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadiosZ" id="exampleRadios3Z" value="option3"
+                aria-describedby="question">
+            <label class="form-check-label" for="exampleRadios3Z">
+                Financials & Physical Resources
+            </label>
+        </div>
+        <br>
+        <div class="alert alert-success">
+            <p>Screen reader output (cursor navigation)</p>
+            <ul>
+                <li> In which M-Pathways system would you create a journal entry?</li>
+                <li>radio button not checked </li>
+                <li>Student Administration</li>
+                <li>radio button not checked </li>
+                <li>Human Resource Management System</li>
+                <li>radio button not checked </li>
+                <li>Financials & Physical Resources</li>
+                <li>blank</li>
+            </ul>
+            <p>Screen reader output (forms navigation)</p>
+            <ul>
+                <li>radio button not checked </li>
+                <li>Student Administration In which M-Pathways system would you create a journal entry?</li>
+                <li>radio button not checked </li>
+                <li>Human Resource Management System In which M-Pathways system would you create a journal entry?</li>
+                <li>radio button not checked </li>
+                <li>Financials & Physical Resources In which M-Pathways system would you create a journal entry?</li>
+                <li>blank</li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
