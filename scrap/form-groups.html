@@ -20,6 +20,28 @@
 <body>
     <div class="container">
         <h1>Grouping controls</h1>
+        <p>Below wired up 2 ok methods for grouping radio buttons and added the screen reader output (in the two main interaction modes of cursor and forms navigation).</p>
+
+        <p>The first one is the old standby, using a fieldset.</p>
+        
+        <p> The second one uses role="group" and aria-labeledby="the container for the text question"</p>
+        
+        <p>Note that both, no matter what navigation mode is selected  convey the following information
+        <ul>
+            <li>it is a group</li>
+            <li>the group has a name (namely the question)</li>
+        </ul>
+        <p>In forms mode, the screen reader also voices how many options are there and which one I currently have on focus</p>
+        
+        <p>Note that in the current Flow pattern:</p>
+        <ul>
+            <li>In cursor navigation the question is voiced, but since it is not the name of the group the relationship of the question and the choices is not clear. The aria-describedby in the inputs, pointed at the question is not voiced</li>
+<li>In forms navigation the question is not voiced. In forms navigation, the most common one, by design nothing is voiced that is not an input, or logically related to an input</li>
+<li>In forms navigation the aria-describedby pattern tacks the question at the end of each answer as you can see.  It is awkward and verbose.</li>
+<li>Finally - a screen reader user in forms mode is not informed of the size of the group and current position in it.</li>
+        </ul>
+
+        <p>We understand the reluctance to use the fieldset pattern: you want to retain control of layout and rendering, and fieldsets have gotten a bad rap for making this hard. Choice 2 (role="group" and aria-labeledby="the container for the text question") might be a better option.</p>
         <h2>1. A traditional grouping pattern using <code>fieldset</code></h2>
         <fieldset>
             <legend>What color was Napoleon's white horse?</legend>
