@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Alert examples</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <article aria-labelledby="polite-example">
+            <header>
+              <h2 id="polite-example">Polite</h2>
+            </header>
+    
+            <div class="alert alert-info"  id="polite-live-region"></div>
+            <button class="polite-button  btn btn-primary">
+              Click here for polite examples using aria-live="polite"
+            </button>
+          </article>
+          <article aria-labelledby="assertive-example">
+            <header>
+              <h2 id="assertive-example">Assertive</h2>
+            </header>
+    
+            <div class="alert alert-danger" id="assertive-live-region"></div>
+            <button class="assertive-button btn btn-danger">
+              Click here for assertive examples using aria-live="assertive"
+            </button>
+          </article>
+
+        </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+        $(function() {
+            $('.polite-button').on('click', function(){
+                $('#polite-live-region').html('<span>A polite alert</span>');
+            })
+            $('.assertive-button').on('click', function(){
+                $('#assertive-live-region').html('<span>An assertive alert</span>');
+            })
+
+        });
+      </script>
+</body>
+</html>
