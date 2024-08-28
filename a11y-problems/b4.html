@@ -26,7 +26,6 @@
     <h3>ITS Departments</h3>
 
     <div class="alert alert-info" ng-show="!deptLength.length">No more departments!</div>
-    <div>There are {{deptLength.length}} listed</div>
     <table class="table table-stipped" ng-show="deptLength.length">
       <thead>
         <tr>
@@ -47,9 +46,9 @@
           <tr ng-repeat="dept in depts" ng-if="!dept.Reorg"   style="background-color:{{dept.Color.toLowerCase()}}  !important">
             <td id="i{{$index}}">{{dept.Department}}</td>
             <td >{{dept.Budget}}</td>
-            <td><a href="" class="edit" data-toggle="modal" data-target="#editModal" ng-click="edit($index)">Edit</a> | <a href="" class="reorg" ng-click="reorg($index)">Reorg it!</a> </td>
+            <td><a aria-describedby="i{{$index}}" href="" class="edit" data-toggle="modal" data-target="#editModal" ng-click="edit($index)">Edit</a> | <a href="" aria-describedby="i{{$index}}" class="reorg" ng-click="reorg($index)">Reorg it!</a> </td>
             <td>
-              <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
+              <button aria-describedby="i{{$index}}" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
             </td>
           </tr>
         </tbody>
@@ -58,7 +57,6 @@
 
     <div ng-show="reorgLength.length">
       <h3>Reorg candidates</h3>
-      <div>There are {{reorgLength.length}} listed</div>
       <table class="table table-stipped">
         <thead>
           <tr>
@@ -77,11 +75,11 @@
           </tr>
           <tbody>
             <tr ng-repeat="dept in depts" ng-if="dept.Reorg">
-              <td>{{dept.Department}}</td>
-              <td   style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
-              <td><a href="" class="reorg" ng-click="unreorg($index)">Spare it a reorg!</a> </td>
+              <td id="i{{$index}}">{{dept.Department}}</td>
+              <td style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
+              <td><a href="" aria-describedby="i{{$index}}" class="reorg" ng-click="unreorg($index)">Spare it a reorg!</a> </td>
               <td>
-                <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
+                <button aria-describedby="i{{$index}}" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>
               </td>
             </tr>
           </tbody>
