@@ -49,6 +49,30 @@
     <p>It would have been a lot easier to just use a <code>button</code>, no? </p>
 
     <div class="btn fake-btn" role="button" aria-pressed="false" tabindex="0" style="border:1px solid #ccc;background:#eee">A "button"</div>
+    <div>
+      <br><br>
+      <pre>
+        <code>
+          &lt;div <strong>role="button"</strong> tabindex="0" class=&quot;btn fake-btn&quot; style=&quot;border:1px solid #ccc;background:#eee&quot;&gt;A &quot;button&quot;&lt;/div&gt;
+          &lt;script type=&quot;text/javascript&quot;&gt;
+            $('.btn').on('click', function() {
+              alert('you clicked me')
+            });
+            $('.btn').keypress(function(e){
+              if(e.which===13){
+                alert('pressed enter');
+              } else {
+                if(e.which===32){
+                      alert('pressed spacebar');
+                  }
+              }
+             });
+          &lt;/script&gt;
+        </code>
+      </pre>
+    
+    </div>
+
   </div>
 
 

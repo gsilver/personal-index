@@ -46,6 +46,30 @@
       <li>And it is not announced as a button in the accessibility API</li>
     </ul>
     <div class="btn fake-btn" tabindex="0" style="border:1px solid #ccc;background:#eee">A "button"</div>
+    <div>
+      
+      <br><br>
+      <pre>
+        <code>
+          &lt;div tabindex="0" class=&quot;btn fake-btn&quot; style=&quot;border:1px solid #ccc;background:#eee&quot;&gt;A &quot;button&quot;&lt;/div&gt;
+          &lt;script type=&quot;text/javascript&quot;&gt;
+            $('.btn').on('click', function() {
+              alert('you clicked me')
+            });
+            <strong>$('.btn').keypress(function(e){
+              if(e.which===13){
+                alert('pressed enter');
+              } else {
+                if(e.which===32){
+                      alert('pressed spacebar');
+                  }
+              }
+            });</strong>
+          &lt;/script&gt;
+        </code>
+      </pre>
+    
+    </div>
   </div>
 
 
