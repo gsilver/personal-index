@@ -74,9 +74,9 @@
             </td>
           </tr>
           <tbody>
-            <tr ng-repeat="dept in depts" ng-if="dept.Reorg">
+            <tr ng-repeat="dept in depts" ng-if="dept.Reorg"  style="background-color:{{dept.Color.toLowerCase()}}  !important">
               <td id="i{{$index}}">{{dept.Department}}</td>
-              <td style="background-color:{{dept.Color.toLowerCase()}}  !important">{{dept.Budget}}</td>
+              <td>{{dept.Budget}}</td>
               <td><a href="" aria-describedby="i{{$index}}" class="reorg" ng-click="unreorg($index)">Spare it a reorg!</a> </td>
               <td>
                 <button aria-describedby="i{{$index}}" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#moreinfo" ng-click="passItemToModal($index)">More Info</button>

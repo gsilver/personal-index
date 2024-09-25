@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <label><span class="__private__-checkbox-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root __private__-checkbox-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root e1iyd1fp0 css-zzlmw">
+            <input class="PrivateSwitchBase-input css-1m9pwf3" type="checkbox" id="startat" aria-expanded="false" data-indeterminate="false"><span font-size="medium" class="css-1sisa7x e1iyd1fp2"></span></span><span class="__private__-typography-root MuiTypography-root __private__-typography-body2Highlight MuiTypography-body2Highlight e1dhyivy1 e1ie5gf00 css-1xuv01x-__private__-typography-root">Start video at</span><div class="__private__-base-input-root MuiInputBase-root MuiInputBase-colorPrimary __private__-disabled Mui-disabled e1dhyivy0 e1so4ehd0 css-v39oy7"><input type="text" class="__private__-base-input-input MuiInputBase-input __private__-disabled Mui-disabled css-1jhxu0" value="00:00:00" disabled=""></div></label>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+<script>
+
+
+$('#startat').change(function (e) {
+    console.log('change')
+        // checked will equal true if checked or false otherwise
+        if($(this).is(':checked')){
+            console.log('c');
+            $(this).attr('aria-expanded',true)
+
+        } else {
+            $(this).attr('aria-expanded',false)
+            console.log('nc');
+
+        }
+});
+
+</script>
+</body>
+</html>
