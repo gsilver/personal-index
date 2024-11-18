@@ -9,23 +9,53 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
-    *:focus-visible {
-        outline:3px solid red
+    a:focus-visible {
+        outline:3px solid red;
     }
+    input:focus{
+      outline:3px solid blue;
+    }
+    textarea:focus-visible {
+      outline-color: currentColor;
+      outline-style: solid;
+      outline-offset: .25rem;
+      outline-width: .25rem;
+    }
+    a.special:focus-visible  {
+      outline: 2px solid white;
+      box-shadow: 0 0 0 4px black;
+    }
+
+    a.bounce:focus-visible {
+       animation: outline-bounce .5s;
+    }
+    @keyframes outline-bounce {
+      0% { outline-offset: .25rem }
+      50% { outline-offset: .5rem }
+      100% { outline-offset: .25rem }
+}
+
 </style>
 </head>
   <body>
       <div class="container">
-        <br>
-        <p><a href="/">Link</a></p>
+        <p>Link gets focus from a.focus-visible, and it bounces</p>
+
+        <p><a href="/" class="bounce">Link</a></p>
         <div class="mb-3">
+            <p>Input gets focus from input:focus</p>
             <label for="exampleFormControlInput1" class="form-label">Email address</label><br>
             <input type="email" class="" id="exampleFormControlInput1" placeholder="name@example.com">
           </div>
           <div class="mb-3">
+            <p>Textarea outline matches color of text</p>
             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
             <textarea class="" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
+          <p><a href="/" class="special">Special link with a drop shadow to produce a 2 colored outline</a></p>
+          <div style="padding:.5rem; background:#000">
+          <p><a href="/" class="special" style="color:#fff">Comes in handy when links appear on different backgrounds</a></p>
+        </div>
       </div>
 
     <!-- Optional JavaScript -->
