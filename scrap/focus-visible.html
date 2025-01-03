@@ -33,7 +33,8 @@
       0% { outline-offset: .25rem }
       50% { outline-offset: .5rem }
       100% { outline-offset: .25rem }
-}
+    }
+
 
 </style>
 </head>
@@ -42,13 +43,14 @@
         <p>Link gets focus from a.focus-visible, and it bounces</p>
 
         <p><a href="/" class="bounce">Link</a></p>
+
         <div class="mb-3">
             <p>Input gets focus from input:focus</p>
             <label for="exampleFormControlInput1" class="form-label">Email address</label><br>
             <input type="email" class="" id="exampleFormControlInput1" placeholder="name@example.com">
           </div>
           <div class="mb-3">
-            <p>Textarea outline matches color of text</p>
+            <p>Textarea outline matches color of text via <code>currentColor</code></p>
             <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
             <textarea class="" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
