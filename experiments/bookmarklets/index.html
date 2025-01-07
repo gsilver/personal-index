@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bookmarklets for vendor demos</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    
+      <div class="container">
+        <br>
+        <h1>Bookmarklets for vendor demos</h1>
+        <p> <strong> Installing bookmarklets:</strong> drag the link to the bookmarks bar of your browser. For best results use Chrome. You can create a folder on your bookmark bar and drag the lonks to that to keep things compact.</p>
+        <p><strong>Using bookmarklets:</strong> click on the bookmarklet in your bookmark bar on in the folder.</p>
+<ul>
+    <li>
+        <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/headings.js';var iframes=document.getElementsByTagName('iframe');for(i=0;i<iframes.length;i++) {iframes[i].contentDocument.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/headings.js';}})();">
+            Headings
+        </a>
+    </li>
+    <li><a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/images.js';var iframes=document.getElementsByTagName('iframe');for(i=0;i<iframes.length;i++) {iframes[i].contentDocument.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/images.js';}})();">
+            Images
+        </a>
+    </li>
+    <li>
+        <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/forms.js';var iframes=document.getElementsByTagName('iframe');for(i=0;i<iframes.length;i++) {iframes[i].contentDocument.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/forms.js';}})();">
+            Forms
+        </a>
+    </li>
+    <li>
+        <a href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js';var iframes=document.getElementsByTagName('iframe');for(i=0;i<iframes.length;i++) {iframes[i].contentDocument.body.appendChild(document.createElement('script')).src='https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js';}})();">
+            Landmarks
+        </a>
+    </li>
+    <li>
+        <a href="javascript:void%20function(){(function(){function%20i(i){document.body.style.filter=i,document.body.style.webkitFilter=i}window.isGrayscale%3F(i(%22none%22),window.isGrayscale=!1):(i(%22grayscale(1)%22),window.isGrayscale=!0)})()}();">
+            Grayscale
+        </a>
+    </li>
+    <li>
+        <a href="javascript:(function()%7Bvar d%3Ddocument,id%3D%27phltsbkmklt%27,el%3Dd.getElementById(id),f%3Dd.querySelectorAll(%27iframe%27),i%3D0,l%3Df.length%3Bif(el)%7Bfunction removeFromShadows(root)%7Bfor(var el of root.querySelectorAll(%27*%27))%7Bif(el.shadowRoot)%7Bel.shadowRoot.getElementById(id).remove()%3BremoveFromShadows(el.shadowRoot)%3B%7D%7D%7Del.remove()%3Bif(l)%7Bfor(i%3D0%3Bi<l%3Bi%2B%2B)%7Btry%7Bf%5Bi%5D.contentWindow.document.getElementById(id).remove()%3BremoveFromShadows(f%5Bi%5D.contentWindow.document)%3B%7Dcatch(e)%7Bconsole.log(e)%7D%7D%7DremoveFromShadows(d)%3B%7Delse%7Bs%3Dd.createElement(%27style%27)%3Bs.id%3Did%3Bs.appendChild(d.createTextNode(%27*%7Bline-height:1.5 !important%3Bletter-spacing:0.12em !important%3Bword-spacing:0.16em !important%3B%7Dp%7Bmargin-bottom:2em !important%3B%7D%27))%3Bfunction applyToShadows(root)%7Bfor(var el of root.querySelectorAll(%27*%27))%7Bif(el.shadowRoot)%7Bel.shadowRoot.appendChild(s.cloneNode(true))%3BapplyToShadows(el.shadowRoot)%3B%7D%7D%7Dd.getElementsByTagName(%27head%27)%5B0%5D.appendChild(s)%3Bfor(i%3D0%3Bi<l%3Bi%2B%2B)%7Btry%7Bf%5Bi%5D.contentWindow.document.getElementsByTagName(%27head%27)%5B0%5D.appendChild(s.cloneNode(true))%3BapplyToShadows(f%5Bi%5D.contentWindow.document)%3B%7Dcatch(e)%7Bconsole.log(e)%7D%7DapplyToShadows(d)%3B%7D%7D)()%3B ">
+            Text spacing
+        </a>
+    </li>
+    
+</ul>
+        
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
