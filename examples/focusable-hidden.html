@@ -39,21 +39,23 @@
             <br>
             <small id="after4">You are almost done, just 3 more tab stops. Tab till you reach the "Done" button</small>
           </div>
-          <div class="form-group sr-only">
-            <label for="formGroupExampleInput">Example label</label>
-            <input aria-hidden="true" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-          </div>
-          <div class="form-group sr-only">
-            <label for="formGroupExampleInput2">Another label</label>
-            <input aria-hidden="true"  type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-          </div>
-
+          <div class="alert-warning sr-only toggle-sr-only" style="padding:1rem">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Example label</label>
+              <input aria-hidden="true" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+            </div>
+            <div class="form-group">
+              <label for="formGroupExampleInput2">Another label</label>
+              <input aria-hidden="true"  type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+            </div>
+          </div> 
           <br><button type="button" id="done" class="btn btn-primary">Done</button>
 
           <br><br>
           <div class="alert alert-info" style="display:none" id="whathapenned">   
-            You experienced 2 tab stops between <strong>Tab stob 4</strong> and this button. You do not know what they were (links, buttons, fields?) or what they were called.
+            You experienced 2 tab stops between <strong>Tab stop 4</strong> and this button. You do not know what they were (links, buttons, fields?) or what they were called.
           </div>
+          <button id="sr-only-remove" type="button" class="btn btn-primary">Reveal hidden elements</button>
 
           <br>
           <br>
@@ -68,6 +70,13 @@
         var btn = $("#done");
         btn.focus(function() { $('#whathapenned').show(); });
         btn.blur(function() { $('#whathapenned').hide();  });
+        $('#sr-only-remove').on('click', function(){
+          //$('.sr-only').removeClass('sr-only');
+          $('.toggle-sr-only').toggleClass('sr-only');
+          $('.toggle-sr-only').find('input').attr('aria-hidden', function(index, attr){
+            return attr == "true" ? "false" : "true";
+          });
+        })
     
     </script>
   </body>
