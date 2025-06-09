@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Naming techniques - browser and AT variation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        h2 {
+            font-size: 120%;
+            font-weight: bold;
+        }
+        h3 {
+            font-size: 95%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1>Naming techniques - browser and AT variation</h1>        
+        <p>What remains: match need with pattern. Patterns to stay away from</p>
+        <h2>aria-labelledby and aria-describedby</h2>
+        <div class="card">
+            <div class="card-body">
+                
+                <div class="form-group">
+                    <label id="input1label">Label</label>
+                    <input
+                    aria-labelledby="input1label"
+                    aria-describedby="input1desc"
+                    id="input1" 
+                    type="text" class="form-control" placeholder="Enter CCC text">
+                    <small id="input1desc" class="form-text text-muted">This text is referenced by the input as a description.</small>
+                </div>
+            </div>
+        </div>
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>'content, selected ' if any </li><li>aria-labelledby value</li><li>aria-describedby value</li><li>'edit text'</li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>aria-labelledby value</li> <li>aria-describedby value</li><li>placeholder value</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        <h2>two aria-labelledby</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label><span id="input2label1">Label 1 </span><span id="input2label2">Label 2</span></label>
+                    <input
+                    aria-labelledby="input2label1 input2label2"
+                    id="input2"
+                    type="text" class="form-control"  placeholder="Enter text">
+                </div>
+                
+            </div>
+        </div>
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>aria-labelledby values</li><li>placeholder value</li><li>'edit text'</li></li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>aria-labelledby values</li> <li>placeholder value</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        
+        <h2>two aria-describedby</h2>
+        <div class="card">
+            <div class="card-body">
+                
+                <div class="form-group">
+                    <label for="input3">Label</label>
+                    <input
+                    aria-describedby="input3desc1 input3desc2"
+                    id="input3" 
+                    type="text" class="form-control" placeholder="Enter text">
+                    <small id="input3desc1" class="form-text text-muted">First description</small>
+                    <small id="input3desc2" class="form-text text-muted">Second description</small>
+                </div>
+            </div>
+        </div>
+        
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>label value</li><li>aria-describedby(s) values</li><li>'edit text'</li></li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>label value</li> <li>aria-describedby(s) values</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        
+        
+        <h2>aria-label and aria-labelledby</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label id="input4label">Label</label>
+                    <input
+                    aria-label="Label"
+                    aria-labelledeby="input4labelledby"
+                    id="input4" 
+                    type="text" class="form-control" placeholder="Enter text">
+                    <small id="input4labelledby" class="form-text text-muted">Second label (via aria-labelledby)</small>
+                </div>
+            </div>
+        </div>
+        
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>label value</li><li>placeholder value</li><li>'edit text'</li></li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>label value</li> <li>placeholder value</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        
+        
+        
+        
+        <h2>aria-label and aria-describedby</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label id="input5label">Label</label>
+                    <input
+                    aria-label="Label"
+                    aria-describedby="input5desc"
+                    id="input5" 
+                    type="text" class="form-control" placeholder="Enter SASA text">
+                    <small id="input5desc" class="form-text text-muted">Description (via aria-describedby)</small>
+                </div>
+                
+            </div>
+        </div>
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>aria-label value</li><li>aria-describedby value</li><li>'edit text'</li></li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>label value</li> <li>'edit'</li><li>aria-describedby value</li>
+            <li>placeholder value</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        
+        
+        
+        
+        <h2>label and aria-describedby</h2>
+        
+        <div class="card">
+            <div class="card-body">
+                
+                <div class="form-group">
+                    <label for="input6">Label</label>
+                    <input
+                    aria-describedby="input6desc"
+                    id="input6" 
+                    type="text" class="form-control" placeholder="Enter text">
+                    <small id="input6desc" class="form-text text-muted">Description (via aria-describedby)</small>
+                </div>
+            </div>
+        </div>
+        
+        <br><h3>VO + Chrome, Safari</h3>
+        <ol><li>label value</li><li>aria-describedby value</li><li>'edit text'</li></li>
+        </ol>
+        <h3>NVDA + FF, JAWS</h3>
+        <ol>
+            <li>label value</li> <li>'edit'</li><li>aria-describedby value</li>
+            <li>placeholder value</li><li>'the text in the input'  or 'blank' if nothing there</li>
+        </ol>
+        
+        <hr>
+        
+        
+        
+        
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
