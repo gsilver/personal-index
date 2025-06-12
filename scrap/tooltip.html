@@ -20,12 +20,13 @@
         .toggletip-bubble {
             display: inline-block;
             position: absolute;
-            left: 100%;
+            left: 120%;
             top: 0;
-            width: 10em;
+            width: 20em;
             padding: 0.5rem;
             background: #000;
             color: #fff;
+            border-radius: .5rem;
         }
         
         a {
@@ -86,7 +87,7 @@
                 <ul>
                     <li>Name of the control expressly clarifies that it only provides more information - it does nothing else. In the example the accessible name is "more info" If there are a large number of these, the name should be disambiguated: "more info on (whatever)" </li>
                     <li>The context should make clear what the information relates to</li>
-                    <li>User "opts into" receiving this information, so this is only provided by clicking it or hitting the Enter key</li>
+                    <li>User "opts into" receiving this information, so this is only provided by clicking it or hitting the Enter key while button is focused</li>
                     <li>The information is provided via an ARIA live region</li>
                 </ul>
                 
@@ -94,7 +95,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <span class="toggletip-container">
-                                <button type="button" class="btn btn-primary round" aria-label="more info" data-toggletip-content="This clarifies whatever needs clarifying">i</button>
+                                <button type="button" class="btn btn-primary round" aria-label="more info" data-toggletip-content="Some information on this context">i</button>
                                 <span role="status"></span>
                             </span>
                         </div></div>
