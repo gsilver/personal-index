@@ -17,6 +17,13 @@
             display: inline-block;
         }
         
+        .tooltip-content {
+            width: 20em;
+            padding: 0.5rem;
+            background: #000;
+            color: #fff;
+            border-radius: .2rem;
+        }
         .toggletip-bubble {
             display: inline-block;
             position: absolute;
@@ -60,8 +67,8 @@
         </ol>
         <div class="panel panel-default">
             <div class="panel-body">
-                <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Add a new item">
-                    +
+                <button aria-label="Add a new item" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Add a new item of this and that type">
+                    <span aria-hidden="true"> + </span>
                 </button>
                 
             </div>
@@ -74,13 +81,13 @@
             <div class="panel-body">
                 
                 <button type="button" class="btn btn-danger x-tooltip">
-                    -
-                    <span class="sr-only">Delete this item</span>
+                    <span aria-hidden="true"> - </span>
+                    <span class="sr-only">Delete item permanently and with extreme prejudice</span>
                 </button>
-                <span class="tooltip-content" style="display:none" aria-hidden="true"> Delete this item</span>
+                <span class="tooltip-content" style="display:none" aria-hidden="true"> Delete item permanently and with extreme prejudice</span>
             </div></div><br>
-            <p>Note: the concatenation of the visible part of the name ('?') and
-                the screen reader part of the name ('Tooltip content') needs to make sense. If the screen reader text is a replacement for the visible text, hide the visible text with <code> aria-hidden="true"</code></p>
+            <p>Note: the concatenation of the visible part of the name and
+                the screen reader part of the name needs to make sense. If the screen reader text is a replacement for the visible text, hide the visible text with <code> aria-hidden="true"</code></p>
                 
                 <h2>Tooltips for controls that only provide information</h2>
                 <p>The above 2 examples are useful to clarify the purpose of a control that actually does something. If the aim is only to provide information this needs to be made clear to the user, and a different pattern used. What follows is addapted from Heydon Pickering, <a href="https://inclusive-components.design/tooltips-toggletips/">Tooltips & Toggletips</a></p>
